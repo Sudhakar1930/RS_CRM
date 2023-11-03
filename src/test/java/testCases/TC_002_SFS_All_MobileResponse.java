@@ -6,12 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import io.appium.java_client.android.AndroidDriver;
 import pageObjects.Browser.IndvControls;
 import pageObjects.Browser.SectionControlsPage;
 import testBase.Browser.BaseClass;
 import utilities.ExcelUtility;
-import utilities.SurveyFormReUsables;
+import utilities.Browser.*;
 
 public class TC_002_SFS_All_MobileResponse extends BaseClass{
 	
@@ -22,16 +21,15 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 	}
 	@Test
 	public void testMobileSectionContrls() throws Exception {
-		
+		try {
 		node = test.createNode("SectionControlsInSection");
 		
-		SurveyFormReUsables oSFRSC = new SurveyFormReUsables();
-		System.out.println("Within Test");
+		SurveyFormReUsables oSFRSC = new SurveyFormReUsables(driver);
 		SectionControlsPage SecObj = new SectionControlsPage(driver);
 		IndvControls IndvObj = new IndvControls(driver);
 		
 		logger.info("******starting TC_002_SFS_All_MobileResponse ****");
-		String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 //		try{
@@ -182,10 +180,11 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 			String sActRM_Value= IndvObj.getRespRMValues();
 			System.out.println("Actual Response Values: "+sActRM_Value);
 			oSFRSC.fSoftAssert(String.valueOf(sActRM_Value),String.valueOf(sExpRM_Value),"Rank Matrix Response Values",node);
-			
-//		}catch(Exception e) {
-//			System.out.println(e.getCause());
-//			Assert.fail(e.getMessage());
-//		}//try catch
+			IndvObj.clickResponseClose(driver);
+		}
+		catch(Exception e) {
+			System.out.println(e.getCause());
+			Assert.fail(e.getMessage());
+		}//try catch
 	}//test
 }//class	

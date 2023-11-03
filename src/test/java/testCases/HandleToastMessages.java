@@ -11,7 +11,7 @@ public class HandleToastMessages extends BaseTest{
 	
 	@Test
 	public void toastcheck() throws Exception {
-	driver.get("https://rthree.live/showform?formid=954468&nurams=bot1");
+	driver.get("https://rthree.live/showform?formid=289536&nurams=bot1");
 	IndvControls IndvObj = new IndvControls(driver);
 	SectionControlsPage SecObj = new SectionControlsPage(driver);
 	

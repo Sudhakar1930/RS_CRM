@@ -19,7 +19,7 @@ public class TC002_SFI_MBPopups extends BaseTest {
 		SurveyFormReUsables oSFR = new SurveyFormReUsables();
 		IndvControls IndvObj = new IndvControls(driver);
 		logger.info("******starting TC_001_SFI_All_Mobile ****");
-		String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
@@ -79,7 +79,7 @@ public class TC002_SFI_MBPopups extends BaseTest {
 			IndvObj.clickMic();
 			Thread.sleep(5000);
 			IndvObj.clickStop();
-			String sCurrDate = utilities.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			String sCurrDate = utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
 			String sPrefixVR="voice_record_" + sCurrDate;
 			logger.info("Voice Recorded");
 			freport("Voice Recorded:" + sPrefixVR , "pass",node);
@@ -100,7 +100,7 @@ public class TC002_SFI_MBPopups extends BaseTest {
 			 IndvObj.SelectFiletoUpload(sExpUF_Value);
 			 Thread.sleep(3000);
 			 freport("File Selected : " + sExpUF_Value  , "pass",node);
-			 String sGetCurrDate =utilities.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			 String sGetCurrDate =utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
 			 String sUF_Prefix = "formshow_" + sGetCurrDate;
 			 System.out.println("File Uploaded");
 			 xlObj.setCellData("Sheet1", 1, 46, sUF_Prefix);

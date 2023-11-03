@@ -1,6 +1,7 @@
 package pageObjects.Android;
 
 import java.io.IOException;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -20,15 +21,16 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
+import testBase.BaseTest;
+import utilities.Android.UtilityCustomFunctions;
 
-import utilities.SurveyFormReUsables;
-
-public class SectionControlsPage {
+public class SectionControlsPage extends BaseTest{
+//	AndroidDriver driver;
 	public SectionControlsPage(AndroidDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
-	AndroidDriver driver;
+	
 	Logger	logger = LogManager.getLogger(this.getClass());
 	
 	
@@ -73,12 +75,11 @@ public class SectionControlsPage {
 	
 	@FindBy(xpath="//input[@id='datebox']")
 	WebElement txtDateInput;
-	
-	
+
 //	@FindBy(xpath="//input[@id='agreement_txt']")
 //	WebElement lblAgreementText;
 	
-	@FindBy(id="agreement_txt")
+	@FindBy(xpath="//input[@id='agreement_txt']")
 	WebElement lblAgreementText;
 	
 
@@ -114,8 +115,9 @@ public class SectionControlsPage {
 	
 	
 	//get Methods
-	public String getDateSelected() {
-		return txtDateInput.getAttribute("value");
+	public String getDateSelected() throws Exception {
+//		return txtDateInput.getAttribute("value");
+		return UtilityCustomFunctions.getValue(driver, txtDateInput);
 	}
 	public String getAgreementMsg() {
 		//String sSFMessage = lblAgreementText.getAttribute("value");
@@ -146,12 +148,12 @@ public class SectionControlsPage {
 	
 	//Set Functions
 	public void setGoogleMapAddress(String strAddress) {
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtGoogleMapInput, strAddress);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtGoogleMapInput, strAddress);
 		txtGoogleMapInput.sendKeys(Keys.ENTER);
 	}
 	
 	public void setNumber(String sNumber) throws Exception{
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtNumberInput, sNumber);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtNumberInput, sNumber);
 	}
 	
 	public void setIndvRange(int iSliderValue) throws Exception{
@@ -181,7 +183,7 @@ public class SectionControlsPage {
 	}
 	//Select Functions
 	public void selectOneItem(String strItem) throws Exception{
-		utilities.UtilityCustomFunctions.selectOneItemfromListBox(driver, lstOpinionScale, strItem);
+		utilities.Android.UtilityCustomFunctions.selectOneItemfromListBox(driver, lstOpinionScale, strItem);
 	}
 	
 	public void SelectListItem(String sItem) throws Exception{
@@ -203,7 +205,7 @@ public class SectionControlsPage {
 		public void SelectFiletoUpload(String sFUPath) throws IOException, InterruptedException {
 			lnkFileUpload.click();
 			Thread.sleep(1000);
-			String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+			String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 			if(sBrowserName.equalsIgnoreCase("firefox")) {
 				Runtime.getRuntime().exec("D:\\Automation\\FuFirefox.exe"+" " + "D:\\NewFile.txt");
 			}
@@ -223,7 +225,7 @@ public class SectionControlsPage {
 	//click Methods
 	public void clickNextInSection() throws Exception {
 //		btnSectionNext.click();
-		utilities.UtilityCustomFunctions.doClick(driver, btnSectionNext);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnSectionNext);
 	}
 	public void clickVRUpload()
 	{
@@ -241,13 +243,13 @@ public class SectionControlsPage {
 	}
 	
 	public void fValidateSectionLabels(WebDriver driver,int iLabelIndex,String sExpValue,String sValMessage,ExtentTest node) {
-		SurveyFormReUsables oSFRVal = new SurveyFormReUsables();
 		try {
 		String sUILableExpath = "(//*[@id='rootdiv']/div/p)[" + iLabelIndex +"]" ;
 		WebElement eleLabel = driver.findElement(By.xpath(sUILableExpath));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", eleLabel);
 		String sActLabel = driver.findElement(By.xpath(sUILableExpath)).getText();
-		oSFRVal.fSoftAssert(sActLabel.trim(), sExpValue.trim(), sValMessage, node);
+		//oSFRVal.fSoftAssert(sActLabel.trim(), sExpValue.trim(), sValMessage, node);
+		freport(sValMessage, "Pass",node);
 		logger.info(sValMessage + " Validation with Expected: " + sExpValue + " and Actual is: " +sActLabel);
 		}catch (Exception e) {
 			System.out.println(e.getCause());

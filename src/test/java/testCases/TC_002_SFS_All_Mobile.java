@@ -11,22 +11,23 @@ import pageObjects.Android.SectionControlsPage;
 import testBase.BaseTest;
 import utilities.ExcelUtility;
 import utilities.SurveyFormReUsables;
+import utilities.Android.UtilityCustomFunctions;
 
 public class TC_002_SFS_All_Mobile extends BaseTest{
-	Logger	logger = LogManager.getLogger(this.getClass());
+	Logger logger = LogManager.getLogger(this.getClass());
 	@BeforeTest
 	public void testName() {
-		test = extent.createTest("TC_004_SFAll_Section");
+		test = extent.createTest("TC_002_SFS_All_Mobile");
 	}
 	@Test
 	public void testSectionContrls() throws Exception {
 	
-		node = test.createNode("All_Controls_In_Section");
+		node = test.createNode("Section_Controls_In_Mobile");
 		
-		SurveyFormReUsables oSFRSC = new SurveyFormReUsables();
+		SurveyFormReUsables oSFRSC = new SurveyFormReUsables(driver);
 		
-		logger.info("******starting TC_004_SFAll_Section ****");
-		String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+		logger.info("******starting TC_002_SFS_All_Mobile ****");
+		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 		try{
@@ -163,7 +164,9 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 				System.out.println("Is Date Available in curr Month: "+bIsDateAvail);
 				bNewMonth = true;
 			}while(bIsDateAvail==false);
-			
+			System.out.println("Outside of appoitment");
+			Thread.sleep(4000);
+			IndvControls.clickGeneralToast();
 			
 			Thread.sleep(1000);
 			sAppFullTime = IndvObj.getBtnApptMsg();
@@ -175,11 +178,13 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			sExpAP_Value = sAppFullTime;
 			freport("Appointment Time Captured", "pass",node);
 			logger.info("Appointment Time Captured in Expected Value");
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 		
 			//MultiSelect Title
 			SecObj.fValidateSectionLabels(driver, 7, sExpMS_Title, "MultiSelect Control Title",node);
+			Thread.sleep(1000);
 			//MultiSelect Value
+			Thread.sleep(5000);
 			IndvObj.setDropdownMS(sExpMS_Value);
 			logger.info("MultiSelect Value Selected") ;
 			freport("MultiSelect Value Selected", "pass",node);
@@ -232,8 +237,11 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			 if(bDateReturnValue=false) {
 				 bDateReturnValue = IndvObj.setDate("Yes");
 			 }
-			 Thread.sleep(1000);
+			 System.out.println("Date Value Entered:");
+			 Thread.sleep(2000);
+			 
 			 String sDateSelected = SecObj.getDateSelected();
+			 System.out.println("Date Contorl value: " + sDateSelected);
 			 sExpDT_Value = sDateSelected;
 			 xlObj.setCellData("Sheet1", 1, 28, sDateSelected);
 			 logger.info("Date Value Updated to DataSheet");

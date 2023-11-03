@@ -206,7 +206,7 @@ public class SectionControlsPage {
 		public void SelectFiletoUpload(String sFUPath) throws IOException, InterruptedException {
 			lnkFileUpload.click();
 			Thread.sleep(1000);
-			String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+			String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 			if(sBrowserName.equalsIgnoreCase("firefox")) {
 				Runtime.getRuntime().exec("D:\\Automation\\FuFirefox.exe"+" " + "D:\\NewFile.txt");
 			}

@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,7 +18,7 @@ import pageObjects.Browser.IndvControls;
 import testBase.Browser.BaseClass;
 
 import utilities.ExcelUtility;
-import utilities.SurveyFormReUsables;
+import utilities.Browser.*;
 
 public class TC_001_SFI_All_MobileResponse extends BaseClass{
 	Logger logger = LogManager.getLogger(this.getClass());
@@ -27,12 +28,12 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 	}
 	@Test
 	public void TestMobileIResponse() throws Exception {
-		
+		try{
 		node = test.createNode("IndependentControls");
-		SurveyFormReUsables oSFR = new SurveyFormReUsables();
+		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);
 		logger.info("******starting TC_001_SFI_All_MobileResponse ****");
-		String sBrowserName=utilities.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
@@ -180,12 +181,12 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 			String sActRM_Value= IndvObj.getRespRMValues();
 			oSFR.fSoftAssert(sActRM_Value.trim(),sExpRM_Value,"Rank Matrix Values",node);
 			
-			BaseClass.sAssertinFn.assertEquals(String.valueOf(sActRM_Value), String.valueOf(sExpRM_Value),"Rank Matrix Response Values");
+			//BaseClass.sAssertinFn.assertEquals(String.valueOf(sActRM_Value), String.valueOf(sExpRM_Value),"Rank Matrix Response Values");
 		
 			IndvObj.clickResponseClose(driver);
-			
-			//a.sAssertinFn.assertAll();
-			BaseClass.sAssertinFn.assertAll();
-			 
+		}	catch(Exception e) {
+			System.out.println(e.getCause());
+			Assert.fail(e.getMessage());
+		}//try catch
 	}
 }

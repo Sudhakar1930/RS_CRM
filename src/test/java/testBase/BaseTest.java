@@ -66,7 +66,10 @@ Logger logger = LogManager.getLogger(this.getClass());
 	ChromeOptions cOptions = new ChromeOptions();
 	UiAutomator2Options options = new UiAutomator2Options();
 //	options.setDeviceName("emulator-5554");
-	options.setDeviceName("db48f8d9");
+//	options.setDeviceName("db48f8d9");
+
+	options.setDeviceName("emulator-5554");
+	
 	options.setPlatformVersion("11.0");
 	options.setPlatformName("Android");
 	options.noReset();
@@ -179,12 +182,6 @@ Logger logger = LogManager.getLogger(this.getClass());
 		obj.clickFirstResponse();
 		logger.info("Clicked first Response");
 	}
-	
-		
-	
-	
-	
-	
 	
 	
 	public void freport(String dec, String status,ExtentTest node) throws IOException, InterruptedException {

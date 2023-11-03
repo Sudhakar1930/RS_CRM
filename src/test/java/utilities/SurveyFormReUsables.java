@@ -1,9 +1,8 @@
 package utilities;
 
 import java.io.IOException;
+
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,32 +14,27 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
-import jdk.internal.org.jline.utils.Log;
-import testBase.BaseTest;
-import testBase.Browser.BaseClass;
-import utilities.ExcelUtility;
-
-import utilities.ExtentReportManager;
-
-import testBase.BaseTest;
+import io.appium.java_client.android.AndroidDriver;
+import pageObjects.Android.SectionControlsPage;
 
 
-public class SurveyFormReUsables extends BaseClass {
+public class SurveyFormReUsables extends SectionControlsPage{
+	
+	
+	public SurveyFormReUsables(AndroidDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 	Logger logger = LogManager.getLogger(this.getClass());
 
 	//SurveyFormReUsables a = new SurveyFormReUsables();
 	public static void sendKeys(WebDriver webDriver, WebElement element, String keyValue) {
 		try {
-			JavascriptExecutor js = (JavascriptExecutor) webDriver;
+			//JavascriptExecutor js = (JavascriptExecutor) webDriver;
 			//js.executeScript("arguments[0].scrollIntoView();", element);
 			WebDriverWait webWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
 			webWait.until(ExpectedConditions.elementToBeClickable(element));

@@ -24,7 +24,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import utilities.UtilityCustomFunctions;
+import utilities.Android.UtilityCustomFunctions;
 public class IndvControls {
 	AndroidDriver driver;
 	Logger	logger = LogManager.getLogger(this.getClass());
@@ -36,6 +36,9 @@ public class IndvControls {
 	
 	@AndroidFindBy(id="teset.test")
 	private WebElement namefield;
+
+	@FindBy(xpath="//*[@id='toast-container']")
+	static WebElement eleToastMsg;
 	
 	@FindBy(xpath="//button[normalize-space()='next']")
 	WebElement btnGeneralNext;
@@ -132,9 +135,10 @@ public class IndvControls {
 	@FindBy(xpath="//div//ul")
 	WebElement lstElement;
 	
-	@FindBy(xpath="//app-timelist//div")
+	//@FindBy(xpath="//app-timelist//div")
+	//In Mobile
+	@FindBy(xpath="//ul[@class='tl-container tl-float']")
 	WebElement lstSecElement;
-	
 	
 	@FindBy(xpath="//iframe[@title='Form preview']")
 	WebElement iFramePreview;
@@ -239,6 +243,14 @@ public class IndvControls {
 	WebElement eleLocPopupAllow;
 	
 	
+	public static void clickGeneralToast() {
+		if(eleToastMsg.isDisplayed()) {
+			eleToastMsg.click();
+		}
+		else {
+			System.out.println("Toast not displayed");
+		}
+	}
 	public void clickMobileLocationPopup() {
 		eleLocPopupAllow.click();
 	}
@@ -370,7 +382,7 @@ public class IndvControls {
 	}
 
 	public void clickSkip() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnSkip);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnSkip);
 	}
 	
 	public void clickResponseClose(WebDriver driver) {
@@ -423,8 +435,9 @@ public class IndvControls {
 		String sSFMessage = btnAppointmentTime.getText();
 		return sSFMessage;
 	}
-	public static int getTimeSlots(WebElement lstElement) {
-		List<WebElement> options = lstElement.findElements(By.tagName("li"));
+	public static int getTimeSlots(WebElement lstParent) {
+		
+		List<WebElement> options = lstParent.findElements(By.tagName("li"));
 		return options.size();
 	}
 	public String getDateSelected() {
@@ -434,17 +447,17 @@ public class IndvControls {
 	
 //Click Methods
 	public void clickMic() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver,btnVRMic);
+		utilities.Android.UtilityCustomFunctions.doClick(driver,btnVRMic);
 	}
 	public void clickStop() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver,btnVRStop);
+		utilities.Android.UtilityCustomFunctions.doClick(driver,btnVRStop);
 	}
 	public void clickYesorNo(String strItem) throws Exception {
 		if(strItem.equals("Yes")) {
-			utilities.UtilityCustomFunctions.doClick(driver,btnYes);
+			utilities.Android.UtilityCustomFunctions.doClick(driver,btnYes);
 		}
 		else {
-			utilities.UtilityCustomFunctions.doClick(driver,btnNo);
+			utilities.Android.UtilityCustomFunctions.doClick(driver,btnNo);
 		}
 	}
 public boolean clickMatchingLabel(String strItem) throws Exception {
@@ -474,51 +487,65 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 	 
 	public void clickPictMsgMatchLabel(String strItem) throws Exception {
 		System.out.println("Size before calling: " + sLstPicMsgItems.size());
-		utilities.UtilityCustomFunctions.findAndClick(strItem,sLstPicMsgItems);
+		utilities.Android.UtilityCustomFunctions.findAndClick(strItem,sLstPicMsgItems);
 	}
 	public void clickThankYouGo() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnGo);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnGo);
 	}
 	public void clickMessageNext() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnMessageNext);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnMessageNext);
 	}
 	public void clickGeneralNext() throws Exception {
 //		utilities.UtilityCustomFunctions.doClick(driver, btnGeneralNext);
 		btnGeneralNext.click();
 	}
 	public void clickPhoneNumberNext() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnPhoneNumberNext);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnPhoneNumberNext);
 	}
 	public void clickBookAppointment() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnBookAppointment);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnBookAppointment);
 	}
 	public void clickApptChooseDate() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnChooseDate);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnChooseDate);
 	}
 	public void clickApptDateIcon() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnDateAgain);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnDateAgain);
 	}
 	public void clickTodayDate() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnCurrentDate);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnCurrentDate);
 	}
 	public void clickMSDropDown() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, btnMultiSelectDropDown);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnMultiSelectDropDown);
 	}
 	public void clickListInput() throws Exception {
-		utilities.UtilityCustomFunctions.doClick(driver, txtListControl);
+		utilities.Android.UtilityCustomFunctions.doClick(driver, txtListControl);
 	}
 	public static void clickFirstItem(WebElement lstElement,AndroidDriver driver) throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		List<WebElement> Slots = lstElement.findElements(By.tagName("li"));
-		Thread.sleep(1000);
+		System.out.println("class: " + lstElement.getAttribute("class"));
+		System.out.println("Size:" + Slots.size());
+		System.out.println("Before js click firstitem");
+		System.out.println("class: " + Slots.get(0).getAttribute("class"));
+		js.executeScript("arguments[0].click();",Slots.get(0));
+		System.out.println("after js click");
+		/*
+		for(int i = 0;i<Slots.size();i++) {
+			System.out.println(Slots.get(i).getText());
+			Slots.get(i).click();
+			break;
+			
+		}
+		
 		for(WebElement Slot: Slots) {
 			System.out.println("Time slot selected: " + Slot.getText());
 			utilities.UtilityCustomFunctions.doClick(driver, Slot);
 			break;
 		}
+		*/
 	}
 	
 	public static boolean setApptdate(WebElement btnChooseDate,AndroidDriver driver,WebElement btnNextMonth,WebElement lstElement,boolean bNewMonth) throws Exception {
-		//UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver);
 		boolean bSlotFound = false;
 		
 	    tcols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
@@ -532,7 +559,7 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 			
 			tcols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
 			Thread.sleep(1000);
-			String tcol=utilities.UtilityCustomFunctions.getValue(driver, tcols.get(i));
+			String tcol=utilities.Android.UtilityCustomFunctions.getText(driver, tcols.get(i));
 //			String tcol=tcols.get(i).getText();
 			String trim = tcol.trim();
 			System.out.println("This text is trimmed text--"+trim);
@@ -557,31 +584,20 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 					else {
 						Thread.sleep(2000);
 						System.out.println("Current Month: Date Enabled: so click it");
-//						tcols.get(i).click();
-						utilities.UtilityCustomFunctions.doClick(driver, tcols.get(i));
-//						try {
-//						WebElement eleToastLoaded = driver.findElement(By.xpath("(*//[@elementId='00000000-0000-0687-0000-461f0000006e']"));
-//						if(eleToastLoaded.isDisplayed()) {
-//							System.out.println("toast message available");
-//							eleToastLoaded.click();
-//						}
+						utilities.Android.UtilityCustomFunctions.doClick(driver, tcols.get(i));
+						
 						if(getTimeSlots(lstElement)!=0) {
-							Thread.sleep(2000);
+							System.out.println("Current Month: Avl Date Selected:timeslots listed");
 							clickFirstItem(lstElement,driver);
-							
-//							WebElement eleToastSuccess = driver.findElement(By.xpath("(*//[@elementId='00000000-0000-0687-0000-4b320000006e']"));
-//							if(eleToastSuccess.isDisplayed()) {
-//								eleToastSuccess.click();
-//								System.out.println("confirm toast");
-//							}
-							
+							System.out.println("First slot clicked");
+//							clickGeneralToast();
 							bSlotFound=true;
 							break;
 						}//getTimeSlot
 						else
 						{
 							System.out.println("No slots : on " + trim );
-							utilities.UtilityCustomFunctions.doClick(driver, btnChooseDate);
+							utilities.Android.UtilityCustomFunctions.doClick(driver, btnChooseDate);
 						}// When no slots in 
 						
 					}//attribute check
@@ -603,14 +619,11 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 						Thread.sleep(2000);
 						System.out.println("New Month: Date Enabled: so click it");
 						tcols.get(j).click();
+						clickGeneralToast();
 						if(getTimeSlots(lstElement)!=0) {
 							Thread.sleep(2000);
 							clickFirstItem(lstElement,driver);
-							WebElement eleToastSuccess = driver.findElement(By.xpath("(*//[@elementId='00000000-0000-0687-0000-4b320000006e']"));
-							if(eleToastSuccess.isDisplayed()) {
-								eleToastSuccess.click();
-								System.out.println("confirm toast");
-							}
+							
 							bSlotFound=true;
 							break;
 						}//getTimeSlot
@@ -676,6 +689,8 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 		return setApptdate(btnChooseDate,driver,btnNextMonth,lstElement,bNewMonth);
 	}
 	public boolean setApptDateInSection(boolean bNewMonth) throws Exception  {
+		
+		
 		return setApptdate(btnChooseDate,driver,btnNextMonth,lstSecElement,bNewMonth);
 	}
 	public void setDropdownMS(String sExpValue) {
@@ -688,7 +703,7 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 		selectMS(driver, lstMsCoontrol, eleDropDown,sExpValue);
 	}
 	public void setGoogleMapAddress(String strAddress) {
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtGoogleMapInput, strAddress);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtGoogleMapInput, strAddress);
 	}
 	
 	public static void selectMS(WebDriver webDriver, List<WebElement> lstMsCoontrol, WebElement eleDropDown,String sMS_Value) {
@@ -794,41 +809,41 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 	public boolean selectOneItem(String strItem) throws Exception{
 		boolean bFlag = false;
 		System.out.println("SelectOneChoice:" + SelectOneChoice);
-		bFlag = utilities.UtilityCustomFunctions.selectOneItemfromListBox(driver, SelectOneChoice, strItem);
+		bFlag = utilities.Android.UtilityCustomFunctions.selectOneItemfromListBox(driver, SelectOneChoice, strItem);
 		return bFlag;
 	}
 	public void selectListItem(String strItem) throws Exception{
 		
-		utilities.UtilityCustomFunctions.selectOneItemfromListBox(driver, lstListValue, strItem);
+		utilities.Android.UtilityCustomFunctions.selectOneItemfromListBox(driver, lstListValue, strItem);
 	}
 	public boolean setDate(String isNextMonthClicked)throws Exception{
-		UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver);
-		return uObj.clickDate(isNextMonthClicked,btnCurrentDate,btnDateIcon, btnNextMonth);
+		//UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver);
+		return clickDate(isNextMonthClicked,btnCurrentDate,btnDateIcon, btnNextMonth);
 	}
 	
 	public String selectFirstAppointMent() throws Exception{
-		return utilities.UtilityCustomFunctions.selectFirstListItem(driver, lstElement);
+		return utilities.Android.UtilityCustomFunctions.selectFirstListItem(driver, lstElement);
 	}
 	public void selectMultiItems(String strValues) throws Exception{
-		utilities.UtilityCustomFunctions.selectMultiItemfromListBox(driver, lstMultiSelectValues, strValues);
+		utilities.Android.UtilityCustomFunctions.selectMultiItemfromListBox(driver, lstMultiSelectValues, strValues);
 	}
 	public void clickLinks(String strLinks) throws Exception{
-		utilities.UtilityCustomFunctions.clickLinkItems(driver, btnLinksControl, strLinks);
+		utilities.Android.UtilityCustomFunctions.clickLinkItems(driver, btnLinksControl, strLinks);
 	}
 	public void setTextAnswer(String sTextQuestion) throws Exception{
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtTextQuestionInput, sTextQuestion);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtTextQuestionInput, sTextQuestion);
 	}
 	public void setEmail(String sEmail) throws Exception{
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtEmailInput, sEmail);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtEmailInput, sEmail);
 	}
 	public void setPhoneNumber(String sPhoneNumber) throws Exception{
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtPhoneNumberInput, sPhoneNumber);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtPhoneNumberInput, sPhoneNumber);
 	}
 	public String selectNextDate()throws Exception{
-	return utilities.UtilityCustomFunctions.SelectNextAvailDate(driver,WbTblAppointMent, btnCurrentDate);
+	return utilities.Android.UtilityCustomFunctions.SelectNextAvailDate(driver,WbTblAppointMent, btnCurrentDate);
 	}
 	public void setNumber(String sNumber) throws Exception{
-		utilities.UtilityCustomFunctions.sendKeys(driver, txtNumberInput, sNumber);
+		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtNumberInput, sNumber);
 	}
 	public void setRange(int iSliderValue) throws Exception{
 		for(int i = 0;i<iSliderValue;i++) {
@@ -837,6 +852,47 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 	}
 	public void setRankingMatrix(String sRankValues) throws Exception{
 		//setRankMatrix
-		utilities.UtilityCustomFunctions.setRankMatrix(btnRankMatrixTbl, sRankValues);
+		utilities.Android.UtilityCustomFunctions.setRankMatrix(btnRankMatrixTbl, sRankValues);
 	}
+	//ClickDate
+    public  boolean clickDate(String sNextMonthClicked,WebElement eleCurrDate,WebElement eleChooseDate,WebElement eleNextMonth) throws Exception {
+		boolean bIsDateSelected=false;
+		if(sNextMonthClicked=="No") {
+		eleChooseDate.click();
+		}
+		List<WebElement> tDateCols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
+		System.out.println("tDateCols  " + tDateCols.size());
+		for (int j = 0; j < tDateCols.size(); j++) {
+			
+			String sDateAttribute = tDateCols.get(j).getAttribute("class");
+			tDateCols = driver.findElements(By.xpath("//table[@role='presentation']/tbody/tr/td"));
+			
+			if(tDateCols.get(j).getText().length()<3 && tDateCols.get(j).getText().length()!=0) {
+				
+				if(Integer.parseInt(eleCurrDate.getText())<= Integer.parseInt(tDateCols.get(j).getText())) {
+					
+					if(sDateAttribute.contains("disabled")) {
+//						
+					}
+					else {
+						
+						
+						sDateAttribute = tDateCols.get(j).getAttribute("class");
+						System.out.println("Date control selected date class: "+ sDateAttribute);
+						tDateCols.get(j).click();
+//						UtilityCustomFunctions.doClick(driver, tDateCols.get(j));
+						
+						bIsDateSelected = true;
+						break;
+					}//if disabled
+				}//ParseInt 
+			}//Only Date
+			
+		}//For loop
+		if(bIsDateSelected==false) {
+			eleNextMonth.click();
+    
+		}
+		return bIsDateSelected;
+	}	
 }
