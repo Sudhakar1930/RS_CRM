@@ -14,12 +14,12 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import pageObjects.Android.IndvControls;
-import testBase.BaseTest;
+import pageObjects.Android.SectionControlsPage;
+import testBase.Android.BaseTest;
 import utilities.ExcelUtility;
 import utilities.SurveyFormReUsables;
 
 public class TC_001_SFI_All_Mobile extends BaseTest{
-//	Logger logger =
 	Logger	logger = LogManager.getLogger(this.getClass());
 	@BeforeTest
 	public void testName() {
@@ -28,9 +28,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 	@Test
 	public void TestMobileIndividualControls() throws Exception {
 		try{
-		node = test.createNode("IndependentControls");
+		node = test.createNode("SFI Mobile Form");
 		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);
+		SectionControlsPage SecObj = new SectionControlsPage(driver);
 		logger.info("******starting TC_001_SFI_All_Mobile ****");
 		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
@@ -303,8 +304,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			 if(bDateReturnValue==false) {
 				 bDateReturnValue = IndvObj.setDate("Yes");
 			 }
-			 
+			 Thread.sleep(3000);
 			 String sDateSelected = IndvObj.getDateSelected();
+			 logger.info("Date Value Updated to DataSheet: "+sDateSelected);
+			 System.err.println("Date Value Retrieved: " + sDateSelected);
 			 sExpDT_Value = sDateSelected;
 			 xlObj.setCellData("Sheet1", 1, 27, sDateSelected);
 			 logger.info("Date Value Updated to DataSheet");

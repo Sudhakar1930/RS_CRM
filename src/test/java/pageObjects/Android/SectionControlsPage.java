@@ -21,7 +21,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
-import testBase.BaseTest;
+import testBase.Android.BaseTest;
 import utilities.Android.UtilityCustomFunctions;
 
 public class SectionControlsPage extends BaseTest{
@@ -121,8 +121,9 @@ public class SectionControlsPage extends BaseTest{
 	}
 	public String getAgreementMsg() {
 		//String sSFMessage = lblAgreementText.getAttribute("value");
-		String sSFMessage = lblAgreementText.getText();
-		return sSFMessage;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String sActvalue = (String) js.executeScript("return arguments[0].value", lblAgreementText);
+		return sActvalue;
 	}
 	
 	public String getSectionMsgControlTitle() {

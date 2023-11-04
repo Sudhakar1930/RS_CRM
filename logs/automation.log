@@ -1,195 +1,111 @@
-18:10:55.820 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Question Passed : Actual Value is: What is your email address?Expected Value is: What is your email address?
-18:10:57.346 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Answer Expected Value:sudhakar@rsoft.in Actual Value: sudhakar@rsoft.in
-18:10:57.346 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Answer Passed : Actual Value is: sudhakar@rsoft.inExpected Value is: sudhakar@rsoft.in
-18:10:59.749 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Question Expected Value:Please type your phone number Actual Value: Please type your phone number
-18:10:59.749 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Question Passed : Actual Value is: Please type your phone numberExpected Value is: Please type your phone number
-18:11:01.131 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Answer Expected Value:+91 1234567890 Actual Value: +91 1234567890
-18:11:01.131 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Answer Passed : Actual Value is: +91 1234567890Expected Value is: +91 1234567890
-18:11:03.598 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Question Expected Value:Book an appointment / meeting Actual Value: Book an appointment / meeting
-18:11:03.598 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Question Passed : Actual Value is: Book an appointment / meetingExpected Value is: Book an appointment / meeting
-18:11:04.983 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Answer Expected Value:Appointment Date : 03/11/2023, Time : [ 11:45 AM to 11:49 AM ] Actual Value: Appointment Date : 03/11/2023, Time : [ 11:45 AM to 11:49 AM ]
-18:11:04.985 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Answer Passed : Actual Value is: Appointment Date : 03/11/2023, Time : [ 11:45 AM to 11:49 AM ]Expected Value is: Appointment Date : 03/11/2023, Time : [ 11:45 AM to 11:49 AM ]
-18:11:07.412 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Question Expected Value:Select your choices..! Actual Value: Select your choices..!
-18:11:07.412 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Question Passed : Actual Value is: Select your choices..!Expected Value is: Select your choices..!
-18:11:08.795 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Answer Expected Value:DisAgree, Agree Actual Value: DisAgree, Agree
-18:11:08.796 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Answer Passed : Actual Value is: DisAgree, AgreeExpected Value is: DisAgree, Agree
-18:11:11.252 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Question Expected Value:Type and select your answer..! Actual Value: Type and select your answer..!
-18:11:11.253 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Question Passed : Actual Value is: Type and select your answer..!Expected Value is: Type and select your answer..!
-18:11:12.695 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Values Expected Value:Sample Option 5 Actual Value: Sample Option 5
-18:11:12.695 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Values Passed : Actual Value is: Sample Option 5Expected Value is: Sample Option 5
-18:11:15.114 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Question Expected Value:Enter the Number? Actual Value: Enter the Number?
-18:11:15.114 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Question Passed : Actual Value is: Enter the Number?Expected Value is: Enter the Number?
-18:11:16.519 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Answer Expected Value:1234567890 Actual Value: 1234567890
-18:11:16.519 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Answer Passed : Actual Value is: 1234567890Expected Value is: 1234567890
-18:11:18.912 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Question Expected Value:Select a range Actual Value: Select a range
-18:11:18.912 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Question Passed : Actual Value is: Select a rangeExpected Value is: Select a range
-18:11:20.295 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Answer Expected Value:30 Actual Value: 30
-18:11:20.296 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Answer Passed : Actual Value is: 30Expected Value is: 30
-18:11:22.778 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Question Expected Value:How was your experience? Actual Value: How was your experience?
-18:11:22.778 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Question Passed : Actual Value is: How was your experience?Expected Value is: How was your experience?
-18:11:24.146 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Answer Expected Value:Okay Actual Value: Okay
-18:11:24.146 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Answer Passed : Actual Value is: OkayExpected Value is: Okay
-18:11:26.590 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Question Expected Value:Choose a number? Actual Value: Choose a number?
-18:11:26.590 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Question Passed : Actual Value is: Choose a number?Expected Value is: Choose a number?
-18:11:27.985 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Answer Expected Value:7 Actual Value: 7
-18:11:27.985 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Answer Passed : Actual Value is: 7Expected Value is: 7
-18:11:30.402 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Question Expected Value:Select a date Actual Value: Select a date
-18:11:30.402 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Question Passed : Actual Value is: Select a dateExpected Value is: Select a date
-18:11:31.796 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Answer Expected Value: Actual Value: 03/11/2023
-18:11:31.797 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Answer Failed : Actual Value is: 03/11/2023Expected Value is: 
-18:11:34.291 [main] INFO  utilities.Browser.SurveyFormReUsables - Link Control Question Expected Value:Please contact us Actual Value: Please contact us
-18:11:34.291 [main] INFO  utilities.Browser.SurveyFormReUsables - Link Control Question Passed : Actual Value is: Please contact usExpected Value is: Please contact us
-18:11:36.714 [main] INFO  utilities.Browser.SurveyFormReUsables - Thank You Control Question Expected Value:Nice chatting with you Actual Value: Nice chatting with you
-18:11:36.715 [main] INFO  utilities.Browser.SurveyFormReUsables - Thank You Control Question Passed : Actual Value is: Nice chatting with youExpected Value is: Nice chatting with you
-18:11:39.124 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Question Expected Value:Select the picture…! Actual Value: Select the picture…!
-18:11:39.125 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Question Passed : Actual Value is: Select the picture…!Expected Value is: Select the picture…!
-18:11:40.784 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Answer Expected Value:SelectPicture Actual Value: SelectPicture
-18:11:40.784 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Answer Passed : Actual Value is: SelectPictureExpected Value is: SelectPicture
-18:11:43.283 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Question Expected Value:Select Yes or No..? Actual Value: Select Yes or No..?
-18:11:43.284 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Question Passed : Actual Value is: Select Yes or No..?Expected Value is: Select Yes or No..?
-18:11:44.680 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Answer Expected Value:No Actual Value: No
-18:11:44.681 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Answer Passed : Actual Value is: NoExpected Value is: No
-18:11:47.059 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Question Expected Value:Terms and Conditions..! Actual Value: Terms and Conditions..!
-18:11:47.060 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Question Passed : Actual Value is: Terms and Conditions..!Expected Value is: Terms and Conditions..!
-18:11:48.499 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Answer Expected Value:Accepted Actual Value: Accepted
-18:11:48.499 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Answer Passed : Actual Value is: AcceptedExpected Value is: Accepted
-18:11:50.906 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Expected Value:Choose the value..! Actual Value: Choose the value..!
-18:11:50.906 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Passed : Actual Value is: Choose the value..!Expected Value is: Choose the value..!
-18:12:12.602 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Response Values Passed : Actual Value is: 147Expected Value is: 147
-18:17:00.969 [main] INFO  testCases.TC_002_SFS_All_Mobile - ******starting TC_002_SFS_All_Mobile ****
-18:17:00.977 [main] INFO  testCases.TC_002_SFS_All_Mobile - Test Execution on Browser: chrome
-18:17:01.035 [main] INFO  testCases.TC_002_SFS_All_Mobile - Excel file Utility instance created
-18:17:02.908 [main] INFO  testCases.TC_002_SFS_All_Mobile - Row Count is: 1
-18:17:03.049 [main] INFO  testCases.TC_002_SFS_All_Mobile - Col Count is: 50
-18:17:03.052 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values started...
-18:17:06.012 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values Completed...
-18:17:28.183 [main] INFO  testCases.TC_002_SFS_All_Mobile - Survey Form Section Controls Url Launched..
-18:17:28.389 [main] INFO  utilities.SurveyFormReUsables - Section Title Passed : Actual Value is: Section Title..!Expected Value is: Section Title..!
-18:17:30.502 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section Title Validation done:  Section Title..! 
-18:17:33.154 [main] INFO  pageObjects.Android.SectionControlsPage - Message Control Title Validation with Expected: Hi, Welcome to Survey form...! and Actual is:  Hi, Welcome to chat bot..! 
-18:17:35.102 [main] INFO  pageObjects.Android.SectionControlsPage - MultiChoice Control Title Validation with Expected: Select an option..! and Actual is:  Select an option..! 
-18:17:39.232 [main] INFO  utilities.UtilityCustomFunctions - [Strongly DisAgree] is selected in List
-18:17:39.232 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiChoice Item Selected : Strongly DisAgree
-18:17:43.300 [main] INFO  pageObjects.Android.SectionControlsPage - TextQuestion Control Title Validation with Expected: Please type an answer ..! and Actual is:  Please type an answer ..! 
-18:17:48.336 [main] INFO  testCases.TC_002_SFS_All_Mobile - Text Entered in TextAnswer Control
-18:17:50.423 [main] INFO  pageObjects.Android.SectionControlsPage - Email Control Title Validation with Expected: What is your email address? and Actual is:  What is your email address? 
-18:17:54.008 [main] INFO  testCases.TC_002_SFS_All_Mobile - Email Id Entered
-18:17:56.071 [main] INFO  pageObjects.Android.SectionControlsPage - Phone Number Control Title Validation with Expected: Please type your phone number and Actual is:  Please type your phone number 
-18:17:59.976 [main] INFO  testCases.TC_002_SFS_All_Mobile - Phone Number Entered
-18:18:03.274 [main] INFO  pageObjects.Android.SectionControlsPage - Appointment Control Title Validation with Expected: Book an appointment / meeting and Actual is:  Book an appointment / meeting 
-18:18:05.355 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment button Clicked
-18:18:26.772 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Updated to Datasheet
-18:18:28.359 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Time Captured in Expected Value
-18:18:35.194 [main] INFO  pageObjects.Android.SectionControlsPage - MultiSelect Control Title Validation with Expected: Select your choices..! and Actual is:  Select your choices..! 
-18:18:47.247 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiSelect Value Selected
-18:18:50.690 [main] INFO  pageObjects.Android.SectionControlsPage - List Control Title Validation with Expected: Type and select your answer..! and Actual is:  Type and select your answer..! 
-18:18:53.098 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Input Box Clicked 
-18:18:59.991 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Item Selected Sample Option 5
-18:19:04.372 [main] INFO  pageObjects.Android.SectionControlsPage - Number Control Title Validation with Expected: Enter the Number? and Actual is:  Enter the Number? 
-18:19:06.548 [main] INFO  testCases.TC_002_SFS_All_Mobile - Number Selected 1234567890
-18:19:11.035 [main] INFO  pageObjects.Android.SectionControlsPage - Range Control Title Validation with Expected: Select a range and Actual is:  Select a range 
-18:19:25.217 [main] INFO  testCases.TC_002_SFS_All_Mobile - Range Selected 30
-18:19:29.683 [main] INFO  pageObjects.Android.SectionControlsPage - Rating Control Title Validation with Expected: How was your experience? and Actual is:  How was your experience? 
-18:19:32.324 [main] INFO  testCases.TC_002_SFS_All_Mobile - Rating Value: OkayClicked
-18:19:38.097 [main] INFO  pageObjects.Android.SectionControlsPage - Opinion Scale Control Title Validation with Expected: Choose a number? and Actual is:  Choose a number? 
-18:19:46.259 [main] INFO  utilities.UtilityCustomFunctions - [7] is selected in List
-18:19:46.259 [main] INFO  testCases.TC_002_SFS_All_Mobile - Opinion Scale : 7Clicked
-18:19:56.916 [main] INFO  pageObjects.Android.SectionControlsPage - Date Control Title Validation with Expected: Select a date and Actual is: Select a date
-18:20:11.762 [main] INFO  testCases.TC_002_SFS_All_Mobile - Date Value Updated to DataSheet
-18:20:19.727 [main] INFO  pageObjects.Android.SectionControlsPage - Links Control Title Validation with Expected: Please contact us and Actual is:   Please contact us  
-18:33:52.556 [main] INFO  testCases.TC_002_SFS_All_Mobile - ******starting TC_002_SFS_All_Mobile ****
-18:33:52.624 [main] INFO  testCases.TC_002_SFS_All_Mobile - Test Execution on Browser: chrome
-18:33:52.650 [main] INFO  testCases.TC_002_SFS_All_Mobile - Excel file Utility instance created
-18:33:55.151 [main] INFO  testCases.TC_002_SFS_All_Mobile - Row Count is: 1
-18:33:55.341 [main] INFO  testCases.TC_002_SFS_All_Mobile - Col Count is: 50
-18:33:55.342 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values started...
-18:33:59.481 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values Completed...
-18:34:20.994 [main] INFO  testCases.TC_002_SFS_All_Mobile - Survey Form Section Controls Url Launched..
-18:34:21.203 [main] INFO  utilities.SurveyFormReUsables - Section Title Passed : Actual Value is: Section Title..!Expected Value is: Section Title..!
-18:34:22.646 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section Title Validation done:  Section Title..! 
-18:34:24.373 [main] INFO  pageObjects.Android.SectionControlsPage - Message Control Title Validation with Expected: Hi, Welcome to Survey form...! and Actual is:  Hi, Welcome to chat bot..! 
-18:34:26.086 [main] INFO  pageObjects.Android.SectionControlsPage - MultiChoice Control Title Validation with Expected: Select an option..! and Actual is:  Select an option..! 
-18:34:30.328 [main] INFO  utilities.Android.UtilityCustomFunctions - [Strongly DisAgree] is selected in List
-18:34:30.328 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiChoice Item Selected : Strongly DisAgree
-18:34:33.607 [main] INFO  pageObjects.Android.SectionControlsPage - TextQuestion Control Title Validation with Expected: Please type an answer ..! and Actual is:  Please type an answer ..! 
-18:34:39.158 [main] INFO  testCases.TC_002_SFS_All_Mobile - Text Entered in TextAnswer Control
-18:34:41.034 [main] INFO  pageObjects.Android.SectionControlsPage - Email Control Title Validation with Expected: What is your email address? and Actual is:  What is your email address? 
-18:34:44.444 [main] INFO  testCases.TC_002_SFS_All_Mobile - Email Id Entered
-18:34:46.423 [main] INFO  pageObjects.Android.SectionControlsPage - Phone Number Control Title Validation with Expected: Please type your phone number and Actual is:  Please type your phone number 
-18:34:50.380 [main] INFO  testCases.TC_002_SFS_All_Mobile - Phone Number Entered
-18:34:53.385 [main] INFO  pageObjects.Android.SectionControlsPage - Appointment Control Title Validation with Expected: Book an appointment / meeting and Actual is:  Book an appointment / meeting 
-18:34:55.959 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment button Clicked
-18:36:44.305 [main] INFO  testCases.TC_002_SFS_All_Mobile - ******starting TC_002_SFS_All_Mobile ****
-18:36:44.322 [main] INFO  testCases.TC_002_SFS_All_Mobile - Test Execution on Browser: chrome
-18:36:44.349 [main] INFO  testCases.TC_002_SFS_All_Mobile - Excel file Utility instance created
-18:36:47.171 [main] INFO  testCases.TC_002_SFS_All_Mobile - Row Count is: 1
-18:36:47.357 [main] INFO  testCases.TC_002_SFS_All_Mobile - Col Count is: 50
-18:36:47.357 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values started...
-18:36:53.960 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values Completed...
-18:37:22.145 [main] INFO  testCases.TC_002_SFS_All_Mobile - Survey Form Section Controls Url Launched..
-18:37:22.447 [main] INFO  utilities.SurveyFormReUsables - Section Title Passed : Actual Value is: Section Title..!Expected Value is: Section Title..!
-18:37:24.049 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section Title Validation done:  Section Title..! 
-18:37:26.774 [main] INFO  pageObjects.Android.SectionControlsPage - Message Control Title Validation with Expected: Hi, Welcome to Survey form...! and Actual is:  Hi, Welcome to chat bot..! 
-18:37:30.682 [main] INFO  pageObjects.Android.SectionControlsPage - MultiChoice Control Title Validation with Expected: Select an option..! and Actual is:  Select an option..! 
-18:37:37.360 [main] INFO  utilities.Android.UtilityCustomFunctions - [Strongly DisAgree] is selected in List
-18:37:37.360 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiChoice Item Selected : Strongly DisAgree
-18:37:43.879 [main] INFO  pageObjects.Android.SectionControlsPage - TextQuestion Control Title Validation with Expected: Please type an answer ..! and Actual is:  Please type an answer ..! 
-18:37:51.007 [main] INFO  testCases.TC_002_SFS_All_Mobile - Text Entered in TextAnswer Control
-18:37:53.185 [main] INFO  pageObjects.Android.SectionControlsPage - Email Control Title Validation with Expected: What is your email address? and Actual is:  What is your email address? 
-18:37:57.188 [main] INFO  testCases.TC_002_SFS_All_Mobile - Email Id Entered
-18:37:59.055 [main] INFO  pageObjects.Android.SectionControlsPage - Phone Number Control Title Validation with Expected: Please type your phone number and Actual is:  Please type your phone number 
-18:38:02.675 [main] INFO  testCases.TC_002_SFS_All_Mobile - Phone Number Entered
-18:38:05.560 [main] INFO  pageObjects.Android.SectionControlsPage - Appointment Control Title Validation with Expected: Book an appointment / meeting and Actual is:  Book an appointment / meeting 
-18:38:08.689 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment button Clicked
-18:43:08.876 [main] INFO  testCases.TC_002_SFS_All_Mobile - ******starting TC_002_SFS_All_Mobile ****
-18:43:08.901 [main] INFO  testCases.TC_002_SFS_All_Mobile - Test Execution on Browser: chrome
-18:43:08.924 [main] INFO  testCases.TC_002_SFS_All_Mobile - Excel file Utility instance created
-18:43:11.211 [main] INFO  testCases.TC_002_SFS_All_Mobile - Row Count is: 1
-18:43:11.371 [main] INFO  testCases.TC_002_SFS_All_Mobile - Col Count is: 50
-18:43:11.372 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values started...
-18:43:16.082 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values Completed...
-18:43:35.230 [main] INFO  testCases.TC_002_SFS_All_Mobile - Survey Form Section Controls Url Launched..
-18:43:35.409 [main] INFO  utilities.SurveyFormReUsables - Section Title Passed : Actual Value is: Section Title..!Expected Value is: Section Title..!
-18:43:37.282 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section Title Validation done:  Section Title..! 
-18:43:39.047 [main] INFO  pageObjects.Android.SectionControlsPage - Message Control Title Validation with Expected: Hi, Welcome to Survey form...! and Actual is:  Hi, Welcome to chat bot..! 
-18:43:40.829 [main] INFO  pageObjects.Android.SectionControlsPage - MultiChoice Control Title Validation with Expected: Select an option..! and Actual is:  Select an option..! 
-18:43:44.995 [main] INFO  utilities.Android.UtilityCustomFunctions - [Strongly DisAgree] is selected in List
-18:43:44.995 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiChoice Item Selected : Strongly DisAgree
-18:43:48.123 [main] INFO  pageObjects.Android.SectionControlsPage - TextQuestion Control Title Validation with Expected: Please type an answer ..! and Actual is:  Please type an answer ..! 
-18:43:53.369 [main] INFO  testCases.TC_002_SFS_All_Mobile - Text Entered in TextAnswer Control
-18:43:55.197 [main] INFO  pageObjects.Android.SectionControlsPage - Email Control Title Validation with Expected: What is your email address? and Actual is:  What is your email address? 
-18:43:58.397 [main] INFO  testCases.TC_002_SFS_All_Mobile - Email Id Entered
-18:44:00.321 [main] INFO  pageObjects.Android.SectionControlsPage - Phone Number Control Title Validation with Expected: Please type your phone number and Actual is:  Please type your phone number 
-18:44:03.933 [main] INFO  testCases.TC_002_SFS_All_Mobile - Phone Number Entered
-18:44:06.911 [main] INFO  pageObjects.Android.SectionControlsPage - Appointment Control Title Validation with Expected: Book an appointment / meeting and Actual is:  Book an appointment / meeting 
-18:44:09.303 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment button Clicked
-18:44:31.522 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Updated to Datasheet
-18:44:33.170 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Time Captured in Expected Value
-18:44:39.991 [main] INFO  pageObjects.Android.SectionControlsPage - MultiSelect Control Title Validation with Expected: Select your choices..! and Actual is:  Select your choices..! 
-18:44:51.784 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiSelect Value Selected
-18:44:55.267 [main] INFO  pageObjects.Android.SectionControlsPage - List Control Title Validation with Expected: Type and select your answer..! and Actual is:  Type and select your answer..! 
-18:44:57.655 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Input Box Clicked 
-18:45:03.945 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Item Selected Sample Option 5
-18:45:08.248 [main] INFO  pageObjects.Android.SectionControlsPage - Number Control Title Validation with Expected: Enter the Number? and Actual is:  Enter the Number? 
-18:45:10.533 [main] INFO  testCases.TC_002_SFS_All_Mobile - Number Selected 1234567890
-18:45:15.014 [main] INFO  pageObjects.Android.SectionControlsPage - Range Control Title Validation with Expected: Select a range and Actual is:  Select a range 
-18:45:30.250 [main] INFO  testCases.TC_002_SFS_All_Mobile - Range Selected 30
-18:45:34.805 [main] INFO  pageObjects.Android.SectionControlsPage - Rating Control Title Validation with Expected: How was your experience? and Actual is:  How was your experience? 
-18:45:37.461 [main] INFO  testCases.TC_002_SFS_All_Mobile - Rating Value: OkayClicked
-18:45:43.017 [main] INFO  pageObjects.Android.SectionControlsPage - Opinion Scale Control Title Validation with Expected: Choose a number? and Actual is:  Choose a number? 
-18:45:50.423 [main] INFO  utilities.Android.UtilityCustomFunctions - [7] is selected in List
-18:45:50.423 [main] INFO  testCases.TC_002_SFS_All_Mobile - Opinion Scale : 7Clicked
-18:46:00.510 [main] INFO  pageObjects.Android.SectionControlsPage - Date Control Title Validation with Expected: Select a date and Actual is: Select a date
-18:46:15.416 [main] INFO  testCases.TC_002_SFS_All_Mobile - Date Value Updated to DataSheet
-18:46:23.870 [main] INFO  pageObjects.Android.SectionControlsPage - Links Control Title Validation with Expected: Please contact us and Actual is:   Please contact us  
-18:46:29.182 [main] INFO  pageObjects.Android.SectionControlsPage - ThankYou Control Title Validation with Expected: Nice chatting with you and Actual is: Nice chatting with you
-18:46:33.645 [main] INFO  pageObjects.Android.SectionControlsPage - PictureMessage Control Title Validation with Expected: Select the picture…! and Actual is:  Select the picture…! 
-18:46:34.513 [main] INFO  testCases.TC_002_SFS_All_Mobile - Picture Message Seleted:SelectPicture
-18:46:40.365 [main] INFO  pageObjects.Android.SectionControlsPage - YesorNo Control Title Validation with Expected: Select Yes or No..? and Actual is:  Select Yes or No..? 
-18:46:40.884 [main] INFO  testCases.TC_002_SFS_All_Mobile - Yes or No ClickedNo
-18:46:44.368 [main] INFO  pageObjects.Android.SectionControlsPage - Agreement Control Title Validation with Expected: Terms and Conditions..! and Actual is:  Terms and Conditions..! 
-18:46:46.477 [main] INFO  utilities.SurveyFormReUsables - Agreement Text Failed : Actual Value is: Expected Value is: I agree to the terms and conditions
-18:46:48.054 [main] INFO  testCases.TC_002_SFS_All_Mobile - Validation of Agreement Text Actual is:  Expected is: I agree to the terms and conditions
-18:46:49.773 [main] INFO  pageObjects.Android.SectionControlsPage - RankingMatrix Control Title Validation with Expected: Choose the value..! and Actual is:  Choose the value..! 
-18:46:52.246 [main] INFO  testCases.TC_002_SFS_All_Mobile - Ranking Matrix Values Selected
-18:46:57.686 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section UI Form Submitted
+14:15:32.850 [main] INFO  pageObjects.Android.SectionControlsPage - Opinion Scale Control Title Validation with Expected: Choose a number? and Actual is:  Choose a number? 
+14:15:40.647 [main] INFO  utilities.Android.UtilityCustomFunctions - [7] is selected in List
+14:15:40.647 [main] INFO  testCases.TC_002_SFS_All_Mobile - Opinion Scale : 7Clicked
+14:15:48.056 [main] INFO  pageObjects.Android.SectionControlsPage - Date Control Title Validation with Expected: Select a date and Actual is: Select a date
+14:16:03.575 [main] INFO  testCases.TC_002_SFS_All_Mobile - Date Value Updated to DataSheet
+14:16:10.801 [main] INFO  pageObjects.Android.SectionControlsPage - Links Control Title Validation with Expected: Please contact us and Actual is:   Please contact us  
+14:16:15.531 [main] INFO  pageObjects.Android.SectionControlsPage - ThankYou Control Title Validation with Expected: Nice chatting with you and Actual is: Nice chatting with you
+14:16:20.139 [main] INFO  pageObjects.Android.SectionControlsPage - PictureMessage Control Title Validation with Expected: Select the picture…! and Actual is:  Select the picture…! 
+14:16:20.763 [main] INFO  testCases.TC_002_SFS_All_Mobile - Picture Message Seleted:SelectPicture
+14:16:26.338 [main] INFO  pageObjects.Android.SectionControlsPage - YesorNo Control Title Validation with Expected: Select Yes or No..? and Actual is:  Select Yes or No..? 
+14:16:26.855 [main] INFO  testCases.TC_002_SFS_All_Mobile - Yes or No ClickedNo
+14:16:30.146 [main] INFO  pageObjects.Android.SectionControlsPage - Agreement Control Title Validation with Expected: Terms and Conditions..! and Actual is:  Terms and Conditions..! 
+14:16:32.233 [main] INFO  utilities.SurveyFormReUsables - Agreement Text Passed : Actual Value is: I agree to the terms and conditionsExpected Value is: I agree to the terms and conditions
+14:16:33.775 [main] INFO  testCases.TC_002_SFS_All_Mobile - Validation of Agreement Text Actual is: I agree to the terms and conditions Expected is: I agree to the terms and conditions
+14:16:35.537 [main] INFO  pageObjects.Android.SectionControlsPage - RankingMatrix Control Title Validation with Expected: Choose the value..! and Actual is:  Choose the value..! 
+14:16:37.658 [main] INFO  testCases.TC_002_SFS_All_Mobile - Ranking Matrix Values Selected
+14:16:42.977 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section UI Form Submitted
+14:16:45.881 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - ******starting TC_002_SFS_All_MobileResponse ****
+14:16:45.881 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Test Execution on Browser: chrome
+14:16:45.881 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Excel file Utility instance created
+14:16:45.915 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Row Count is: 1
+14:16:45.935 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Col Count is: 50
+14:16:45.936 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values started...
+14:16:46.865 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values Completed...
+14:16:51.875 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Navigation started
+14:16:55.419 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Login details Entered
+14:16:55.509 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Chat bot Logged In
+14:17:10.523 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard wait for 15 secs
+14:17:18.071 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clear all button clicked on listbox
+14:17:18.438 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Build Name entered in List Box
+14:17:21.441 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Waited for 3 secs
+14:17:21.527 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Enter Key applied on ListBox
+14:17:22.531 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard Wait for 1 sec
+14:17:22.648 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked side bar Build button once
+14:17:23.658 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard Wait for 1 sec
+14:17:23.746 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked side bar Result
+14:17:24.065 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Side Item Response clicked
+14:17:24.191 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked refresh Response
+14:17:24.289 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked refresh Response Again
+14:17:27.382 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Clicked first Response
+14:17:27.383 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Navigated to Build: SFAllMobile_Section
+14:17:28.387 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Section Title in Response : 1) Section Title..!
+14:17:29.522 [main] INFO  utilities.Browser.SurveyFormReUsables - Message Title in Response Expected Value:Hi, Welcome to Survey form...! Actual Value: Hi, Welcome to chat bot..!
+14:17:29.523 [main] INFO  utilities.Browser.SurveyFormReUsables - Message Title in Response Failed : Actual Value is: Hi, Welcome to chat bot..!Expected Value is: Hi, Welcome to Survey form...!
+14:17:32.012 [main] INFO  utilities.Browser.SurveyFormReUsables - Multi Choice Question in Response Expected Value:Select an option..! Actual Value: Select an option..!
+14:17:32.012 [main] INFO  utilities.Browser.SurveyFormReUsables - Multi Choice Question in Response Passed : Actual Value is: Select an option..!Expected Value is: Select an option..!
+14:17:33.413 [main] INFO  utilities.Browser.SurveyFormReUsables - Multi Choice Answer in Response Expected Value:Strongly DisAgree Actual Value: Strongly DisAgree
+14:17:33.414 [main] INFO  utilities.Browser.SurveyFormReUsables - Multi Choice Answer in Response Passed : Actual Value is: Strongly DisAgreeExpected Value is: Strongly DisAgree
+14:17:35.905 [main] INFO  utilities.Browser.SurveyFormReUsables - Text Question Control Question Expected Value:Please type an answer ..! Actual Value: Please type an answer ..!
+14:17:35.905 [main] INFO  utilities.Browser.SurveyFormReUsables - Text Question Control Question Passed : Actual Value is: Please type an answer ..!Expected Value is: Please type an answer ..!
+14:17:37.290 [main] INFO  utilities.Browser.SurveyFormReUsables - Text Question Control Answer Expected Value:Welcome to Automation...! Test execution of Survey form Controls within Section UI. Actual Value: Welcome to Automation...! Test execution of Survey form Controls within Section UI.
+14:17:37.290 [main] INFO  utilities.Browser.SurveyFormReUsables - Text Question Control Answer Passed : Actual Value is: Welcome to Automation...! Test execution of Survey form Controls within Section UI.Expected Value is: Welcome to Automation...! Test execution of Survey form Controls within Section UI.
+14:17:39.781 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Question Expected Value:What is your email address? Actual Value: What is your email address?
+14:17:39.781 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Question Passed : Actual Value is: What is your email address?Expected Value is: What is your email address?
+14:17:41.663 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Answer Expected Value:sudhakar@rsoft.in Actual Value: sudhakar@rsoft.in
+14:17:41.663 [main] INFO  utilities.Browser.SurveyFormReUsables - Email Control Answer Passed : Actual Value is: sudhakar@rsoft.inExpected Value is: sudhakar@rsoft.in
+14:17:44.074 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Question Expected Value:Please type your phone number Actual Value: Please type your phone number
+14:17:44.075 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Question Passed : Actual Value is: Please type your phone numberExpected Value is: Please type your phone number
+14:17:45.502 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Answer Expected Value:+91 1234567890 Actual Value: +91 1234567890
+14:17:45.502 [main] INFO  utilities.Browser.SurveyFormReUsables - Phone Number Control Answer Passed : Actual Value is: +91 1234567890Expected Value is: +91 1234567890
+14:17:47.952 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Question Expected Value:Book an appointment / meeting Actual Value: Book an appointment / meeting
+14:17:47.952 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Question Passed : Actual Value is: Book an appointment / meetingExpected Value is: Book an appointment / meeting
+14:17:49.326 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Answer Expected Value:Appointment Date : 06/11/2023, Time : [ 09:10 AM to 09:14 AM ] Actual Value: Appointment Date : 06/11/2023, Time : [ 09:10 AM to 09:14 AM ]
+14:17:49.326 [main] INFO  utilities.Browser.SurveyFormReUsables - Appointment Control Answer Passed : Actual Value is: Appointment Date : 06/11/2023, Time : [ 09:10 AM to 09:14 AM ]Expected Value is: Appointment Date : 06/11/2023, Time : [ 09:10 AM to 09:14 AM ]
+14:17:51.731 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Question Expected Value:Select your choices..! Actual Value: Select your choices..!
+14:17:51.731 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Question Passed : Actual Value is: Select your choices..!Expected Value is: Select your choices..!
+14:17:53.138 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Answer Expected Value:DisAgree, Agree Actual Value: DisAgree, Agree
+14:17:53.139 [main] INFO  utilities.Browser.SurveyFormReUsables - MultiChoice Control Answer Passed : Actual Value is: DisAgree, AgreeExpected Value is: DisAgree, Agree
+14:17:55.572 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Question Expected Value:Type and select your answer..! Actual Value: Type and select your answer..!
+14:17:55.573 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Question Passed : Actual Value is: Type and select your answer..!Expected Value is: Type and select your answer..!
+14:17:57.061 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Values Expected Value:Sample Option 5 Actual Value: Sample Option 5
+14:17:57.061 [main] INFO  utilities.Browser.SurveyFormReUsables - List Control Values Passed : Actual Value is: Sample Option 5Expected Value is: Sample Option 5
+14:17:59.480 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Question Expected Value:Enter the Number? Actual Value: Enter the Number?
+14:17:59.481 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Question Passed : Actual Value is: Enter the Number?Expected Value is: Enter the Number?
+14:18:00.880 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Answer Expected Value:1234567890 Actual Value: 1234567890
+14:18:00.880 [main] INFO  utilities.Browser.SurveyFormReUsables - Number Control Answer Passed : Actual Value is: 1234567890Expected Value is: 1234567890
+14:18:03.333 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Question Expected Value:Select a range Actual Value: Select a range
+14:18:03.333 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Question Passed : Actual Value is: Select a rangeExpected Value is: Select a range
+14:18:04.688 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Answer Expected Value:30 Actual Value: 30
+14:18:04.688 [main] INFO  utilities.Browser.SurveyFormReUsables - Range Control Answer Passed : Actual Value is: 30Expected Value is: 30
+14:18:07.052 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Question Expected Value:How was your experience? Actual Value: How was your experience?
+14:18:07.052 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Question Passed : Actual Value is: How was your experience?Expected Value is: How was your experience?
+14:18:08.469 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Answer Expected Value:Okay Actual Value: Okay
+14:18:08.469 [main] INFO  utilities.Browser.SurveyFormReUsables - Rating Control Answer Passed : Actual Value is: OkayExpected Value is: Okay
+14:18:10.889 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Question Expected Value:Choose a number? Actual Value: Choose a number?
+14:18:10.889 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Question Passed : Actual Value is: Choose a number?Expected Value is: Choose a number?
+14:18:12.338 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Answer Expected Value:7 Actual Value: 7
+14:18:12.339 [main] INFO  utilities.Browser.SurveyFormReUsables - Opinion Scale Control Answer Passed : Actual Value is: 7Expected Value is: 7
+14:18:14.795 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Question Expected Value:Select a date Actual Value: Select a date
+14:18:14.796 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Question Passed : Actual Value is: Select a dateExpected Value is: Select a date
+14:18:16.236 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Answer Expected Value:04/11/2023 Actual Value: 04/11/2023
+14:18:16.236 [main] INFO  utilities.Browser.SurveyFormReUsables - Date Control Answer Passed : Actual Value is: 04/11/2023Expected Value is: 04/11/2023
+14:18:18.646 [main] INFO  utilities.Browser.SurveyFormReUsables - Link Control Question Expected Value:Please contact us Actual Value: Please contact us
+14:18:18.647 [main] INFO  utilities.Browser.SurveyFormReUsables - Link Control Question Passed : Actual Value is: Please contact usExpected Value is: Please contact us
+14:18:21.020 [main] INFO  utilities.Browser.SurveyFormReUsables - Thank You Control Question Expected Value:Nice chatting with you Actual Value: Nice chatting with you
+14:18:21.020 [main] INFO  utilities.Browser.SurveyFormReUsables - Thank You Control Question Passed : Actual Value is: Nice chatting with youExpected Value is: Nice chatting with you
+14:18:23.452 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Question Expected Value:Select the picture…! Actual Value: Select the picture…!
+14:18:23.452 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Question Passed : Actual Value is: Select the picture…!Expected Value is: Select the picture…!
+14:18:24.954 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Answer Expected Value:SelectPicture Actual Value: SelectPicture
+14:18:24.954 [main] INFO  utilities.Browser.SurveyFormReUsables - Picture Message Control Answer Passed : Actual Value is: SelectPictureExpected Value is: SelectPicture
+14:18:27.381 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Question Expected Value:Select Yes or No..? Actual Value: Select Yes or No..?
+14:18:27.381 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Question Passed : Actual Value is: Select Yes or No..?Expected Value is: Select Yes or No..?
+14:18:28.858 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Answer Expected Value:No Actual Value: No
+14:18:28.858 [main] INFO  utilities.Browser.SurveyFormReUsables - Yes or No Control Answer Passed : Actual Value is: NoExpected Value is: No
+14:18:31.357 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Question Expected Value:Terms and Conditions..! Actual Value: Terms and Conditions..!
+14:18:31.358 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Question Passed : Actual Value is: Terms and Conditions..!Expected Value is: Terms and Conditions..!
+14:18:32.759 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Answer Expected Value:Accepted Actual Value: Accepted
+14:18:32.759 [main] INFO  utilities.Browser.SurveyFormReUsables - Agreement Control Answer Passed : Actual Value is: AcceptedExpected Value is: Accepted
+14:18:35.134 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Expected Value:Choose the value..! Actual Value: Choose the value..!
+14:18:35.134 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Passed : Actual Value is: Choose the value..!Expected Value is: Choose the value..!
+14:18:56.762 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Response Values Passed : Actual Value is: 147Expected Value is: 147

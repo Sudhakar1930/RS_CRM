@@ -34,6 +34,8 @@ public class IndvControls {
 		PageFactory.initElements(driver,this);
 	}
 	
+	
+
 	@AndroidFindBy(id="teset.test")
 	private WebElement namefield;
 
@@ -154,8 +156,10 @@ public class IndvControls {
 	@FindBy(xpath="//button[@type='button']")
 	WebElement btnDateIcon;
 	
+//	@FindBy(xpath="//div[@id='rootdiv']//input")
 	@FindBy(xpath="//div[@id='rootdiv']//input")
 	WebElement txtDateInput;
+	
 	//FileUpload
 //	@FindBy(xpath="//div[@class='fileupshow-body-div']")
 //	WebElement lnkFileUpload;
@@ -440,8 +444,10 @@ public class IndvControls {
 		List<WebElement> options = lstParent.findElements(By.tagName("li"));
 		return options.size();
 	}
-	public String getDateSelected() {
-		return txtDateInput.getAttribute("value");
+	public String getDateSelected() throws Exception {
+//		return txtDateInput.getAttribute("value");
+		return UtilityCustomFunctions.getValue(driver, txtDateInput);
+		
 	}
 	
 	

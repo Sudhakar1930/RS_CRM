@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import io.appium.java_client.android.AndroidDriver;
 import pageObjects.Android.IndvControls;
 import pageObjects.Android.SectionControlsPage;
-import testBase.BaseTest;
+import testBase.Android.BaseTest;
 
 public class HandleToastMessages extends BaseTest{
 	

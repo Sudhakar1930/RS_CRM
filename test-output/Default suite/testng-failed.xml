@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_001_SFI_All_MobileResponse">
+      <class name="testCases.AppiumBrowser">
         <methods>
-          <include name="TestMobileIResponse"/>
-          <include name="flush"/>
-          <include name="testName"/>
           <include name="onStart"/>
+          <include name="testName"/>
+          <include name="setup"/>
+          <include name="flush"/>
+          <include name="OpenBrowser"/>
         </methods>
-      </class> <!-- testCases.TC_001_SFI_All_MobileResponse -->
+      </class> <!-- testCases.AppiumBrowser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

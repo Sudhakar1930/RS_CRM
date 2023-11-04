@@ -29,7 +29,7 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 	@Test
 	public void TestMobileIResponse() throws Exception {
 		try{
-		node = test.createNode("IndependentControls");
+		node = test.createNode("SFI_MOBILE_Response");
 		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);
 		logger.info("******starting TC_001_SFI_All_MobileResponse ****");
