@@ -17,7 +17,7 @@ import pageObjects.Android.IndvControls;
 import pageObjects.Android.SectionControlsPage;
 import testBase.Android.BaseTest;
 import utilities.ExcelUtility;
-import utilities.SurveyFormReUsables;
+import utilities.Android.SurveyFormReUsables;
 
 public class TC_001_SFI_All_Mobile extends BaseTest{
 	Logger	logger = LogManager.getLogger(this.getClass());
@@ -207,10 +207,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			sExpAP_Value = sAppFullTime;
 			logger.info("Appointment Time Captured in Expected Value");
 			freport("Appointment Time Captured: " +sAppFullTime , "pass",node);
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			IndvObj.clickGeneralNext();
 			logger.info("Appointment Next Button clicked");
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			
 			//MultiSelect
 			String sActMS_Title = IndvObj.getSecGenTitle();
@@ -401,6 +401,78 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			freport("Ranking Matrix Values Selected:" + sExpRM_Value , "pass",node);
 			IndvObj.clickGeneralNext();
 			logger.info("Ranking Matrix Next Clicked");
+			
+			System.out.println("All Contexts " + driver.getContextHandles());
+			logger.info("All Contexts " + driver.getContextHandles());
+			driver.context("NATIVE_APP");
+			Thread.sleep(5000);
+			IndvObj.clickAndroidLinkAllow();
+			driver.context("CHROMIUM");
+			
+			
+			//Google Map
+			Thread.sleep(3000);
+			String sActGM_Title = IndvObj.getSecGenTitle();
+			oSFR.fSoftAssert(sActGM_Title.trim(),sExpGM_Title,"Google Map Title",node);
+			logger.info("Validation of Google Map Control Title" + sActGM_Title) ;
+			Thread.sleep(1000);
+			IndvObj.setGoogleMapAddress(sExpGM_Value);
+			freport("Google Map Address Entered:" + sExpGM_Value , "pass",node);
+			logger.info("Address Entered in Google Map");
+			Thread.sleep(2000);
+			IndvObj.clickGeneralNext();
+			logger.info("Google Map Next Clicked");
+			
+//VR
+			
+			Thread.sleep(1000);
+			String sActVR_Title = IndvObj.getSecGenTitle();
+			oSFR.fSoftAssert(sActVR_Title.trim(),sExpVR_Title,"Voice Record Title",node);
+			
+			logger.info("Validation of Voice Record Control Title" + sActVR_Title) ;
+			
+			IndvObj.clickMic();
+			Thread.sleep(1000);
+			System.out.println("All Contexts 2nd time " + driver.getContextHandles());
+			logger.info("All Contexts " + driver.getContextHandles());
+			driver.context("NATIVE_APP");
+			System.out.println("Switched to Native App");
+			Thread.sleep(1000);
+			IndvObj.clickAndroidLinkAllow();
+			Thread.sleep(3000);
+			IndvObj.clickAndroidAllowRecord();
+			driver.context("CHROMIUM");
+			Thread.sleep(5000);
+			IndvObj.clickStop();
+			String sCurrDate = utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			String sPrefixVR="voice_record_" + sCurrDate;
+			logger.info("Voice Recorded");
+			freport("Voice Recorded:" + sPrefixVR , "pass",node);
+			//Update it to Excel sheet
+			xlObj.setCellData("Sheet1", 1, 43, sPrefixVR);
+			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 43);
+			logger.info("Voice Record Prefix updated to Datasheet");
+			Thread.sleep(2000);
+			IndvObj.clickGeneralNext();
+			logger.info("Voice Record Next Clicked");
+			
+			//Upload file
+			 String sActUF_Title = IndvObj.getSecGenTitle();
+			 oSFR.fSoftAssert(sActUF_Title.trim(),sExpUF_Title,"File Upload Control Title",node);
+			 logger.info("Validation of File Upload Control Title") ;
+
+			 IndvObj.SelectFiletoUpload(sExpUF_Value);
+			 Thread.sleep(3000);
+			 freport("File Selected : " + sExpUF_Value  , "pass",node);
+			 String sGetCurrDate =utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			 String sUF_Prefix = "formshow_" + sGetCurrDate;
+			 System.out.println("File Uploaded");
+			 xlObj.setCellData("Sheet1", 1, 46, sUF_Prefix);
+			 logger.info("Upload file prefix added to Datasheet");
+			 Thread.sleep(3000);
+			 IndvObj.clickGeneralNext();
+			 logger.info("FileUpload Next Clicked");
+			 
 	}	catch(Exception e) {
 		System.out.println(e.getCause());
 		Assert.fail(e.getMessage());

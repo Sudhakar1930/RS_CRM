@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -46,6 +47,7 @@ public class UtilityCustomFunctions {
 			Actions action = new Actions(driver);
 			action.moveToElement(element).doubleClick().build().perform();
 			element.sendKeys(keyValue);
+			element.sendKeys(Keys.ENTER);
 		}
 		catch(Exception e){
 			System.out.println(e.getCause());
@@ -188,14 +190,16 @@ public class UtilityCustomFunctions {
 		JavascriptExecutor js = (JavascriptExecutor) AndroidDriver;
 		try {
 			WebDriverWait webWait = new WebDriverWait(AndroidDriver, Duration.ofSeconds(10));
-			webWait.until(ExpectedConditions.elementToBeClickable(element));
+//			webWait.until(ExpectedConditions.elementToBeClickable(element));
 			webWait.until(ExpectedConditions.visibilityOf(element));
 			js.executeScript("arguments[0].scrollIntoView(true);", element);
 			actualValue= (String) js.executeScript("return arguments[0].value", element);
 //			actualValue = element.getText();
 		}  catch (Exception ex) {
+			actualValue = element.getText();
 			//Reporter.log("Exception occured while getValue event " + ex.getMessage());
 			System.out.println("Exception occured while getValue event " + ex.getMessage());
+			
 			//throw ex;
 		}
 		return actualValue;

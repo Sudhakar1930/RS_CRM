@@ -16,7 +16,7 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 
-import utilities.SurveyFormReUsables;
+import utilities.Android.SurveyFormReUsables;
 import utilities.Browser.UtilityCustomFunctions;
 
 public class IndvControls extends BasePage{

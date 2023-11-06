@@ -10,7 +10,7 @@ import pageObjects.Android.IndvControls;
 import pageObjects.Android.SectionControlsPage;
 import testBase.Android.BaseTest;
 import utilities.ExcelUtility;
-import utilities.SurveyFormReUsables;
+import utilities.Android.SurveyFormReUsables;
 import utilities.Android.UtilityCustomFunctions;
 
 public class TC_002_SFS_All_Mobile extends BaseTest{

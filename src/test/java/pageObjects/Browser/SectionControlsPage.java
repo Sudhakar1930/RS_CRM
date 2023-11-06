@@ -20,8 +20,7 @@ import org.testng.Assert;
 import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
-
-import utilities.SurveyFormReUsables;
+import utilities.Android.SurveyFormReUsables;
 import utilities.Browser.UtilityCustomFunctions;
 
 public class SectionControlsPage {

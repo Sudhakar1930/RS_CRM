@@ -1,7 +1,7 @@
 package pageObjects.Android;
 
 import java.io.File;
-import java.io.IOException;
+import java.nio.file.Files;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -27,6 +27,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import utilities.Android.UtilityCustomFunctions;
 public class IndvControls {
 	AndroidDriver driver;
+	File fi;
 	Logger	logger = LogManager.getLogger(this.getClass());
 	public IndvControls(AndroidDriver driver) {
 		this.driver = driver;
@@ -41,6 +42,25 @@ public class IndvControls {
 
 	@FindBy(xpath="//*[@id='toast-container']")
 	static WebElement eleToastMsg;
+	
+	@FindBy(id="com.android.chrome:id/positive_button")
+	WebElement lnkAllow;
+	
+	@FindBy(id="com.android.permissioncontroller:id/permission_allow_foreground_only_button")
+	WebElement lnkRecAudio;
+	
+	@FindBy(xpath="//*[@text='Files']")
+	WebElement elefileButton;
+	
+	@FindBy(xpath="//android.widget.ImageButton[@content-desc='Show roots']")
+	WebElement eleShowRoots;
+	
+	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView")
+	WebElement eleDownloads;
+	
+	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/com.google.android.material.card.MaterialCardView/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[1]")
+	WebElement eleDoc;
+	
 	
 	@FindBy(xpath="//button[normalize-space()='next']")
 	WebElement btnGeneralNext;
@@ -126,7 +146,6 @@ public class IndvControls {
 	@FindBy(xpath="//input[@type='text']")
 	WebElement txtListControl;
 	
-	
 	@FindBy(xpath="//input[@id='numbershow']")
 	WebElement txtNumberInput;
 	
@@ -167,14 +186,9 @@ public class IndvControls {
 	@FindBy(xpath="//img[@id='imgsrc']")
 	WebElement lnkFileUpload;
 	
-	@FindBy(id="com.android.permissioncontroller:id/permission_allow_button")
-	WebElement elementView;
-	
 	@FindBy(xpath="//*[@text='Files']")
 	WebElement eleFile;
 	
-	@FindBy(id="com.android.documentsui:id/thumbnail")
-	WebElement eleDoc;
 	
 	@FindBy(xpath="//ul[@class='linkshow-container float']")
 	WebElement btnLinksControl;
@@ -246,6 +260,15 @@ public class IndvControls {
 	@AndroidFindBy(xpath=".//android.widget.Button[@text='Allow']")
 	WebElement eleLocPopupAllow;
 	
+	
+	public void clickAndroidLinkAllow() throws Exception {
+//		UtilityCustomFunctions.doClick(driver, lnkAllow);
+		lnkAllow.click();
+	}
+	public void clickAndroidAllowRecord() throws Exception {
+//		UtilityCustomFunctions.doClick(driver, lnkRecAudio);
+		lnkRecAudio.click();
+	}
 	
 	public static void clickGeneralToast() {
 		if(eleToastMsg.isDisplayed()) {
@@ -385,15 +408,6 @@ public class IndvControls {
 		return bEmail;
 	}
 
-	public void clickSkip() throws Exception {
-		utilities.Android.UtilityCustomFunctions.doClick(driver, btnSkip);
-	}
-	
-	public void clickResponseClose(WebDriver driver) {
-		driver.switchTo().defaultContent();
-		lnkCloseResponse.click();
-	}
-	
 	
 	//Get Methods
 
@@ -426,7 +440,8 @@ public class IndvControls {
 		String sSFMessage = lblGeneralTitle.getText();
 		return sSFMessage;
 	}
-	public String getSecGenTitle() {
+	public String getSecGenTitle() throws Exception {
+		//String sSFMessage = UtilityCustomFunctions.getValue(driver, lblSecGenTitle);
 		String sSFMessage = lblSecGenTitle.getText();
 		return sSFMessage;
 	}
@@ -452,6 +467,17 @@ public class IndvControls {
 	
 	
 //Click Methods
+	public void clickSkip() throws Exception {
+		utilities.Android.UtilityCustomFunctions.doClick(driver, btnSkip);
+	}
+	
+	public void clickResponseClose(WebDriver driver) {
+		driver.switchTo().defaultContent();
+		lnkCloseResponse.click();
+	}
+	public void clickFileUpload() throws Exception {
+		UtilityCustomFunctions.doClick(driver, lnkFileUpload);
+	}
 	public void clickMic() throws Exception {
 		utilities.Android.UtilityCustomFunctions.doClick(driver,btnVRMic);
 	}
@@ -502,8 +528,8 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 		utilities.Android.UtilityCustomFunctions.doClick(driver, btnMessageNext);
 	}
 	public void clickGeneralNext() throws Exception {
-//		utilities.UtilityCustomFunctions.doClick(driver, btnGeneralNext);
-		btnGeneralNext.click();
+		UtilityCustomFunctions.doClick(driver, btnGeneralNext);
+//		btnGeneralNext.click();
 	}
 	public void clickPhoneNumberNext() throws Exception {
 		utilities.Android.UtilityCustomFunctions.doClick(driver, btnPhoneNumberNext);
@@ -777,39 +803,55 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 			btnCheckAgreement.click();
 		}
 	}
-	public void SelectFiletoUpload(String sFUPath) throws IOException, InterruptedException {
+	public void SelectFiletoUpload(String sFUPath) throws Exception {
+		System.out.println("Before FileUpload link");
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(lnkFileUpload));
+		wait.until(ExpectedConditions.elementToBeClickable(lnkFileUpload));
+		Thread.sleep(3000);
 		lnkFileUpload.click();
+		System.out.println("FileUpload link visible");
+//		UtilityCustomFunctions.doClick(driver, lnkFileUpload);
+	    Thread.sleep(3000);
+	    /*
+	    fi = new File(sFUPath);
+	    byte[] fileContent = Files.readAllBytes(fi.toPath()); 
+		driver.pushFile("storage/Downloads/TestFile.txt", fileContent);
+		System.out.println("After file push");*/
+	    //Change Context to Native
 		Thread.sleep(1000);
-		driver.pushFile("/Download/NewFile.txt", new File("D:\\NewFile.txt"));
+		driver.context("NATIVE_APP");
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(lnkRecAudio));
+	    Thread.sleep(3000);
+	    if(lnkRecAudio.isDisplayed()) {
+			lnkRecAudio.click();
+		}
+		else {
+			System.out.println("chrome to record not present");
+		}
+	    Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOf(elefileButton));
+        elefileButton.click();
+        System.out.println("Files button clicked");
+        Thread.sleep(3000);
+        
+        
+        wait.until(ExpectedConditions.visibilityOf(eleShowRoots));
+        eleShowRoots.click();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(eleDownloads));
+		Thread.sleep(5000);
+		eleDownloads.click();
 		
-		Set<String> contextNames = driver.getContextHandles();
-        for (String strContextName : contextNames) {
-            if (strContextName.contains("NATIVE_APP")) {
-                driver.context("NATIVE_APP");
-                break;
-            }
-        }
+		Thread.sleep(5000);
+        System.out.println("After Push file");
+		wait.until(ExpectedConditions.visibilityOf(eleDoc));
+		Thread.sleep(5000);
+		eleDoc.click();
         
-        //Click Allow Permission
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(elementView));
-        elementView.click();
-        
-        wait.until(ExpectedConditions.visibilityOf(eleFile));
-        eleFile.click();
-        
-        wait.until(ExpectedConditions.visibilityOf(eleDoc));
-        eleDoc.click();
-        
-        //Switch to Chrome browser
-        Set<String> contextNames1 = driver.getContextHandles();
-        for (String strContextName : contextNames1) {
-            if (strContextName.contains("CHROMIUM")) {
-                driver.context("CHROMIUM");
-                break;
-            }
-        }
-        
+        System.out.println("After eledoc Seelected");
+        driver.context("CHROMIUM");
  	}
 	
 	public boolean selectOneItem(String strItem) throws Exception{
