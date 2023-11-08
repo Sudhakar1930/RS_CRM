@@ -38,14 +38,15 @@ public class UtilityCustomFunctions {
 	public static void sendKeys(AndroidDriver driver, WebElement element, String keyValue) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView();", element);
-			/*
-			Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			
+			
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			wait.until(ExpectedConditions.visibilityOf(element));
-			//element.clear();*/
-			Actions action = new Actions(driver);
-			action.moveToElement(element).doubleClick().build().perform();
+			js.executeScript("arguments[0].scrollIntoView();", element);
+//			element.clear();
+//			Actions action = new Actions(driver);
+//			action.moveToElement(element).doubleClick().build().perform();
 			element.sendKeys(keyValue);
 			element.sendKeys(Keys.ENTER);
 		}

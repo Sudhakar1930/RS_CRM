@@ -93,7 +93,7 @@ public class IndvControls {
 	@FindBy(xpath="	//input[@id='ems_email']")
 	WebElement txtEmailInput;
 
-	@FindBy(id="phs_phonenumber")
+	@FindBy(xpath="//input[@id='phs_phonenumber']")
 	WebElement txtPhoneNumberInput;
 	
 	
@@ -262,7 +262,9 @@ public class IndvControls {
 	
 	
 	public void clickAndroidLinkAllow() throws Exception {
-//		UtilityCustomFunctions.doClick(driver, lnkAllow);
+		WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webWait.until(ExpectedConditions.elementToBeClickable(lnkAllow));
+		webWait.until(ExpectedConditions.visibilityOf(lnkAllow));
 		lnkAllow.click();
 	}
 	public void clickAndroidAllowRecord() throws Exception {
@@ -287,6 +289,7 @@ public class IndvControls {
 		}
 	}
 	
+
 	public boolean bIsAppointmentDisplayed() {
 		boolean bFlag = false;
 		bFlag = IsElementVisible(driver,btnBookAppointment); 
@@ -885,7 +888,7 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtEmailInput, sEmail);
 	}
 	public void setPhoneNumber(String sPhoneNumber) throws Exception{
-		utilities.Android.UtilityCustomFunctions.sendKeys(driver, txtPhoneNumberInput, sPhoneNumber);
+		UtilityCustomFunctions.sendKeys(driver, txtPhoneNumberInput, sPhoneNumber);
 	}
 	public String selectNextDate()throws Exception{
 	return utilities.Android.UtilityCustomFunctions.SelectNextAvailDate(driver,WbTblAppointMent, btnCurrentDate);

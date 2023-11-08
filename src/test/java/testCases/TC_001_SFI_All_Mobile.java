@@ -38,8 +38,8 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
 			
-//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
-			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
+			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
+//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
 			
 			
 			ExcelUtility xlObj = new ExcelUtility(sPath);
@@ -117,7 +117,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			
 			logger.info("Survey Form Url Launched..");
 			freport(sExpBuildUrl, "pass",node);
-			Thread.sleep(5000);
+			
 			String sActTxtMessageTitle = IndvObj.getSFMessage();
 			System.out.println("Message Title" + sActTxtMessageTitle);
 			oSFR.fSoftAssert(sActTxtMessageTitle.trim(), sExpTxtMessageTitle, "Message Title",node);
@@ -402,12 +402,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			IndvObj.clickGeneralNext();
 			logger.info("Ranking Matrix Next Clicked");
 			
-			System.out.println("All Contexts " + driver.getContextHandles());
-			logger.info("All Contexts " + driver.getContextHandles());
-			driver.context("NATIVE_APP");
-			Thread.sleep(5000);
-			IndvObj.clickAndroidLinkAllow();
-			driver.context("CHROMIUM");
+			
 			
 			
 			//Google Map
@@ -432,12 +427,12 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			logger.info("Validation of Voice Record Control Title" + sActVR_Title) ;
 			
 			IndvObj.clickMic();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			System.out.println("All Contexts 2nd time " + driver.getContextHandles());
 			logger.info("All Contexts " + driver.getContextHandles());
 			driver.context("NATIVE_APP");
 			System.out.println("Switched to Native App");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			IndvObj.clickAndroidLinkAllow();
 			Thread.sleep(3000);
 			IndvObj.clickAndroidAllowRecord();

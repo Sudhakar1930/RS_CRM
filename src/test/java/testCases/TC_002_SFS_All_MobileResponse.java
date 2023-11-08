@@ -180,6 +180,20 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 			String sActRM_Value= IndvObj.getRespRMValues();
 			System.out.println("Actual Response Values: "+sActRM_Value);
 			oSFRSC.fSoftAssert(String.valueOf(sActRM_Value),String.valueOf(sExpRM_Value),"Rank Matrix Response Values",node);
+			//Google Map
+			oSFRSC.ValidateAllIndResp(driver,true,sExpGM_Title,20,"Google Map Control Question",false,node);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpGM_Value,18,"Google Map Control Answer",false,node);
+			//Voice Record Control
+			oSFRSC.ValidateAllIndResp(driver,true,sExpVR_Title,21,"Voice Record Control Question",false,node);
+			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpVR_Value,19,"Voice Record Control Answer",true,node);
+			//FileUpload Control
+			oSFRSC.ValidateAllIndResp(driver,true,sExpUF_Title,22,"FileUpload Control Question",false,node);
+			sExpUF_Prefix = xlObj.getCellData("Sheet1", 1, 47);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpUF_Prefix,20,"FileUpload Control Answer",true,node);
+			
+			
+			
 			IndvObj.clickResponseClose(driver);
 		}
 		catch(Exception e) {
