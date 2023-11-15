@@ -19,13 +19,14 @@ import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import pageObjects.Android.SectionControlsPage;
+import testBase.Android.BaseTest;
+import utilities.ExtentReportManager;
 
-
-public class SurveyFormReUsables extends SectionControlsPage{
+public class SurveyFormReUsables extends BaseTest{
 	
 	
-	public SurveyFormReUsables(AndroidDriver driver) {
-		super(driver);
+	public SurveyFormReUsables(WebDriver driver) {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

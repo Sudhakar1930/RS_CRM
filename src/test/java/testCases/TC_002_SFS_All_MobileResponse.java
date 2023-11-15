@@ -6,9 +6,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import pageObjects.Browser.IndvControls;
+//import pageObjects.Browser.IndvControls;
 import pageObjects.Browser.SectionControlsPage;
+import pageObjects.Browser.IndvControls;
 import testBase.Browser.BaseClass;
+
 import utilities.ExcelUtility;
 import utilities.Browser.*;
 

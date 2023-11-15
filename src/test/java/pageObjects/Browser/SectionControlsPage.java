@@ -21,13 +21,14 @@ import com.aventstack.extentreports.ExtentTest;
 
 import io.appium.java_client.android.AndroidDriver;
 import utilities.Android.SurveyFormReUsables;
-import utilities.Browser.UtilityCustomFunctions;
+import utilities.Android.UtilityCustomFunctions;
+
 
 public class SectionControlsPage {
 	WebDriver driver;
-	public SectionControlsPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver,this);
+	public SectionControlsPage(WebDriver driver2) {
+		this.driver = driver2;
+		PageFactory.initElements(driver2,this);
 	}
 
 	Logger	logger = LogManager.getLogger(this.getClass());
@@ -202,18 +203,18 @@ public class SectionControlsPage {
 //			Runtime.getRuntime().exec("D:\\Automation\\AutoITScript.exe"+ " " + "D:\\NewFile.txt");
 			Runtime.getRuntime().exec("D:\\Automation\\AutoITScript.exe"+ " " + "D:/NewFile.txt");
 		}*/
-		public void SelectFiletoUpload(String sFUPath) throws IOException, InterruptedException {
-			lnkFileUpload.click();
-			Thread.sleep(1000);
-			String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
-			if(sBrowserName.equalsIgnoreCase("firefox")) {
-				Runtime.getRuntime().exec("D:\\Automation\\FuFirefox.exe"+" " + "D:\\NewFile.txt");
-			}
-			else {
-				Runtime.getRuntime().exec("D:\\Automation\\AutoITScript.exe"+ " " + "D:\\NewFile.txt");
-			}
-			
-		}
+//		public void SelectFiletoUpload(String sFUPath) throws IOException, InterruptedException {
+//			lnkFileUpload.click();
+//			Thread.sleep(1000);
+//			String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
+//			if(sBrowserName.equalsIgnoreCase("firefox")) {
+//				Runtime.getRuntime().exec("D:\\Automation\\FuFirefox.exe"+" " + "D:\\NewFile.txt");
+//			}
+//			else {
+//				Runtime.getRuntime().exec("D:\\Automation\\AutoITScript.exe"+ " " + "D:\\NewFile.txt");
+//			}
+//			
+//		}
 		
 		
 		public void selectListDropDown(WebDriver driver,String sItem) {
@@ -243,12 +244,13 @@ public class SectionControlsPage {
 	}
 	
 	public void fValidateSectionLabels(WebDriver driver,int iLabelIndex,String sExpValue,String sValMessage,ExtentTest node) {
-		SurveyFormReUsables oSFRVal = new SurveyFormReUsables();
+		SurveyFormReUsables oSFRVal = new SurveyFormReUsables(driver);
 		try {
 		String sUILableExpath = "(//*[@id='rootdiv']/div/p)[" + iLabelIndex +"]" ;
 		WebElement eleLabel = driver.findElement(By.xpath(sUILableExpath));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", eleLabel);
 		String sActLabel = driver.findElement(By.xpath(sUILableExpath)).getText();
+		
 		oSFRVal.fSoftAssert(sActLabel.trim(), sExpValue.trim(), sValMessage, node);
 		logger.info(sValMessage + " Validation with Expected: " + sExpValue + " and Actual is: " +sActLabel);
 		}catch (Exception e) {

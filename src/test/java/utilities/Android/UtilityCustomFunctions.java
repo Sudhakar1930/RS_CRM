@@ -35,12 +35,12 @@ public class UtilityCustomFunctions {
 		return browserName;
 	}
 
-	public static void sendKeys(AndroidDriver driver, WebElement element, String keyValue) {
+	public static void sendKeys(WebDriver driver2, WebElement element, String keyValue) {
 		try {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
+			JavascriptExecutor js = (JavascriptExecutor) driver2;
 			
 			
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebDriverWait wait = new WebDriverWait(driver2, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			wait.until(ExpectedConditions.visibilityOf(element));
 			js.executeScript("arguments[0].scrollIntoView();", element);
@@ -118,12 +118,12 @@ public class UtilityCustomFunctions {
 		}
 		return flag;
 	}//function end
-	public static boolean selectOneItemfromListBox(AndroidDriver AndroidDriver, WebElement element, String textValue) {
+	public static boolean selectOneItemfromListBox(WebDriver driver2, WebElement element, String textValue) {
 		//waitForJQueryToLoad(AndroidDriver);
 		boolean flag = false;
 		
 		try {
-			((JavascriptExecutor) AndroidDriver).executeScript("arguments[0].scrollIntoView(true);", element);
+			((JavascriptExecutor) driver2).executeScript("arguments[0].scrollIntoView(true);", element);
 			
 			System.out.println("Element:" + element.getTagName());
 			if (element.isDisplayed() || element.isEnabled()) {
@@ -154,12 +154,12 @@ public class UtilityCustomFunctions {
 	 * @return return the boolean value
 	 * @throws Exception 
 	 */
-	public static boolean doClick(AndroidDriver driver, WebElement element) throws Exception {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+	public static boolean doClick(WebDriver driver2, WebElement element) throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor) driver2;
 		boolean isClicked = false;
 		try {
 			js.executeScript("arguments[0].scrollIntoView(true);", element);
-			WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			WebDriverWait webWait = new WebDriverWait(driver2, Duration.ofSeconds(20));
 			webWait.until(ExpectedConditions.elementToBeClickable(element));
 			webWait.until(ExpectedConditions.visibilityOf(element));
 			js.executeScript("arguments[0].click();", element);
