@@ -594,7 +594,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 					System.out.println("Switched to Native App");
 					Thread.sleep(3000);
 					IndvObj.clickAndroidLinkAllow();
-					Thread.sleep(3000);
+					Thread.sleep(4000);
 					IndvObj.clickAndroidAllowRecord();
 					driver.context("CHROMIUM");
 					Thread.sleep(5000);
@@ -619,6 +619,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			
 			// File Upload
 			if (IndvObj.bIsFileUploadDisplayed()) {
+				IndvObj.clickAndroidAllowRecord();
 				freport("FileUpload Control Present", "pass", node);
 				logger.info("FileUpload Conrol Present");
 				String sActUF_Title = IndvObj.getSecGenTitle();
