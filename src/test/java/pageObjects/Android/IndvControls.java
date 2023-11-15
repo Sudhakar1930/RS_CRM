@@ -260,16 +260,45 @@ public class IndvControls {
 	@AndroidFindBy(xpath=".//android.widget.Button[@text='Allow']")
 	WebElement eleLocPopupAllow;
 	
+
+	@FindBy(xpath="//span[normalize-space()='Please contact us']")
+	WebElement eleLinks;
 	
-	public void clickAndroidLinkAllow() throws Exception {
+	@FindBy(xpath="//span[@class='dropdown-btn']")
+	WebElement btnDropDown;
+	
+	@FindBy(xpath="//*[@id='rootdiv']//div//p/img")
+	WebElement eleThankUImage;
+	
+	@FindBy(xpath="//*[@id='rootdiv']/p/button")
+	WebElement btnThankYouGo;
+	
+	@FindBy(xpath="//*[@id='rootdiv']/ul[@class='opnscal-container float']")
+	WebElement eleOpinionScale;
+	
+	@FindBy(xpath="//div//h3")
+	WebElement lblPicMsgTitle;
+	
+	
+	public void clickAndroidLinkAllow() {
+		try {
 		WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		webWait.until(ExpectedConditions.elementToBeClickable(lnkAllow));
 		webWait.until(ExpectedConditions.visibilityOf(lnkAllow));
 		lnkAllow.click();
+		}catch(Exception e) {
+			System.out.println(e.getCause());
+		}
 	}
 	public void clickAndroidAllowRecord() throws Exception {
-//		UtilityCustomFunctions.doClick(driver, lnkRecAudio);
-		lnkRecAudio.click();
+		try {
+			WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+			webWait.until(ExpectedConditions.elementToBeClickable(lnkRecAudio));
+			webWait.until(ExpectedConditions.visibilityOf(lnkRecAudio));
+			lnkRecAudio.click();
+			}catch(Exception e) {
+				System.out.println(e.getCause());
+			}
 	}
 	
 	public static void clickGeneralToast() {
@@ -281,15 +310,80 @@ public class IndvControls {
 		}
 	}
 	public void clickMobileLocationPopup() {
+		try {
+		WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		webWait.until(ExpectedConditions.elementToBeClickable(eleLocPopupAllow));
+		webWait.until(ExpectedConditions.visibilityOf(eleLocPopupAllow));
 		eleLocPopupAllow.click();
+		}catch(Exception e) {
+			System.out.println(e.getCause());
+		}
+
 	}
+
+	
+	
+	public boolean bIsLinksControlDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,eleLinks);
+		return bFlag;
+	}
+	public boolean bIsOpinionScaleDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,eleOpinionScale);
+		return bFlag;
+	}
+	public boolean bIsRatingDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,lstRatingLabels);
+		return bFlag;
+	}
+	public boolean bIsThankYouDisplayed() {
+		boolean bFlag1 = false;
+		boolean bFlag2 = false;
+		boolean bFlag = false;
+		bFlag1 = IsElementVisible(driver,eleThankUImage); 
+		bFlag2 = IsElementVisible(driver,btnThankYouGo);
+		System.out.println("bflag1:" + bFlag1);
+		System.out.println("bflag2:" + bFlag2);
+		if(bFlag1==true && bFlag2==true) {
+			bFlag = true;
+		}
+		else {
+			bFlag = false;
+		}
+		return bFlag;
+	}	
 	public void clickLogout() {
 		if(btnLogout.isDisplayed()) {
 			btnLogout.click();
 		}
 	}
 	
-
+	public boolean bIsMultiChoiceDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,SelectOneChoice); 
+		return bFlag;
+	}
+	public boolean bIsPictureMessageDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementsVisible(driver,sLstPicMsgItems); 
+		return bFlag;
+	}
+	
+	public boolean bIsMultiSelectDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,btnDropDown); 
+		return bFlag;
+	}
+	
+	
+	public boolean bIsMessageTitleDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,lblMessageTitle); 
+		return bFlag;
+	}
+	
 	public boolean bIsAppointmentDisplayed() {
 		boolean bFlag = false;
 		bFlag = IsElementVisible(driver,btnBookAppointment); 
@@ -327,6 +421,7 @@ public class IndvControls {
 		return bFlag;
 	}
 	
+	
 	public boolean bIsGoogleMapDisplayed() {
 		boolean bFlag = false;
 		bFlag = IsElementVisible(driver,txtGoogleMapInput); 
@@ -360,7 +455,11 @@ public class IndvControls {
 		bFlag = IsElementVisible(driver,lblAgreementText); 
 		return bFlag;
 	}
-	
+	public boolean bIsDateDisplayed() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver,txtDateInput); 
+		return bFlag;
+	}
 	
 	
 	public boolean bIsVRDisplayed() {
@@ -378,19 +477,37 @@ public class IndvControls {
 	
 	public boolean IsElementVisible(WebDriver driver,WebElement element) {
 		boolean bIsElementVisible=false;
+		try {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
 		js.executeScript("arguments[0].scrollIntoView();", element);
-		
-		if(element.isDisplayed()) {
-			bIsElementVisible = true;
-		}
-		else {
+		bIsElementVisible = true;
+		}catch(Exception e) {
 			bIsElementVisible = false;
 		}
 		return bIsElementVisible;
 	}
-	
-	
+	public boolean IsElementsVisible(WebDriver driver,List<WebElement> element) {
+		boolean bIsElementVisible=false;
+		try {
+			System.out.println("Before Picture Message size");
+		int size = element.size();
+		System.out.println("Before Picture Message size " + size);
+		if(size>0) {
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].scrollIntoView();", element);
+		bIsElementVisible = true;
+		}
+		else {
+			bIsElementVisible = false;
+		}
+		}catch(Exception e) {
+			bIsElementVisible = false;
+		}
+		return bIsElementVisible;
+	}
 	public boolean bSkipPresent() {
 		boolean bSkip = false;
 		try {
@@ -413,7 +530,12 @@ public class IndvControls {
 
 	
 	//Get Methods
-
+	public String getPicMsgTitle() {
+		String sSFMessage= lblPicMsgTitle.getText();
+		return sSFMessage;
+	}
+	
+	
 	public String getRespRMValues() {
 		UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver); 
 		String sSFMessage= uObj.getRespankMatrixValues(lstRankMatrixResp);

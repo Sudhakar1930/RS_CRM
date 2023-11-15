@@ -69,6 +69,7 @@ Logger logger = LogManager.getLogger(this.getClass());
 //	options.setDeviceName("db48f8d9");
 
 	options.setDeviceName("emulator-5554");
+//	options.setDeviceName("db48f8d9");
 	
 	options.setPlatformVersion("11.0");
 	options.setPlatformName("Android");

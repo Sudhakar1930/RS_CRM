@@ -1,6 +1,6 @@
 package pageObjects.Browser;
 import java.io.IOException;
-
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -212,11 +212,80 @@ public class IndvControls extends BasePage{
 		@FindBy(xpath="//div[@class='secshow-rootdiv']")
 		WebElement eleSectionControl;
 		
+		@FindBy(xpath="//span[normalize-space()='Please contact us']")
+		WebElement eleLinks;
 		
+		@FindBy(xpath="//span[@class='dropdown-btn']")
+		WebElement btnDropDown;
+		
+		@FindBy(xpath="//*[@id='rootdiv']//div//p/img")
+		WebElement eleThankUImage;
+		
+		@FindBy(xpath="//*[@id='rootdiv']/p/button")
+		WebElement btnThankYouGo;
+		
+		@FindBy(xpath="//*[@id='rootdiv']/ul[@class='opnscal-container float']")
+		WebElement eleOpinionScale;
+		
+		public boolean bIsLinksControlDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,eleLinks);
+			return bFlag;
+		}
+		public boolean bIsOpinionScaleDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,eleOpinionScale);
+			return bFlag;
+		}
+		public boolean bIsRatingDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,lstRatingLabels);
+			return bFlag;
+		}
+		public boolean bIsThankYouDisplayed() {
+			boolean bFlag1 = false;
+			boolean bFlag2 = false;
+			boolean bFlag = false;
+			bFlag1 = IsElementVisible(driver,eleThankUImage); 
+			bFlag2 = IsElementVisible(driver,btnThankYouGo);
+			System.out.println("bflag1:" + bFlag1);
+			System.out.println("bflag2:" + bFlag2);
+			if(bFlag1==true && bFlag2==true) {
+				bFlag = true;
+			}
+			else {
+				bFlag = false;
+			}
+			return bFlag;
+		}	
 		public void clickLogout() {
 			if(btnLogout.isDisplayed()) {
 				btnLogout.click();
 			}
+		}
+		
+		public boolean bIsMultiChoiceDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,SelectOneChoice); 
+			return bFlag;
+		}
+		public boolean bIsPictureMessageDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementsVisible(driver,sLstPicMsgItems); 
+			return bFlag;
+		}
+		
+		public boolean bIsMultiSelectDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,btnDropDown); 
+			return bFlag;
+		}
+		
+		
+		public boolean bIsMessageTitleDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,lblMessageTitle); 
+			return bFlag;
 		}
 		
 		public boolean bIsAppointmentDisplayed() {
@@ -256,6 +325,7 @@ public class IndvControls extends BasePage{
 			return bFlag;
 		}
 		
+		
 		public boolean bIsGoogleMapDisplayed() {
 			boolean bFlag = false;
 			bFlag = IsElementVisible(driver,txtGoogleMapInput); 
@@ -289,7 +359,11 @@ public class IndvControls extends BasePage{
 			bFlag = IsElementVisible(driver,lblAgreementText); 
 			return bFlag;
 		}
-		
+		public boolean bIsDateDisplayed() {
+			boolean bFlag = false;
+			bFlag = IsElementVisible(driver,txtDateInput); 
+			return bFlag;
+		}
 		
 		
 		public boolean bIsVRDisplayed() {
@@ -307,19 +381,37 @@ public class IndvControls extends BasePage{
 		
 		public boolean IsElementVisible(WebDriver driver,WebElement element) {
 			boolean bIsElementVisible=false;
+			try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			wait.until(ExpectedConditions.visibilityOf(element));
 			js.executeScript("arguments[0].scrollIntoView();", element);
-			
-			if(element.isDisplayed()) {
-				bIsElementVisible = true;
-			}
-			else {
+			bIsElementVisible = true;
+			}catch(Exception e) {
 				bIsElementVisible = false;
 			}
 			return bIsElementVisible;
 		}
-		
-		
+		public boolean IsElementsVisible(WebDriver driver,List<WebElement> element) {
+			boolean bIsElementVisible=false;
+			try {
+				System.out.println("Before Picture Message size");
+			int size = element.size();
+			System.out.println("Before Picture Message size " + size);
+			if(size>0) {
+//			JavascriptExecutor js = (JavascriptExecutor) driver;
+//			js.executeScript("arguments[0].scrollIntoView();", element);
+			bIsElementVisible = true;
+			}
+			else {
+				bIsElementVisible = false;
+			}
+			}catch(Exception e) {
+				bIsElementVisible = false;
+			}
+			return bIsElementVisible;
+		}
 		public boolean bSkipPresent() {
 			boolean bSkip = false;
 			try {
