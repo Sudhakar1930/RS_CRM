@@ -26,7 +26,7 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 	public void testName() {
 		test = extent.createTest("TC_001_SFI_All_MobileResponse");
 	}
-	@Test
+	@Test(alwaysRun = true)
 	public void TestMobileIResponse() throws Exception {
 		try{
 		node = test.createNode("SFI_MOBILE_Response");
@@ -38,8 +38,8 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
 			
-			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
-//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
+//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
+			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
 			
 			
 			ExcelUtility xlObj = new ExcelUtility(sPath);

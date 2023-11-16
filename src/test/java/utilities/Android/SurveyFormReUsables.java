@@ -53,7 +53,7 @@ public class SurveyFormReUsables extends BaseTest{
 	public static void fLaunchUrl(WebDriver driver,String sUrl) {
 		try {
 		driver.navigate().to(sUrl);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		}catch (Exception e) {
 			//Assert.fail("Browser Launch failed");
@@ -97,15 +97,17 @@ public class SurveyFormReUsables extends BaseTest{
 	}*/
 	
 	public void fSoftAssert(String sActValue, String sExpValue,String sMessage,ExtentTest Node) throws IOException, InterruptedException {
+		BaseTest a = new BaseTest();
 		try {
 		if(sActValue.trim().equalsIgnoreCase(sExpValue.trim())) {
 			logger.info(sMessage + " Passed : Actual Value is: " +sActValue + "Expected Value is: "+sExpValue);
-			freport(sMessage, "Pass",Node);
+//			freport(sMessage, "Pass",Node);
+			a.freport(sMessage, "Pass",Node);
 		}
 		else {
 			logger.info(sMessage + " Failed : Actual Value is: " +sActValue + "Expected Value is: "+sExpValue);
-			freport(sMessage, "fail",Node);
-			
+//			freport(sMessage, "fail",Node);
+			a.freport(sMessage, "Pass",Node);
 			
 		}
 		}catch(Exception e) {

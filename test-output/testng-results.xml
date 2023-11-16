@@ -1,36 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-15T17:37:13 IST" name="Suite" finished-at="2023-11-15T17:43:06 IST" duration-ms="353206">
+  <suite started-at="2023-11-16T13:01:11 IST" name="Suite" finished-at="2023-11-16T13:19:21 IST" duration-ms="1089765">
     <groups>
     </groups>
-    <test started-at="2023-11-15T17:37:13 IST" name="chrometest" finished-at="2023-11-15T17:43:06 IST" duration-ms="353206">
-      <class name="testCases.TC_001_SFI_All_Mobile">
-        <test-method is-config="true" signature="onStart(org.testng.ITestContext)[pri:0, instance:testCases.TC_001_SFI_All_Mobile@8a589a2]" started-at="2023-11-15T17:37:12 IST" name="onStart" finished-at="2023-11-15T17:37:13 IST" duration-ms="439" status="PASS">
+    <test started-at="2023-11-16T13:01:11 IST" name="chrometest" finished-at="2023-11-16T13:19:21 IST" duration-ms="1089765">
+      <class name="testCases.TC_002_SFS_All_MobileResponse">
+        <test-method is-config="true" signature="testName()[pri:0, instance:testCases.TC_002_SFS_All_MobileResponse@532a02d9]" started-at="2023-11-16T13:01:11 IST" name="testName" finished-at="2023-11-16T13:01:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testName -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.TC_002_SFS_All_MobileResponse@532a02d9]" started-at="2023-11-16T13:16:50 IST" name="setup" finished-at="2023-11-16T13:16:53 IST" duration-ms="2608" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@3f22ce2a]]>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testMobileSectionContrls()[pri:0, instance:testCases.TC_002_SFS_All_MobileResponse@532a02d9]" started-at="2023-11-16T13:16:53 IST" name="testMobileSectionContrls" finished-at="2023-11-16T13:19:21 IST" duration-ms="147850" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMobileSectionContrls -->
+      </class> <!-- testCases.TC_002_SFS_All_MobileResponse -->
+      <class name="testCases.TC_002_SFS_All_Mobile">
+        <test-method is-config="true" signature="testName()[pri:0, instance:testCases.TC_002_SFS_All_Mobile@644c78d4]" started-at="2023-11-16T13:01:11 IST" name="testName" finished-at="2023-11-16T13:01:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testName -->
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:testCases.TC_002_SFS_All_Mobile@644c78d4]" started-at="2023-11-16T13:10:04 IST" name="configureAppium" finished-at="2023-11-16T13:10:23 IST" duration-ms="18787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configureAppium -->
+        <test-method signature="testSectionContrls()[pri:0, instance:testCases.TC_002_SFS_All_Mobile@644c78d4]" started-at="2023-11-16T13:10:23 IST" name="testSectionContrls" finished-at="2023-11-16T13:16:50 IST" duration-ms="387297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSectionContrls -->
+      </class> <!-- testCases.TC_002_SFS_All_Mobile -->
+      <class name="testCases.TC_001_SFI_All_MobileResponse">
+        <test-method is-config="true" signature="testName()[pri:0, instance:testCases.TC_001_SFI_All_MobileResponse@74bdc168]" started-at="2023-11-16T13:01:11 IST" name="testName" finished-at="2023-11-16T13:01:11 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testName -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:testCases.TC_001_SFI_All_MobileResponse@74bdc168]" started-at="2023-11-16T13:07:32 IST" name="setup" finished-at="2023-11-16T13:07:36 IST" duration-ms="4174" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="TestMobileIResponse()[pri:0, instance:testCases.TC_001_SFI_All_MobileResponse@74bdc168]" started-at="2023-11-16T13:07:36 IST" name="TestMobileIResponse" finished-at="2023-11-16T13:10:04 IST" duration-ms="148697" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestMobileIResponse -->
+      </class> <!-- testCases.TC_001_SFI_All_MobileResponse -->
+      <class name="testCases.TC_001_SFI_All_Mobile">
+        <test-method is-config="true" signature="onStart(org.testng.ITestContext)[pri:0, instance:testCases.TC_001_SFI_All_Mobile@11acdc30]" started-at="2023-11-16T13:01:11 IST" name="onStart" finished-at="2023-11-16T13:01:11 IST" duration-ms="510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@43114981]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onStart -->
-        <test-method is-config="true" signature="testName()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@8a589a2]" started-at="2023-11-15T17:37:13 IST" name="testName" finished-at="2023-11-15T17:37:13 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="testName()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@11acdc30]" started-at="2023-11-16T13:01:11 IST" name="testName" finished-at="2023-11-16T13:01:11 IST" duration-ms="11" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testName -->
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@8a589a2]" started-at="2023-11-15T17:37:13 IST" name="configureAppium" finished-at="2023-11-15T17:37:39 IST" duration-ms="26047" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@11acdc30]" started-at="2023-11-16T13:01:11 IST" name="configureAppium" finished-at="2023-11-16T13:01:30 IST" duration-ms="18749" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="TestMobileIndividualControls()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@8a589a2]" started-at="2023-11-15T17:37:39 IST" name="TestMobileIndividualControls" finished-at="2023-11-15T17:43:06 IST" duration-ms="327013" status="PASS">
+        <test-method signature="TestMobileIndividualControls()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@11acdc30]" started-at="2023-11-16T13:01:30 IST" name="TestMobileIndividualControls" finished-at="2023-11-16T13:07:31 IST" duration-ms="361474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestMobileIndividualControls -->
-        <test-method is-config="true" signature="flush()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@8a589a2]" started-at="2023-11-15T17:43:06 IST" name="flush" finished-at="2023-11-15T17:43:07 IST" duration-ms="817" status="PASS">
+        <test-method is-config="true" signature="flush()[pri:0, instance:testCases.TC_001_SFI_All_Mobile@11acdc30]" started-at="2023-11-16T13:19:21 IST" name="flush" finished-at="2023-11-16T13:19:22 IST" duration-ms="653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flush -->

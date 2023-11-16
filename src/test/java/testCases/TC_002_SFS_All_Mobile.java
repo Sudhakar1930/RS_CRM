@@ -1,5 +1,7 @@
 package testCases;
 
+import java.util.Set;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -19,11 +21,9 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 	public void testName() {
 		test = extent.createTest("TC_002_SFS_All_Mobile");
 	}
-	@Test
+	@Test(alwaysRun = true)
 	public void testSectionContrls() throws Exception {
-	
 		node = test.createNode("Section_Controls_In_Mobile");
-		
 		SurveyFormReUsables oSFRSC = new SurveyFormReUsables(driver);
 		
 		logger.info("******starting TC_002_SFS_All_Mobile ****");
@@ -109,16 +109,29 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			logger.info("Extracting DataSheet Values Completed...");
 			
 			oSFRSC.fLaunchUrl(driver, sExpBuildUrl);
-			freport(sExpBuildUrl, "pass",node);
-			logger.info("Survey Form Section Controls Url Launched..");
-//			Thread.sleep(5000);
+			//URL Validation 
+			logger.info("Survey Form Url Launched..");
+			String sActBuildUrl = driver.getCurrentUrl();
+			if(sActBuildUrl.trim().equalsIgnoreCase(sExpBuildUrl)) {
+				freport(sExpBuildUrl, "pass", node);
+				logger.info("Build Url Pass");
+			}
+			else {
+				logger.info("Build Url failing");
+				freport("Browser URL Not Correct" , "fail",node);
+				Assert.fail("Url Failed");
+			}
+			Thread.sleep(3000);
 			System.out.println("All Contexts " + driver.getContextHandles());
 			logger.info("All Contexts " + driver.getContextHandles());
-			driver.context("NATIVE_APP");
-//			Thread.sleep(5000);
-			IndvObj.clickAndroidLinkAllow();
-			driver.context("CHROMIUM");
-			Thread.sleep(2000);
+			Set contextNames = driver.getContextHandles();
+			if(contextNames.size()>1) {
+				driver.context("NATIVE_APP");
+//				Thread.sleep(5000);
+				IndvObj.clickAndroidLinkAllow();
+				driver.context("CHROMIUM");
+				Thread.sleep(2000);	
+			}
 			//Validation of Section Title
 			String sActSectionTitle = IndvObj.getGeneralTitle();
 			oSFRSC.fSoftAssert(sActSectionTitle.trim(), sExpSectionTitle.trim(), "Section Title",node);

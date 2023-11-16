@@ -27,9 +27,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 	public void testName() {
 		test = extent.createTest("TC_001_SFI_All_Mobile");
 	}
-	@Test
+	
+	@Test(alwaysRun = true)
 	public void TestMobileIndividualControls() throws Exception {
-		try{
+	try{
 		node = test.createNode("SFI Mobile Form");
 		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);

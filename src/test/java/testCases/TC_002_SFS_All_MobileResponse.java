@@ -21,7 +21,7 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 	public void testName() {
 		test = extent.createTest("TC_002_SFS_All_MobileResponse");
 	}
-	@Test
+	@Test(alwaysRun = true)
 	public void testMobileSectionContrls() throws Exception {
 		try {
 		node = test.createNode("SectionControlsInSection");
