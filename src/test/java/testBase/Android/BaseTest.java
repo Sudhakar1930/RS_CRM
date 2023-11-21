@@ -59,9 +59,11 @@ Logger logger = LogManager.getLogger(this.getClass());
  @BeforeClass	
  public void configureAppium() throws MalformedURLException, InterruptedException {
 	//AppiumDriverLocalService service = AppiumServiceBuilder().withAppiumJS(new File)
+	 System.out.println("Before Service Start");
 	 service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
 			.withIPAddress("127.0.0.1").usingPort(4723).build();
 	service.start();
+	System.out.println("After Service Start");
 	DesiredCapabilities cap = new DesiredCapabilities();
 	ChromeOptions cOptions = new ChromeOptions();
 	UiAutomator2Options options = new UiAutomator2Options();

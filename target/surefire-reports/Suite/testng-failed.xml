@@ -11,20 +11,11 @@
         <methods>
           <include name="onStart"/>
           <include name="setup"/>
-          <include name="testMobileSectionContrls"/>
           <include name="flush"/>
+          <include name="testMobileSectionContrls"/>
           <include name="testName"/>
         </methods>
       </class> <!-- testCases.TC_002_SFS_All_MobileResponse -->
-      <class name="testCases.TC_002_SFS_All_Mobile">
-        <methods>
-          <include name="onStart"/>
-          <include name="testSectionContrls"/>
-          <include name="flush"/>
-          <include name="testName"/>
-          <include name="configureAppium"/>
-        </methods>
-      </class> <!-- testCases.TC_002_SFS_All_Mobile -->
     </classes>
   </test> <!-- chrometest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

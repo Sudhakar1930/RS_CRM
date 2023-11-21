@@ -107,7 +107,7 @@ public class SurveyFormReUsables extends BaseTest{
 		else {
 			logger.info(sMessage + " Failed : Actual Value is: " +sActValue + "Expected Value is: "+sExpValue);
 //			freport(sMessage, "fail",Node);
-			a.freport(sMessage, "Pass",Node);
+			a.freport(sMessage, "fail",Node);
 			
 		}
 		}catch(Exception e) {

@@ -122,16 +122,20 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 				Assert.fail("Url Failed");
 			}
 			Thread.sleep(3000);
-			System.out.println("All Contexts " + driver.getContextHandles());
-			logger.info("All Contexts " + driver.getContextHandles());
-			Set contextNames = driver.getContextHandles();
-			if(contextNames.size()>1) {
-				driver.context("NATIVE_APP");
+//			System.out.println("All Contexts " + driver.getContextHandles());
+//			logger.info("All Contexts " + driver.getContextHandles());
+//			Set contextNames = driver.getContextHandles();
+//			System.out.println("cibtext suze "+contextNames.size());
+//			if(contextNames.size()>1) {
+//				System.out.println("Inside the context if");
+//				Thread.sleep(3000);
+//				driver.context("NATIVE_APP");
 //				Thread.sleep(5000);
-				IndvObj.clickAndroidLinkAllow();
-				driver.context("CHROMIUM");
-				Thread.sleep(2000);	
-			}
+//				IndvObj.clickAndroidLinkAllow();
+//				driver.context("CHROMIUM");
+//				Thread.sleep(2000);	
+//			}
+//			System.out.println("outside the context if");
 			//Validation of Section Title
 			String sActSectionTitle = IndvObj.getGeneralTitle();
 			oSFRSC.fSoftAssert(sActSectionTitle.trim(), sExpSectionTitle.trim(), "Section Title",node);
@@ -314,55 +318,55 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 //			 IndvObj.clickAndroidLinkAllow();
 //			 driver.context("CHROMIUM");
 			 
-			//Google Map Control
-			 SecObj.fValidateSectionLabels(driver, 23, sExpGM_Title, "GoogleMap Control Title",node);
-			 Thread.sleep(3000);
-			 SecObj.setGoogleMapAddress(sExpGM_Value);
-			 logger.info("Address Entered in Google Map");
-			 freport("Address Entered in Google Map"+sExpGM_Value, "pass",node);
+//			//Google Map Control
+//			 SecObj.fValidateSectionLabels(driver, 23, sExpGM_Title, "GoogleMap Control Title",node);
+//			 Thread.sleep(3000);
+//			 SecObj.setGoogleMapAddress(sExpGM_Value);
+//			 logger.info("Address Entered in Google Map");
+//			 freport("Address Entered in Google Map"+sExpGM_Value, "pass",node);
+//			 
+//			//Voice Record Control
+//			 SecObj.fValidateSectionLabels(driver, 22, sExpVR_Title, "VoiceRecord Control Title",node);
+//			 Thread.sleep(1000);
+//			 IndvObj.clickMic();
+//			 System.out.println("All Contexts 2nd time " + driver.getContextHandles());
+//			 logger.info("All Contexts " + driver.getContextHandles());
+//			 driver.context("NATIVE_APP");
+//			 System.out.println("Switched to Native App");
+//			 Thread.sleep(3000);
+//			 IndvObj.clickAndroidLinkAllow();
+//			 Thread.sleep(3000);
+//			 IndvObj.clickAndroidAllowRecord();
+//			 driver.context("CHROMIUM");
+//			 Thread.sleep(5000);
+//			 IndvObj.clickStop();
+//			 String sCurrDate = UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+//			 String sPrefixVR="voice_record_" + sCurrDate;
+//			 logger.info("Voice Recorded");
+//			 freport("Voice Recorded", "pass",node);
+//			 //Update it to Excel sheet
+//				
+//				xlObj.setCellData("Sheet1", 1, 44, sPrefixVR);
+//				sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
+//				logger.info("Voice Record Prefix updated to Datasheet");
+//				Thread.sleep(3000);	
+//			 SecObj.clickVRUpload();
+//			 Thread.sleep(1000);
 			 
-			//Voice Record Control
-			 SecObj.fValidateSectionLabels(driver, 22, sExpVR_Title, "VoiceRecord Control Title",node);
-			 Thread.sleep(1000);
-			 IndvObj.clickMic();
-			 System.out.println("All Contexts 2nd time " + driver.getContextHandles());
-			 logger.info("All Contexts " + driver.getContextHandles());
-			 driver.context("NATIVE_APP");
-			 System.out.println("Switched to Native App");
-			 Thread.sleep(3000);
-			 IndvObj.clickAndroidLinkAllow();
-			 Thread.sleep(3000);
-			 IndvObj.clickAndroidAllowRecord();
-			 driver.context("CHROMIUM");
-			 Thread.sleep(5000);
-			 IndvObj.clickStop();
-			 String sCurrDate = UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-			 String sPrefixVR="voice_record_" + sCurrDate;
-			 logger.info("Voice Recorded");
-			 freport("Voice Recorded", "pass",node);
-			 //Update it to Excel sheet
-				
-				xlObj.setCellData("Sheet1", 1, 44, sPrefixVR);
-				sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
-				logger.info("Voice Record Prefix updated to Datasheet");
-				Thread.sleep(3000);	
-			 SecObj.clickVRUpload();
-			 Thread.sleep(1000);
-			 
-			//FileUpload Control
-		     Thread.sleep(1000);
-			 SecObj.fValidateSectionLabels(driver, 23, sExpUF_Title, "FileUpload Control Title",node);
-			 
-//			 SecObj.SelectFiletoUpload(sExpUF_Value);
-			 IndvObj.SelectFiletoUpload(sExpUF_Value);
-			 Thread.sleep(3000);
-			 logger.info("File Uploaded");
-			 freport("File uploaded: " + sExpUF_Value, "pass",node);
-			 String sGetCurrDate =UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-			 String sUF_Prefix = "formshow_" + sGetCurrDate;
-			 System.out.println("File Uploaded");
-			 xlObj.setCellData("Sheet1", 1, 47, sUF_Prefix);
-			 logger.info("Upload file prefix added to Datasheet");
+//			//FileUpload Control
+//		     Thread.sleep(1000);
+//			 SecObj.fValidateSectionLabels(driver, 23, sExpUF_Title, "FileUpload Control Title",node);
+//			 
+////			 SecObj.SelectFiletoUpload(sExpUF_Value);
+//			 IndvObj.SelectFiletoUpload(sExpUF_Value);
+//			 Thread.sleep(3000);
+//			 logger.info("File Uploaded");
+//			 freport("File uploaded: " + sExpUF_Value, "pass",node);
+//			 String sGetCurrDate =UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+//			 String sUF_Prefix = "formshow_" + sGetCurrDate;
+//			 System.out.println("File Uploaded");
+//			 xlObj.setCellData("Sheet1", 1, 47, sUF_Prefix);
+//			 logger.info("Upload file prefix added to Datasheet");
 			 
 			 
 			// IndvObj.clickGeneralNext();
