@@ -96,3 +96,64 @@
 16:43:57.795 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Expected Value:Choose the value..! Actual Value: Choose the value..!
 16:43:57.795 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Control Question Passed : Actual Value is: Choose the value..!Expected Value is: Choose the value..!
 16:44:19.499 [main] INFO  utilities.Browser.SurveyFormReUsables - Rank Matrix Response Values Passed : Actual Value is: 147Expected Value is: 147
+16:51:47.612 [main] INFO  testCases.TC_002_SFS_All_Mobile - ******starting TC_002_SFS_All_Mobile ****
+16:51:47.620 [main] INFO  testCases.TC_002_SFS_All_Mobile - Test Execution on Browser: chrome
+16:51:47.722 [main] INFO  testCases.TC_002_SFS_All_Mobile - Excel file Utility instance created
+16:51:49.360 [main] INFO  testCases.TC_002_SFS_All_Mobile - Row Count is: 1
+16:51:49.476 [main] INFO  testCases.TC_002_SFS_All_Mobile - Col Count is: 50
+16:51:49.476 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values started...
+16:51:54.331 [main] INFO  testCases.TC_002_SFS_All_Mobile - Extracting DataSheet Values Completed...
+16:52:11.320 [main] INFO  testCases.TC_002_SFS_All_Mobile - Survey Form Url Launched..
+16:52:15.449 [main] INFO  testCases.TC_002_SFS_All_Mobile - Build Url Pass
+16:52:18.614 [main] INFO  utilities.Android.SurveyFormReUsables - Section Title Passed : Actual Value is: Section Title..!Expected Value is: Section Title..!
+16:52:19.627 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section Title Validation done:  Section Title..! 
+16:52:21.654 [main] INFO  pageObjects.Android.SectionControlsPage - Message Control Title Validation with Expected: Hi, Welcome to Survey form...! and Actual is:  Hi, Welcome to chat bot..! 
+16:52:23.926 [main] INFO  pageObjects.Android.SectionControlsPage - MultiChoice Control Title Validation with Expected: Select an option..! and Actual is:  Select an option..! 
+16:52:28.635 [main] INFO  utilities.Android.UtilityCustomFunctions - [Strongly DisAgree] is selected in List
+16:52:28.637 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiChoice Item Selected : Strongly DisAgree
+16:52:32.145 [main] INFO  pageObjects.Android.SectionControlsPage - TextQuestion Control Title Validation with Expected: Please type an answer ..! and Actual is:  Please type an answer ..! 
+16:52:39.367 [main] INFO  testCases.TC_002_SFS_All_Mobile - Text Entered in TextAnswer Control
+16:52:41.839 [main] INFO  pageObjects.Android.SectionControlsPage - Email Control Title Validation with Expected: What is your email address? and Actual is:  What is your email address? 
+16:52:45.781 [main] INFO  testCases.TC_002_SFS_All_Mobile - Email Id Entered
+16:52:49.179 [main] INFO  pageObjects.Android.SectionControlsPage - Phone Number Control Title Validation with Expected: Please type your phone number and Actual is:  Please type your phone number 
+16:52:53.583 [main] INFO  testCases.TC_002_SFS_All_Mobile - Phone Number Entered
+16:53:01.066 [main] INFO  pageObjects.Android.SectionControlsPage - Appointment Control Title Validation with Expected: Book an appointment / meeting and Actual is:  Book an appointment / meeting 
+16:53:03.789 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment button Clicked
+16:53:55.193 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Updated to Datasheet
+16:53:56.693 [main] INFO  testCases.TC_002_SFS_All_Mobile - Appointment Time Captured in Expected Value
+16:54:03.428 [main] INFO  pageObjects.Android.SectionControlsPage - MultiSelect Control Title Validation with Expected: Select your choices..! and Actual is:  Select your choices..! 
+16:54:14.761 [main] INFO  testCases.TC_002_SFS_All_Mobile - MultiSelect Value Selected
+16:54:18.091 [main] INFO  pageObjects.Android.SectionControlsPage - List Control Title Validation with Expected: Type and select your answer..! and Actual is:  Type and select your answer..! 
+16:54:20.628 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Input Box Clicked 
+16:54:26.972 [main] INFO  testCases.TC_002_SFS_All_Mobile - List Item Selected Sample Option 5
+16:54:30.886 [main] INFO  pageObjects.Android.SectionControlsPage - Number Control Title Validation with Expected: Enter the Number? and Actual is:  Enter the Number? 
+16:54:33.239 [main] INFO  testCases.TC_002_SFS_All_Mobile - Number Selected 1234567890
+16:54:38.337 [main] INFO  pageObjects.Android.SectionControlsPage - Range Control Title Validation with Expected: Select a range and Actual is:  Select a range 
+16:54:54.040 [main] INFO  testCases.TC_002_SFS_All_Mobile - Range Selected 30
+16:54:59.339 [main] INFO  pageObjects.Android.SectionControlsPage - Rating Control Title Validation with Expected: How was your experience? and Actual is:  How was your experience? 
+16:55:03.377 [main] INFO  testCases.TC_002_SFS_All_Mobile - Rating Value: OkayClicked
+16:55:16.246 [main] INFO  pageObjects.Android.SectionControlsPage - Opinion Scale Control Title Validation with Expected: Choose a number? and Actual is:  Choose a number? 
+16:55:23.641 [main] INFO  utilities.Android.UtilityCustomFunctions - [7] is selected in List
+16:55:23.641 [main] INFO  testCases.TC_002_SFS_All_Mobile - Opinion Scale : 7Clicked
+16:55:31.776 [main] INFO  pageObjects.Android.SectionControlsPage - Date Control Title Validation with Expected: Select a date and Actual is: Select a date
+16:56:13.307 [main] INFO  testCases.TC_002_SFS_All_Mobile - Date Value Updated to DataSheet
+16:56:20.485 [main] INFO  pageObjects.Android.SectionControlsPage - Links Control Title Validation with Expected: Please contact us and Actual is:   Please contact us  
+16:56:26.581 [main] INFO  pageObjects.Android.SectionControlsPage - ThankYou Control Title Validation with Expected: Nice chatting with you and Actual is: Nice chatting with you
+16:56:31.112 [main] INFO  pageObjects.Android.SectionControlsPage - PictureMessage Control Title Validation with Expected: Select the picture…! and Actual is:  Select the picture…! 
+16:56:31.819 [main] INFO  testCases.TC_002_SFS_All_Mobile - Picture Message Seleted:SelectPicture
+16:56:37.627 [main] INFO  pageObjects.Android.SectionControlsPage - YesorNo Control Title Validation with Expected: Select Yes or No..? and Actual is:  Select Yes or No..? 
+16:56:38.269 [main] INFO  testCases.TC_002_SFS_All_Mobile - Yes or No ClickedNo
+16:56:41.605 [main] INFO  pageObjects.Android.SectionControlsPage - Agreement Control Title Validation with Expected: Terms and Conditions..! and Actual is:  Terms and Conditions..! 
+16:56:43.724 [main] INFO  utilities.Android.SurveyFormReUsables - Agreement Text Passed : Actual Value is: I agree to the terms and conditionsExpected Value is: I agree to the terms and conditions
+16:56:44.736 [main] INFO  testCases.TC_002_SFS_All_Mobile - Validation of Agreement Text Actual is: I agree to the terms and conditions Expected is: I agree to the terms and conditions
+16:56:46.546 [main] INFO  pageObjects.Android.SectionControlsPage - RankingMatrix Control Title Validation with Expected: Choose the value..! and Actual is:  Choose the value..! 
+16:56:49.002 [main] INFO  testCases.TC_002_SFS_All_Mobile - Ranking Matrix Values Selected
+16:56:54.653 [main] INFO  testCases.TC_002_SFS_All_Mobile - Section UI Form Submitted
+16:56:59.604 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - ******starting TC_002_SFS_All_MobileResponse ****
+16:56:59.604 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Test Execution on Browser: chrome
+16:56:59.604 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Excel file Utility instance created
+16:56:59.657 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Row Count is: 1
+16:56:59.800 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Col Count is: 50
+16:56:59.800 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values started...
+16:57:03.990 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values Completed...
+16:57:08.995 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Navigation started

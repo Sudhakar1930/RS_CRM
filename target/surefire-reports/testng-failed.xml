@@ -11,8 +11,8 @@
         <methods>
           <include name="onStart"/>
           <include name="setup"/>
-          <include name="flush"/>
           <include name="testMobileSectionContrls"/>
+          <include name="flush"/>
           <include name="testName"/>
         </methods>
       </class> <!-- testCases.TC_002_SFS_All_MobileResponse -->
