@@ -315,3 +315,27 @@
 01:07:20.682 [main] INFO  utilities.Browser.SurveyFormReUsables - FileUpload Control Question Expected Value:Upload file Actual Value: Upload file
 01:07:20.682 [main] INFO  utilities.Browser.SurveyFormReUsables - FileUpload Control Question Passed : Actual Value is: Upload fileExpected Value is: Upload file
 01:07:22.079 [main] INFO  utilities.Browser.SurveyFormReUsables - FileUpload Control Answer Passed : Actual Value is: trueExpected Value is: true
+14:16:52.374 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - ******starting TC_002_SFS_All_MobileResponse ****
+14:16:52.384 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Test Execution on Browser: chrome
+14:16:52.391 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Excel file Utility instance created
+14:16:53.762 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Row Count is: 1
+14:16:53.965 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Col Count is: 50
+14:16:53.965 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values started...
+14:16:59.752 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Extracting DataSheet Values Completed...
+14:17:04.767 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Navigation started
+14:17:11.075 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Login details Entered
+14:17:11.214 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Chat bot Logged In
+14:17:26.244 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard wait for 15 secs
+14:17:26.542 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clear all button clicked on listbox
+14:17:27.654 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Build Name entered in List Box
+14:17:30.665 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Waited for 3 secs
+14:17:30.774 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Enter Key applied on ListBox
+14:17:31.788 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard Wait for 1 sec
+14:17:31.947 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked side bar Build button once
+14:17:32.951 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Hard Wait for 1 sec
+14:17:33.080 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked side bar Result
+14:17:33.764 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Side Item Response clicked
+14:17:34.041 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked refresh Response
+14:17:34.241 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - clicked refresh Response Again
+14:17:37.399 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Clicked first Response
+14:17:37.399 [main] INFO  testCases.TC_002_SFS_All_MobileResponse - Navigated to Build: SFAllMobile_Section

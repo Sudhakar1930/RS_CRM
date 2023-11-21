@@ -11,20 +11,11 @@
         <methods>
           <include name="onStart"/>
           <include name="setup"/>
-          <include name="flush"/>
           <include name="testMobileSectionContrls"/>
+          <include name="flush"/>
           <include name="testName"/>
         </methods>
       </class> <!-- testCases.TC_002_SFS_All_MobileResponse -->
-      <class name="testCases.TC_001_SFI_All_Mobile">
-        <methods>
-          <include name="onStart"/>
-          <include name="TestMobileIndividualControls"/>
-          <include name="testName"/>
-          <include name="flush"/>
-          <include name="configureAppium"/>
-        </methods>
-      </class> <!-- testCases.TC_001_SFI_All_Mobile -->
       <class name="testCases.TC_002_SFS_All_Mobile">
         <methods>
           <include name="onStart"/>
