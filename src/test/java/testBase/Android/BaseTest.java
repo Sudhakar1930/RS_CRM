@@ -76,10 +76,10 @@ Logger logger = LogManager.getLogger(this.getClass());
 	UiAutomator2Options options = new UiAutomator2Options();
 
 
-	options.setDeviceName("emulator-5554");
+	options.setDeviceName("R9ZR908HTNR");
 //	options.setDeviceName("db48f8d9");
 	
-	options.setPlatformVersion("11.0");
+	options.setPlatformVersion("13.0");
 	options.setPlatformName("Android");
 	options.noReset();
 	options.withBrowserName("Chrome");

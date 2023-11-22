@@ -144,7 +144,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 					Assert.fail("Message Control Not Displayed");
 				}
 
-			
+			Thread.sleep(3000);
 //			MultiChoice Control Validation
 			if(IndvObj.bIsMultiChoiceDisplayed()) {
 
@@ -163,10 +163,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				Assert.fail("MultiChoice Not Displayed");
 			}
 			
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			IndvObj.clickGeneralNext();
 			logger.info("MultiChoice Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 //			TextQuestion Control Validation
 			if (IndvObj.bIsTextQuestionDisplayed()) {
 				freport("Text Question Conrol Present", "pass", node);
@@ -183,9 +183,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("Text Question Conrol Missing");
 				Assert.fail("Text Question Conrol Missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Text Question Next Clicked");
-			
+			Thread.sleep(3000);
 	//		Email Control
 			if(IndvObj.bEmailPresent()) {
 				freport("Email Control Present" , "pass",node);
@@ -202,9 +203,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("Email Control Missing");
 				Assert.fail("Email Control Missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Email Next Clicked") ;
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 //			PhoneNumber Control Validation
 			if(IndvObj.bIsPhoneNoDisplayed()) {
 				String sActPN_Title = IndvObj.getGeneralTitle();
@@ -223,10 +225,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				 logger.info("Phone Number Conrol Missing");
 				 Assert.fail("PhoneNumber Missing");
 			}
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			IndvObj.clickPhoneNumberNext();
 			logger.info("PhoneNumber Next Clicked") ;
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			
 			//Appointment
 			 if(IndvObj.bIsAppointmentDisplayed()) {
@@ -263,7 +265,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			 }
 			 IndvObj.clickGeneralNext();
 			 logger.info("Appointment Next Button clicked");
-			 Thread.sleep(1000);
+			 Thread.sleep(3000);
 //			MultiSelect Control Validation
 			if(IndvObj.bIsMultiSelectDisplayed()) {
 				String sActMS_Title = IndvObj.getSecGenTitle();
@@ -301,9 +303,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("List Conrol missing");
 				Assert.fail("List Conrol missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("List Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			//Number
 			if(IndvObj.bIsNumberDisplayed()) {
 				 freport("Number Control Present" , "pass",node);
@@ -317,9 +320,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("Number Control Missing");
 				Assert.fail("Number Control Missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Number Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			//Range
 			if(IndvObj.bIsRangeDisplayed()) {
 				freport("Range Conrol Present" , "pass",node);
@@ -337,9 +341,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				freport("Range Conrol missing" , "fail",node);
 				Assert.fail("Range Conrol missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Range Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			//Rating
 			if(IndvObj.bIsRatingDisplayed()) {
 			logger.info("Rating control Present");
@@ -363,9 +368,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				Assert.fail("Rating Conrol missing");
 				
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Rating Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			// Opinion scale 
 			if(IndvObj.bIsOpinionScaleDisplayed()) {
 				freport("Opinion Scale Present", "pass", node);
@@ -389,9 +395,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("Opinion Scale Conrol missing");
 				Assert.fail("Opinion Scale Conrol Missing");
 			}
+			Thread.sleep(3000);
 			IndvObj.clickGeneralNext();
 			logger.info("Opinion Scale Next Clicked");
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			//Date
 			if(IndvObj.bIsDateDisplayed()) {
 			freport("Date Control Present", "pass", node);
@@ -414,9 +421,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				logger.info("Date Conrol Missing");
 				Assert.fail("Date Control Missing");
 			}
+			 Thread.sleep(1000);
 			 IndvObj.clickGeneralNext();
 			 logger.info("Date Next Clicked");
-			 Thread.sleep(1000);
+			 Thread.sleep(3000);
 			
 			 //Links Validation
 			 if(IndvObj.bIsLinksControlDisplayed()) {
@@ -438,7 +446,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 			 }	
 			 IndvObj.clickGeneralNext();
 			 logger.info("Links Next Clicked");
-			 Thread.sleep(1000);
+			 Thread.sleep(3000);
 			//ThankYou Control
 			 if(IndvObj.bIsThankYouDisplayed()) {
 				 Thread.sleep(1000);
@@ -454,7 +462,8 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				 Assert.fail("ThankYou Control Not Displayed");
 			 }
 			 IndvObj.clickThankYouGo();
-			 logger.info("ThankYou Next Clicked");	
+			 logger.info("ThankYou Next Clicked");
+			 Thread.sleep(3000);
 			// Picture Message Control
 				if (IndvObj.bIsPictureMessageDisplayed()) {
 					freport("Picture Message Control Present", "pass", node);
@@ -477,7 +486,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 					Thread.sleep(1000);
 					IndvObj.clickGeneralNext();
 					logger.info("Picture Message Next Clicked");
-					Thread.sleep(1000);
+					Thread.sleep(3000);
 			 
 			// Yes or No
 				if (IndvObj.bIsYesorNoDisplayed()) {
@@ -499,7 +508,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				//Yes or No Next Clicked
 				IndvObj.clickGeneralNext();
 				logger.info("YesorNo Next Clicked");
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 			 
 				//Agreement Control	
 				if (IndvObj.bIsAgreementDisplayed()) {
@@ -518,9 +527,10 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 					logger.info("Agreement Conrol Missing");
 					Assert.fail("Agreement Conrol Missing");
 				}
+				Thread.sleep(1000);
 				IndvObj.clickGeneralNext();
 				logger.info("Agreement Next Clicked");
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				//Rank Matrix Control
 				if(IndvObj.bIsRankMatrixDisplayed()) {
 					logger.info("RankMatrix control present");
@@ -540,7 +550,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				}//Rank Matrix Displayed
 				IndvObj.clickGeneralNext();
 				logger.info("Ranking Matrix Next Clicked");
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				
 				
 //				System.out.println("All Contexts " + driver.getContextHandles());
@@ -552,12 +562,20 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 //				if(IndvObj.bIsGoogleMapDisplayed()) {
 //					freport("Google Map Control Present" , "pass",node);
 //					logger.info("Google Map Control Present");
-//						driver.context("NATIVE_APP");
-//						Thread.sleep(1000);
-//						IndvObj.clickAndroidLinkAllow();
-//						Thread.sleep(3000);
-//						IndvObj.clickAndroidAllowRecord();
-//						driver.context("CHROMIUM");
+//					System.out.println("All Contexts " + driver.getContextHandles());
+//					logger.info("All Contexts " + driver.getContextHandles());
+//					driver.context("NATIVE_APP");
+//					System.out.println("Native app set ");
+//					Thread.sleep(3000);
+//					IndvObj.clickAndroidLinkAllow();
+//					driver.context("CHROMIUM");
+//					
+////						driver.context("NATIVE_APP");
+////						Thread.sleep(1000);
+////						IndvObj.clickAndroidLinkAllow();
+////						Thread.sleep(3000);
+////						IndvObj.clickAndroidAllowRecord();
+////						driver.context("CHROMIUM");
 //					   String sActGM_Title = IndvObj.getSecGenTitle();
 //					   oSFR.fSoftAssert(sActGM_Title.trim(),sExpGM_Title,"Google Map Title",node);
 //					   logger.info("Validation of Google Map Control Title" + sActGM_Title) ;
@@ -575,7 +593,7 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 //				Thread.sleep(1000);
 //				IndvObj.clickGeneralNext();
 //				logger.info("Google Map Next Clicked");
-//			
+//				Thread.sleep(3000);
 ////VR
 //			
 //				//VR Control

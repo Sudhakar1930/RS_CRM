@@ -9,10 +9,21 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">chrometest</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">142,734</td><td></td><td></td></tr>
+<tr><td><a href="#t0">chrometest</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">71,397</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">chrometest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testCases.TC002_SFI_MBPopups</td><td><a href="#m0">TestMobilePopupControls</a></td><td rowspan="1">1700647336356</td><td rowspan="1">114872</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">chrometest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testCases.TC_001_SFI_All_Mobile</td><td><a href="#m0">TestMobileIndividualControls</a></td><td rowspan="1">1700650374591</td><td rowspan="1">33127</td></tr></tbody>
 </table>
-<h2>chrometest</h2><h3 id="m0">testCases.TC002_SFI_MBPopups#TestMobilePopupControls</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>chrometest</h2><h3 id="m0">testCases.TC_001_SFI_All_Mobile#TestMobileIndividualControls</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: stale element reference: stale element not found
+  (Session info: chrome=119.0.6045.163)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [eb3d64d0-a219-42ff-a06a-cd881892dbb2, executeScript {script=arguments[0].click();, args=[{element-6066-11e4-a52e-4f735466cecf=831358C18A61BA9393702382B8D11BD4_element_12}]}]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, autoGrantPermissions: true, automationName: UIAutomator2, browserName: Chrome, deviceName: R9ZR908HTNR, noReset: true, platformName: ANDROID, platformVersion: 13.0}, appium:deviceApiLevel: 33, appium:deviceManufacturer: samsung, appium:deviceModel: SM-T220, appium:deviceName: R9ZR908HTNR, appium:deviceScreenDensity: 213, appium:deviceScreenSize: 800x1340, appium:deviceUDID: R9ZR908HTNR, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 1.3312501, appium:platformVersion: 13, appium:statBarHeight: 32, appium:takesScreenshot: true, appium:viewportRect: {height: 1244, left: 0, top: 32, width: 800}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: Chrome, platformName: ANDROID}
+Session ID: eb3d64d0-a219-42ff-a06a-cd881892dbb2
+	at testCases.TC_001_SFI_All_Mobile.TestMobileIndividualControls(TC_001_SFI_All_Mobile.java:669)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

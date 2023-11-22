@@ -97,8 +97,11 @@ public class IndvControls {
 	WebElement txtPhoneNumberInput;
 	
 	
-	@FindBy(xpath="//my[@class='ng-star-inserted']")
+//	@FindBy(xpath="//my[@class='ng-star-inserted']")
+	@FindBy(xpath="//*[@id='rootdiv']/p/button/my")
 	WebElement btnPhoneNumberNext;
+	
+	
 	
 	@FindBy(xpath="//button[normalize-space()='Book an appointment']")
 	WebElement btnBookAppointment;
