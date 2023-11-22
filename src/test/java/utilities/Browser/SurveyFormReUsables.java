@@ -96,13 +96,15 @@ public class SurveyFormReUsables extends BaseClass{
 	}*/
 	
 	public void fSoftAssert(String sActValue, String sExpValue,String sMessage,ExtentTest Node) throws IOException, InterruptedException {
+		BaseClass b = new BaseClass();
 		if(sActValue.trim().equalsIgnoreCase(sExpValue.trim())) {
 			logger.info(sMessage + " Passed : Actual Value is: " +sActValue + "Expected Value is: "+sExpValue);
-			freport(sMessage, "Pass",Node);
+			b.freport(sMessage, "Pass",Node);
+			
 		}
 		else {
 			logger.info(sMessage + " Failed : Actual Value is: " +sActValue + "Expected Value is: "+sExpValue);
-			freport(sMessage, "fail",Node);
+			b.freport(sMessage, "fail",Node);
 			
 			
 		}

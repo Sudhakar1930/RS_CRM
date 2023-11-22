@@ -46,29 +46,35 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import pageObjects.Android.NavigatetoResponse;
 import testBase.Browser.BaseClass;
 import utilities.ExtentReportManager;
 public class BaseTest extends ExtentReportManager {
 public AndroidDriver driver;
 public AppiumDriverLocalService service;
+public AppiumServiceBuilder builder;
+//import io.appium.java_client.service.local.AppiumServiceBuilder;
 public ResourceBundle rb;
 public static SoftAssert sAssertinFn;
+
 protected static File file;
 Logger logger = LogManager.getLogger(this.getClass());
  @BeforeClass	
  public void configureAppium() throws MalformedURLException, InterruptedException {
 	//AppiumDriverLocalService service = AppiumServiceBuilder().withAppiumJS(new File)
 	 System.out.println("Before Service Start");
-	 service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-			.withIPAddress("127.0.0.1").usingPort(4723).build();
+//	 service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+//			.withIPAddress("127.0.0.1").usingPort(4723).build();
+	 builder = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
+				.withIPAddress("127.0.0.1").usingPort(4723).withArgument(GeneralServerFlag.SESSION_OVERRIDE);
+	AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
 	service.start();
 	System.out.println("After Service Start");
 	DesiredCapabilities cap = new DesiredCapabilities();
 	ChromeOptions cOptions = new ChromeOptions();
 	UiAutomator2Options options = new UiAutomator2Options();
-//	options.setDeviceName("emulator-5554");
-//	options.setDeviceName("db48f8d9");
+
 
 	options.setDeviceName("emulator-5554");
 //	options.setDeviceName("db48f8d9");

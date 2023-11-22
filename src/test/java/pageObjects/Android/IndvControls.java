@@ -149,7 +149,7 @@ public class IndvControls {
 	@FindBy(xpath="//input[@id='numbershow']")
 	WebElement txtNumberInput;
 	
-	@FindBy(xpath="//input[@id='rangeinput']")
+	@FindBy(xpath="//mat-slider[@role='slider']")
 	WebElement eleRangeSlider;
 	
 	
@@ -977,6 +977,7 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
         
         System.out.println("After eledoc Seelected");
         driver.context("CHROMIUM");
+        Thread.sleep(3000);
  	}
 	
 	public boolean selectOneItem(String strItem) throws Exception{

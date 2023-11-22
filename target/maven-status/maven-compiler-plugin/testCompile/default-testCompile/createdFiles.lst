@@ -1,3 +1,4 @@
+testCases\TC_003_SFI_All_MobilePopupResponse.class
 testBase\Browser\BaseClass.class
 pageObjects\Browser\BasePage.class
 testCases\TC_002_SFS_All_MobileResponse.class
@@ -12,12 +13,15 @@ testCases\TC002_SFI_MBPopups.class
 utilities\Android\SurveyFormReUsables.class
 utilities\ExcelUtility.class
 utilities\Android\UtilityCustomFunctions.class
+testCases\TC_004_SFS_All_MobilePopupResponse.class
 utilities\Browser\SurveyFormReUsables.class
 pageObjects\Android\NavigatetoResponse.class
 testCases\TC_001_SFI_All_Mobile.class
 pageObjects\Android\IndvControls.class
+testCases\TC_004_SFS_All_MobilePopups.class
 utilities\ExtentReportManager.class
 testBase\Android\Base1.class
 utilities\DataProviders.class
 testCases\SFAllMB_Independent.class
 testCases\TC_002_SFS_All_Mobile.class
+testCases\TC_003_SFI_All_MobilePopups.class

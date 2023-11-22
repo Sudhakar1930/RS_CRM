@@ -63,12 +63,28 @@ public class TC002_SFI_MBPopups extends BaseTest {
 			
 			Thread.sleep(2000);
 			
-//			Click Message Next
-			IndvObj.clickMessageNext();
-			
+			//Upload file
+			 String sActUF_Title = IndvObj.getSecGenTitle();
+			 oSFR.fSoftAssert(sActUF_Title.trim(),sExpUF_Title,"File Upload Control Title",node);
+			 logger.info("Validation of File Upload Control Title") ;
+
+			 IndvObj.SelectFiletoUpload(sExpUF_Value);
+			 Thread.sleep(3000);
+			 freport("File Selected : " + sExpUF_Value  , "pass",node);
+			 String sGetCurrDate =utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			 String sUF_Prefix = "formshow_" + sGetCurrDate;
+			 System.out.println("File Uploaded");
+			 xlObj.setCellData("Sheet1", 1, 10, sUF_Prefix);
+			 logger.info("Upload file prefix added to Datasheet");
+			 Thread.sleep(3000);
+			 IndvObj.clickGeneralNext();
+			 logger.info("FileUpload Next Clicked");
+
+			 
 			System.out.println("All Contexts " + driver.getContextHandles());
 			logger.info("All Contexts " + driver.getContextHandles());
 			driver.context("NATIVE_APP");
+			System.out.println("Native app set ");
 			Thread.sleep(3000);
 			IndvObj.clickAndroidLinkAllow();
 			driver.context("CHROMIUM");
@@ -120,23 +136,7 @@ public class TC002_SFI_MBPopups extends BaseTest {
 			IndvObj.clickGeneralNext();
 			logger.info("Voice Record Next Clicked");
 			
-			//Upload file
-			 String sActUF_Title = IndvObj.getSecGenTitle();
-			 oSFR.fSoftAssert(sActUF_Title.trim(),sExpUF_Title,"File Upload Control Title",node);
-			 logger.info("Validation of File Upload Control Title") ;
-
-			 IndvObj.SelectFiletoUpload(sExpUF_Value);
-			 Thread.sleep(3000);
-			 freport("File Selected : " + sExpUF_Value  , "pass",node);
-			 String sGetCurrDate =utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-			 String sUF_Prefix = "formshow_" + sGetCurrDate;
-			 System.out.println("File Uploaded");
-			 xlObj.setCellData("Sheet1", 1, 10, sUF_Prefix);
-			 logger.info("Upload file prefix added to Datasheet");
-			 Thread.sleep(3000);
-			 IndvObj.clickGeneralNext();
-			 logger.info("FileUpload Next Clicked");
-			 
+						 
 			 
 			
 			 

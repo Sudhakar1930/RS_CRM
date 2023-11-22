@@ -543,108 +543,108 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 				Thread.sleep(1000);
 				
 				
-				System.out.println("All Contexts " + driver.getContextHandles());
-				logger.info("All Contexts " + driver.getContextHandles());
-				Thread.sleep(1000);
-				
-				Thread.sleep(1000);
-				//GoogleMap Control
-				if(IndvObj.bIsGoogleMapDisplayed()) {
-					freport("Google Map Control Present" , "pass",node);
-					logger.info("Google Map Control Present");
-						driver.context("NATIVE_APP");
-						Thread.sleep(1000);
-						IndvObj.clickAndroidLinkAllow();
-						Thread.sleep(3000);
-						IndvObj.clickAndroidAllowRecord();
-						driver.context("CHROMIUM");
-					   String sActGM_Title = IndvObj.getSecGenTitle();
-					   oSFR.fSoftAssert(sActGM_Title.trim(),sExpGM_Title,"Google Map Title",node);
-					   logger.info("Validation of Google Map Control Title" + sActGM_Title) ;
-					   Thread.sleep(1000);
-					   //Enter GoogleMap Values
-						IndvObj.setGoogleMapAddress(sExpGM_Value);
-						freport("Google Map Address Entered:" + sExpGM_Value , "pass",node);
-						logger.info("Address Entered in Google Map");
-						
-						}else {
-							logger.info("Google Map Control Missing");
-							freport("Google Map Control Missing" , "fail",node);
-							Assert.fail("Google Map Control Missing");
-					}
-				Thread.sleep(1000);
-				IndvObj.clickGeneralNext();
-				logger.info("Google Map Next Clicked");
-			
-//VR
-			
-				//VR Control
-				if(IndvObj.bIsVRDisplayed()) {
-					 logger.info("VR control present");
-					 freport("Voice Record Control present" , "pass",node);
-					 Thread.sleep(1000);
-					 String sActVR_Title = IndvObj.getSecGenTitle();
-					 oSFR.fSoftAssert(sActVR_Title.trim(),sExpVR_Title,"Voice Record Title",node);
-					 logger.info("Validation of Voice Record Control Title" + sActVR_Title) ;
-					 
-					IndvObj.clickMic();
-					Thread.sleep(2000);
-					System.out.println("All Contexts 2nd time " + driver.getContextHandles());
-					logger.info("All Contexts " + driver.getContextHandles());
-					driver.context("NATIVE_APP");
-					System.out.println("Switched to Native App");
-					Thread.sleep(3000);
-					IndvObj.clickAndroidLinkAllow();
-					Thread.sleep(4000);
-					IndvObj.clickAndroidAllowRecord();
-					driver.context("CHROMIUM");
-					Thread.sleep(5000);
-					IndvObj.clickStop();
-					String sCurrDate = utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-					String sPrefixVR="voice_record_" + sCurrDate;
-					logger.info("Voice Recorded");
-					freport("Voice Recorded:" + sPrefixVR , "pass",node);
-					//Update it to Excel sheet
-					xlObj.setCellData("Sheet1", 1, 43, sPrefixVR);
-					sExpVR_Value = xlObj.getCellData("Sheet1", 1, 43);
-					logger.info("Voice Record Prefix updated to Datasheet");
-				}
-				else {
-					logger.info("VR control Missing");
-					freport("Voice Record Control Missing" , "fail",node);
-					Assert.fail("Voice Record Not Displayed");
-				}
-				Thread.sleep(2000);
-				IndvObj.clickGeneralNext();
-				logger.info("Voice Record Next Clicked");
-			
-			// File Upload
-			if (IndvObj.bIsFileUploadDisplayed()) {
-				IndvObj.clickAndroidAllowRecord();
-				freport("FileUpload Control Present", "pass", node);
-				logger.info("FileUpload Conrol Present");
-				String sActUF_Title = IndvObj.getSecGenTitle();
-				oSFR.fSoftAssert(sActUF_Title.trim(), sExpUF_Title, "File Upload Control Title", node);
-				logger.info("Validation of File Upload Control Title");
-				//set file
-				IndvObj.SelectFiletoUpload(sExpUF_Value);
-				Thread.sleep(3000);
-				freport("File Selected : " + sExpUF_Value, "pass", node);
-				//update value to DataTable
-				String sGetCurrDate = UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-				String sUF_Prefix = "formshow_" + sGetCurrDate;
-				System.out.println("File Uploaded");
-				xlObj.setCellData("Sheet1", 1, 46, sUF_Prefix);
-				logger.info("Upload file prefix added to Datasheet");
-				
-			} else {
-				freport("FileUpload Control Missing", "fail", node);
-				logger.info("FileUpload Conrol Missing");
-				Assert.fail("FileUpload control Missing");
-			}
-			IndvObj.clickGeneralNext();
-			logger.info("FileUpload Next Clicked");
-			Thread.sleep(1000);
+//				System.out.println("All Contexts " + driver.getContextHandles());
+//				logger.info("All Contexts " + driver.getContextHandles());
+//				Thread.sleep(1000);
+//				
+//				Thread.sleep(1000);
+//				//GoogleMap Control
+//				if(IndvObj.bIsGoogleMapDisplayed()) {
+//					freport("Google Map Control Present" , "pass",node);
+//					logger.info("Google Map Control Present");
+//						driver.context("NATIVE_APP");
+//						Thread.sleep(1000);
+//						IndvObj.clickAndroidLinkAllow();
+//						Thread.sleep(3000);
+//						IndvObj.clickAndroidAllowRecord();
+//						driver.context("CHROMIUM");
+//					   String sActGM_Title = IndvObj.getSecGenTitle();
+//					   oSFR.fSoftAssert(sActGM_Title.trim(),sExpGM_Title,"Google Map Title",node);
+//					   logger.info("Validation of Google Map Control Title" + sActGM_Title) ;
+//					   Thread.sleep(1000);
+//					   //Enter GoogleMap Values
+//						IndvObj.setGoogleMapAddress(sExpGM_Value);
+//						freport("Google Map Address Entered:" + sExpGM_Value , "pass",node);
+//						logger.info("Address Entered in Google Map");
+//						
+//						}else {
+//							logger.info("Google Map Control Missing");
+//							freport("Google Map Control Missing" , "fail",node);
+//							Assert.fail("Google Map Control Missing");
+//					}
+//				Thread.sleep(1000);
+//				IndvObj.clickGeneralNext();
+//				logger.info("Google Map Next Clicked");
+//			
+////VR
+//			
+//				//VR Control
+//				if(IndvObj.bIsVRDisplayed()) {
+//					 logger.info("VR control present");
+//					 freport("Voice Record Control present" , "pass",node);
+//					 Thread.sleep(1000);
+//					 String sActVR_Title = IndvObj.getSecGenTitle();
+//					 oSFR.fSoftAssert(sActVR_Title.trim(),sExpVR_Title,"Voice Record Title",node);
+//					 logger.info("Validation of Voice Record Control Title" + sActVR_Title) ;
+//					 
+//					IndvObj.clickMic();
+//					Thread.sleep(2000);
+//					System.out.println("All Contexts 2nd time " + driver.getContextHandles());
+//					logger.info("All Contexts " + driver.getContextHandles());
+//					driver.context("NATIVE_APP");
+//					System.out.println("Switched to Native App");
+//					Thread.sleep(3000);
+//					IndvObj.clickAndroidLinkAllow();
+//					Thread.sleep(4000);
+//					IndvObj.clickAndroidAllowRecord();
+//					driver.context("CHROMIUM");
+//					Thread.sleep(5000);
+//					IndvObj.clickStop();
+//					String sCurrDate = utilities.Android.UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+//					String sPrefixVR="voice_record_" + sCurrDate;
+//					logger.info("Voice Recorded");
+//					freport("Voice Recorded:" + sPrefixVR , "pass",node);
+//					//Update it to Excel sheet
+//					xlObj.setCellData("Sheet1", 1, 43, sPrefixVR);
+//					sExpVR_Value = xlObj.getCellData("Sheet1", 1, 43);
+//					logger.info("Voice Record Prefix updated to Datasheet");
+//				}
+//				else {
+//					logger.info("VR control Missing");
+//					freport("Voice Record Control Missing" , "fail",node);
+//					Assert.fail("Voice Record Not Displayed");
+//				}
+//				Thread.sleep(2000);
+//				IndvObj.clickGeneralNext();
+//				logger.info("Voice Record Next Clicked");
+//			
+//			// File Upload
+//			if (IndvObj.bIsFileUploadDisplayed()) {
+//				IndvObj.clickAndroidAllowRecord();
+//				freport("FileUpload Control Present", "pass", node);
+//				logger.info("FileUpload Conrol Present");
+//				String sActUF_Title = IndvObj.getSecGenTitle();
+//				oSFR.fSoftAssert(sActUF_Title.trim(), sExpUF_Title, "File Upload Control Title", node);
+//				logger.info("Validation of File Upload Control Title");
+//				//set file
+//				IndvObj.SelectFiletoUpload(sExpUF_Value);
+//				Thread.sleep(3000);
+//				freport("File Selected : " + sExpUF_Value, "pass", node);
+//				//update value to DataTable
+//				String sGetCurrDate = UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+//				String sUF_Prefix = "formshow_" + sGetCurrDate;
+//				System.out.println("File Uploaded");
+//				xlObj.setCellData("Sheet1", 1, 46, sUF_Prefix);
+//				logger.info("Upload file prefix added to Datasheet");
+//				
+//			} else {
+//				freport("FileUpload Control Missing", "fail", node);
+//				logger.info("FileUpload Conrol Missing");
+//				Assert.fail("FileUpload control Missing");
+//			}
+//			IndvObj.clickGeneralNext();
+//			logger.info("FileUpload Next Clicked");
+//			Thread.sleep(1000);
 			 
 	}	catch(Exception e) {
 		System.out.println(e.getCause());
