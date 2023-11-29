@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">2 methods,  1 skipped,  1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testCases.TC_001_SFI_All_Mobile" class="method navigator-link" hash-for-method="TestMobileIndividualControls">TestMobileIndividualControls</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_002_SFS_All_Mobile" class="method navigator-link" hash-for-method="testSectionContrls">testSectionContrls</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testCases.TC_002_SFS_All_MobileResponse" class="method navigator-link" hash-for-method="testMobileSectionContrls">testMobileSectionContrls</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,26 +132,58 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testCases.TC_001_SFI_All_Mobile</span>
+              <img src="skipped.png"/>
+              <span class="class-name">testCases.TC_002_SFS_All_Mobile</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TestMobileIndividualControls">
-                  </a> <!-- TestMobileIndividualControls -->
-                  <span class="method-name">TestMobileIndividualControls</span>
-                  <div class="stack-trace">java.lang.AssertionError: MultiChoice Not Displayed
-	at testCases.TC_001_SFI_All_Mobile.TestMobileIndividualControls(TC_001_SFI_All_Mobile.java:163)
+                  <a name="testSectionContrls">
+                  </a> <!-- testSectionContrls -->
+                  <span class="method-name">testSectionContrls</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 13.0. The following are available: emulator-5554 (11) 
+Host info: host: &apos;DESKTOP-H290O4K&apos;, ip: &apos;192.168.31.145&apos;
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[{appium:noReset=true, appium:autoGrantPermissions=true, browserName=Chrome, appium:deviceName=R9ZR908HTNR, platformName=ANDROID, appium:automationName=UIAutomator2, appium:platformVersion=13.0}], desiredCapabilities=Capabilities {appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:deviceName: R9ZR908HTNR, appium:noReset: true, appium:platformVersion: 13.0, browserName: Chrome, platformName: ANDROID}}]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:deviceName: R9ZR908HTNR, appium:noReset: true, appium:platformVersion: 13.0, browserName: Chrome, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:177)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:268)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:168)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:90)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:102)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:109)
+	at testBase.Android.BaseTest.configureAppium(BaseTest.java:100)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
-... Removed 32 stack frames
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.TC_002_SFS_All_MobileResponse</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMobileSectionContrls">
+                  </a> <!-- testMobileSectionContrls -->
+                  <span class="method-name">testMobileSectionContrls</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -154,7 +200,8 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;chrometest&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.TC_001_SFI_All_Mobile&quot;/&gt;
+      &lt;class name=&quot;testCases.TC_002_SFS_All_Mobile&quot;/&gt;
+      &lt;class name=&quot;testCases.TC_002_SFS_All_MobileResponse&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- chrometest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -168,7 +215,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">chrometest (1 class)</span>
+                <span class="test-name">chrometest (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -194,16 +241,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TestMobileIndividualControls')
-data.setCell(0, 2, 'testCases.TC_001_SFI_All_Mobile')
-data.setCell(0, 3, 19766);
+data.setCell(0, 1, 'testMobileSectionContrls')
+data.setCell(0, 2, 'testCases.TC_002_SFS_All_MobileResponse')
+data.setCell(0, 3, 128826);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testSectionContrls')
+data.setCell(1, 2, 'testCases.TC_002_SFS_All_Mobile')
+data.setCell(1, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -218,9 +269,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.TC_002_SFS_All_MobileResponse</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">flush</span>
+                <br/>
+                <span class="ignored-method-name">onStart</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -229,28 +289,48 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.TC_001_SFI_All_Mobile</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.TC_002_SFS_All_Mobile</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">onStart(org.testng.TestRunner@28ee0a3c)</span>
+                <span class="method-name">onStart(org.testng.TestRunner@100eeedc)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">testName</span>
-                <span class="method-start">457 ms</span>
+                <span class="method-start">414 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.TC_002_SFS_All_MobileResponse</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">testName</span>
+                <span class="method-start">425 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.TC_002_SFS_All_Mobile</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">configureAppium</span>
-                <span class="method-start">492 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">TestMobileIndividualControls</span>
-                <span class="method-start">17985 ms</span>
+                <span class="method-name">configureAppium</span>
+                <span class="method-start">448 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.TC_002_SFS_All_MobileResponse</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup(chrome)</span>
+                <span class="method-start">2481 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testMobileSectionContrls</span>
+                <span class="method-start">5726 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.TC_002_SFS_All_Mobile</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">flush</span>
-                <span class="method-start">37809 ms</span>
+                <span class="method-start">134626 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

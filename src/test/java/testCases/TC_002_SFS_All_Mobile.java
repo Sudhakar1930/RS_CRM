@@ -36,8 +36,8 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			IndvControls IndvObj = new IndvControls(driver);
 			SectionControlsPage SecObj = new SectionControlsPage(driver);
 			
-//			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Live" + ".xlsx" ;
-			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Rthree" + ".xlsx" ;
+			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Live" + ".xlsx" ;
+//			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Rthree" + ".xlsx" ;
 			
 
 
@@ -109,6 +109,42 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			logger.info("Extracting DataSheet Values Completed...");
 			
 			oSFRSC.fLaunchUrl(driver, sExpBuildUrl);
+			Thread.sleep(1000);
+			Set<String> gContextNames = driver.getContextHandles();
+	        for (String strContextName : gContextNames) {
+	            if (strContextName.contains("NATIVE_APP")) {
+	                driver.context("NATIVE_APP");
+	                break;
+	            }
+	        }
+	        Thread.sleep(3000);
+			System.out.println("Native app set ");
+			Thread.sleep(3000);
+			if(IndvObj.bIsAllowLocPopup())
+			{
+				IndvObj.clickAndroidLinkAllowLocation();
+				System.out.println("Allow Location popup displayed and clicked");
+			}
+			else {
+				System.out.println("Allow Location popup not displayed");
+			}
+			Thread.sleep(3000);
+		    if(IndvObj.bIsAllowPermission()) {
+		    	IndvObj.clickAndroidAllowPermission();
+		    	System.out.println("Allow permission popup displayed and clicked");
+		    }else {
+		    	System.out.println("Allow permission popup not displayed");
+		    }
+		    //set context to chromium
+		    Set<String> gbcontextNames = driver.getContextHandles();
+	        for (String strContextName : gbcontextNames) {
+	            if (strContextName.contains("CHROMIUM")) {
+	                driver.context("CHROMIUM");
+	                break;
+	            }
+	        }
+			System.out.println("Context back to chromium in Section Start");
+			
 			//URL Validation 
 			logger.info("Survey Form Url Launched..");
 			String sActBuildUrl = driver.getCurrentUrl();
@@ -311,24 +347,91 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			 logger.info("Ranking Matrix Values Selected");
 			 freport("Ranking Matrix Values Selected", "pass",node);
 			 
-//			 System.out.println("All Contexts " + driver.getContextHandles());
-//			 logger.info("All Contexts " + driver.getContextHandles());
-//			 driver.context("NATIVE_APP");
-//			 Thread.sleep(5000);
-//			 IndvObj.clickAndroidLinkAllow();
-//			 driver.context("CHROMIUM");
+
 			 
 //			//Google Map Control
+			 Thread.sleep(3000);
+		        System.out.println("Before GM displayed");
+				if(IndvObj.bIsGoogleMapDisplayed()) {
+					System.out.println("Within Google Map context");
+					freport("Google Map Control Present" , "pass",node);
+					logger.info("Google Map Control Present");
+					SecObj.fValidateSectionLabels(driver, 23, sExpGM_Title, "GoogleMap Control Title",node);
+					logger.info("Validation of Google Map Control Title" + sExpGM_Title);
+					System.out.println("Google Map title validated");
+					Thread.sleep(3000);
+//					//Enter GoogleMap Values
+					System.out.println("Expected GM Value to be entered is: " + sExpGM_Value);
+					SecObj.setGoogleMapAddress(sExpGM_Value);
+					logger.info("Address Entered in Google Map");
+					freport("Address Entered in Google Map"+sExpGM_Value, "pass",node);
+					System.out.println("Address Entered in Google Map");
+					}else {
+							logger.info("Section Google Map Control Missing");
+							freport("Section  Google Map Control Missing" , "fail",node);
+							Assert.fail("Section Google Map Control Missing");
+					}//Google Map Present/Not
+				Thread.sleep(3000);
+				
 //			 SecObj.fValidateSectionLabels(driver, 23, sExpGM_Title, "GoogleMap Control Title",node);
 //			 Thread.sleep(3000);
 //			 SecObj.setGoogleMapAddress(sExpGM_Value);
 //			 logger.info("Address Entered in Google Map");
 //			 freport("Address Entered in Google Map"+sExpGM_Value, "pass",node);
 //			 
-//			//Voice Record Control
-//			 SecObj.fValidateSectionLabels(driver, 22, sExpVR_Title, "VoiceRecord Control Title",node);
-//			 Thread.sleep(1000);
-//			 IndvObj.clickMic();
+			//Voice Record Control
+			 SecObj.fValidateSectionLabels(driver, 22, sExpVR_Title, "VoiceRecord Control Title",node);
+			 Thread.sleep(1000);
+			 IndvObj.clickMic();
+			 Set<String> vr1ContextNames = driver.getContextHandles();
+		        for (String strContextName : vr1ContextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+		        Thread.sleep(3000);
+				System.out.println("Native app set ");
+				Thread.sleep(3000);
+				if(IndvObj.bIsAllowLocPopup())
+				{
+					IndvObj.clickAndroidLinkAllowLocation();
+					System.out.println("Allow Location popup displayed and clicked");
+				}
+				else {
+					System.out.println("Allow Location popup not displayed");
+				}
+				Thread.sleep(3000);
+			    if(IndvObj.bIsAllowPermission()) {
+			    	IndvObj.clickAndroidAllowPermission();
+			    	System.out.println("Allow permission popup displayed and clicked");
+			    }else {
+			    	System.out.println("Allow permission popup not displayed");
+			    }
+			    //set context to chromium
+			    Set<String> vr2contextNames = driver.getContextHandles();
+		        for (String strContextName : vr2contextNames) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+				System.out.println("Context back to chromium in Section Start");
+				Thread.sleep(5000);
+				 IndvObj.clickStop();
+				 String sCurrDate = UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+				 String sPrefixVR="voice_record_" + sCurrDate;
+				 logger.info("Voice Recorded");
+				 freport("Voice Recorded", "pass",node);
+				 //Update it to Excel sheet
+					xlObj.setCellData("Sheet1", 1, 44, sPrefixVR);
+					sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
+					logger.info("Voice Record Prefix updated to Datasheet");
+					Thread.sleep(3000);	
+				 SecObj.clickVRUpload();
+				 Thread.sleep(3000);
+				
+				
 //			 System.out.println("All Contexts 2nd time " + driver.getContextHandles());
 //			 logger.info("All Contexts " + driver.getContextHandles());
 //			 driver.context("NATIVE_APP");
@@ -353,20 +456,44 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 //			 SecObj.clickVRUpload();
 //			 Thread.sleep(1000);
 			 
-//			//FileUpload Control
-//		     Thread.sleep(1000);
-//			 SecObj.fValidateSectionLabels(driver, 23, sExpUF_Title, "FileUpload Control Title",node);
+//			 FileUpload Control
+		     Thread.sleep(1000);
+			 SecObj.fValidateSectionLabels(driver, 23, sExpUF_Title, "FileUpload Control Title",node);
 //			 
-////			 SecObj.SelectFiletoUpload(sExpUF_Value);
-//			 IndvObj.SelectFiletoUpload(sExpUF_Value);
-//			 Thread.sleep(3000);
-//			 logger.info("File Uploaded");
-//			 freport("File uploaded: " + sExpUF_Value, "pass",node);
-//			 String sGetCurrDate =UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
-//			 String sUF_Prefix = "formshow_" + sGetCurrDate;
-//			 System.out.println("File Uploaded");
-//			 xlObj.setCellData("Sheet1", 1, 47, sUF_Prefix);
-//			 logger.info("Upload file prefix added to Datasheet");
+			 IndvObj.SelectFiletoUpload(sExpUF_Value);
+			 Thread.sleep(3000);
+			 System.out.println("After media clicked");
+			 Set<String> fcontextNames = driver.getContextHandles();
+		        for (String strContextName : fcontextNames) {
+		            if (strContextName.contains("NATIVE_APP")) {
+		                driver.context("NATIVE_APP");
+		                break;
+		            }
+		        }
+		     Thread.sleep(3000);
+			 boolean btest = IndvObj.IsMediaFirstItemDisplayed();
+			 System.out.println("Media First Item displayed: " + btest);
+			 if(IndvObj.IsMediaFirstItemDisplayed()) {
+				 IndvObj.clickMediaFirstItm();
+			 }
+			 else {
+				 System.out.println("Media item not displayed");
+			 }
+			   Set<String> contextNames1 = driver.getContextHandles();
+		        for (String strContextName : contextNames1) {
+		            if (strContextName.contains("CHROMIUM")) {
+		                driver.context("CHROMIUM");
+		                break;
+		            }
+		        }
+		     Thread.sleep(3000);
+			 logger.info("File Uploaded");
+			 freport("File uploaded: " + sExpUF_Value, "pass",node);
+			 String sGetCurrDate =UtilityCustomFunctions.getCurrentDate("ddMMyyyy");
+			 String sUF_Prefix = "formshow_" + sGetCurrDate;
+			 System.out.println("File Uploaded");
+			 xlObj.setCellData("Sheet1", 1, 47, sUF_Prefix);
+			 logger.info("Upload file prefix added to Datasheet");
 			 
 			 
 			// IndvObj.clickGeneralNext();

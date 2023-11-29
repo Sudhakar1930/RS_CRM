@@ -1,11 +1,15 @@
 package pageObjects.Android;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -38,8 +42,9 @@ public class NavigatetoResponse {
 	@FindBy(css="i.material-icons.gap.rotate.comman.down")
 	WebElement btnBuildSideBar;
 	
-	@FindBy(css="i.material-icons.gap.rotate.comman2")
+	@FindBy(xpath = "//*[@id='sidebar_body']//i[@class='material-icons gap rotate comman2']")
 	WebElement btnSideBarResult;
+	
 	
 	@FindBy(xpath="//span[normalize-space()='Responses']")
 	WebElement btnSideItemResponses;
@@ -99,7 +104,8 @@ public class NavigatetoResponse {
 	//Set Methods
 	public void setBuildName(String strBuildName) throws Exception {
 //		utilities.UtilityCustomFunctions.sendKeys(driver, txtBuildName, strBuildName);
-		txtBuildName.sendKeys(strBuildName);
+		utilities.Browser.UtilityCustomFunctions.sendKeys(driver, txtBuildName, strBuildName);
+		txtBuildName.sendKeys(Keys.ENTER);
 	}
 	
 	public void KeyEnterBuildName() throws Exception {
@@ -107,7 +113,27 @@ public class NavigatetoResponse {
 		//utilities.UtilityCustomFunctions.sendKeys(driver, txtBuildName, "Keys.ENTER");
 	}
 	
-	
+	public boolean bIsCloseAllVisible() {
+		boolean bFlag = false;
+		bFlag = IsElementVisible(driver, btnClearAll);
+		return bFlag;
+	}
+
+	public boolean IsElementVisible(WebDriver driver, WebElement element) {
+		boolean bIsElementVisible = false;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		js.executeScript("arguments[0].scrollIntoView();", element);
+
+		if (element.isDisplayed()) {
+			bIsElementVisible = true;
+		} else {
+			bIsElementVisible = false;
+		}
+		return bIsElementVisible;
+	}
 	
 	
 	

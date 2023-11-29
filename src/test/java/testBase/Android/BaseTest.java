@@ -45,75 +45,45 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import pageObjects.Android.NavigatetoResponse;
 import testBase.Browser.BaseClass;
 import utilities.ExtentReportManager;
 public class BaseTest extends ExtentReportManager {
-public AndroidDriver driver;
-public AppiumDriverLocalService service;
-public AppiumServiceBuilder builder;
-//import io.appium.java_client.service.local.AppiumServiceBuilder;
-public ResourceBundle rb;
-public static SoftAssert sAssertinFn;
 
-protected static File file;
+	public AndroidDriver driver;
+	protected static File file;
+
+
+
 Logger logger = LogManager.getLogger(this.getClass());
- @BeforeClass	
- public void configureAppium() throws MalformedURLException, InterruptedException {
-	//AppiumDriverLocalService service = AppiumServiceBuilder().withAppiumJS(new File)
-	 System.out.println("Before Service Start");
-//	 service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-//			.withIPAddress("127.0.0.1").usingPort(4723).build();
-	 builder = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//build//lib//main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-	AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
-	service.start();
-	System.out.println("After Service Start");
-	DesiredCapabilities cap = new DesiredCapabilities();
-	ChromeOptions cOptions = new ChromeOptions();
+@BeforeClass
+public void configureAppium() throws MalformedURLException, InterruptedException {
+	 AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
+		service.start();
+		System.out.println("Appium Url:" + service.getUrl());
+		System.out.println("Is Server Running:" + service.isRunning());
+	
 	UiAutomator2Options options = new UiAutomator2Options();
 
-
-	options.setDeviceName("R9ZR908HTNR");
-//	options.setDeviceName("db48f8d9");
-	
+	options.setDeviceName("RZCW30AKXKZ");
 	options.setPlatformVersion("13.0");
 	options.setPlatformName("Android");
 	options.noReset();
 	options.withBrowserName("Chrome");
+	options.setAutomationName("UiAutomator2");
+	options.noSign();
 	options.autoGrantPermissions();
 	
-	Map<String, Object> prefs = new HashMap<String, Object>();
-	prefs.put("autofill.profile_enabled", false);
-	prefs.put("profile.default_content_setting_values.media_stream_mic", 1); 
-	prefs.put("profile.default_content_setting_values.media_stream_camera", 1);
-	prefs.put("profile.default_content_setting_values.geolocation",1); 
-	prefs.put("profile.default_content_setting_values.notifications",1);
-	
-	cOptions.setExperimentalOption("prefs", prefs);
-	cap.setCapability(ChromeOptions.CAPABILITY, cOptions);
-	
-	options.merge(cap);
-	
 	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	 
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
+		 
 	logger = LogManager.getLogger(this.getClass());
-//	
-	/*
-	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-	Thread.sleep(5000);
-	driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
-	driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
-	Thread.sleep(5000);
-	driver.findElement(By.xpath("//button[@type='submit']")).click();
-	driver.findElement(By.xpath("//button[@type='submit']")).click();
-	
-	//driver.findElement(By.xpath(" //textarea[@id='APjFqb']")).sendKeys(Keys.ENTER);
-	*/
-	System.out.println("Inside BaseTest BeforeClass");
+		
+	 
+	 
  }
  public void testname(String testname, String name) {
 		test = extent.createTest(testname);
@@ -220,11 +190,12 @@ Logger logger = LogManager.getLogger(this.getClass());
 		if(status.equalsIgnoreCase("pass")) {
 			System.err.println("Before node Pass");
 			node.pass(dec, img);
+			System.out.println(dec + " : " + "pass");
 
 		}else if (status.equalsIgnoreCase("fail")) {
 			System.err.println("Before node Fail");
 			node.fail(dec, img);
-			System.err.println("After node Fail");
+			System.err.println(dec + " : After node Fail");
 		}
 		}
 

@@ -33,7 +33,7 @@ public class TC_003_SFI_All_MobilePopupResponse extends BaseClass{
 		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);
 		logger.info("******starting TC_001_SFI_All_MobileResponse ****");
-		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Browser.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{

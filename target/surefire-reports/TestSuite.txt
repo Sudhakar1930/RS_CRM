@@ -1,23 +1,42 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 40.38 s <<< FAILURE! -- in TestSuite
-testCases.TC_001_SFI_All_Mobile.TestMobileIndividualControls -- Time elapsed: 19.78 s <<< FAILURE!
-java.lang.AssertionError: MultiChoice Not Displayed
-	at org.testng.Assert.fail(Assert.java:111)
-	at testCases.TC_001_SFI_All_Mobile.TestMobileIndividualControls(TC_001_SFI_All_Mobile.java:163)
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 136.9 s <<< FAILURE! -- in TestSuite
+testCases.TC_002_SFS_All_Mobile.configureAppium -- Time elapsed: 4.035 s <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Unable to find an active device or emulator with OS 13.0. The following are available: emulator-5554 (11) 
+Host info: host: 'DESKTOP-H290O4K', ip: '192.168.31.145'
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[{appium:noReset=true, appium:autoGrantPermissions=true, browserName=Chrome, appium:deviceName=R9ZR908HTNR, platformName=ANDROID, appium:automationName=UIAutomator2, appium:platformVersion=13.0}], desiredCapabilities=Capabilities {appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:deviceName: R9ZR908HTNR, appium:noReset: true, appium:platformVersion: 13.0, browserName: Chrome, platformName: ANDROID}}]
+Capabilities {appium:autoGrantPermissions: true, appium:automationName: UIAutomator2, appium:deviceName: R9ZR908HTNR, appium:noReset: true, appium:platformVersion: 13.0, browserName: Chrome, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:177)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:268)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:168)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:90)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:102)
+	at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:109)
+	at testBase.Android.BaseTest.configureAppium(BaseTest.java:100)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:180)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
 	at org.testng.TestRunner.privateRun(TestRunner.java:848)
 	at org.testng.TestRunner.run(TestRunner.java:621)

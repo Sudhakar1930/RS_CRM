@@ -44,18 +44,22 @@ public class IndvControls {
 	static WebElement eleToastMsg;
 	
 	@FindBy(id="com.android.chrome:id/positive_button")
-	WebElement lnkAllow;
+	WebElement lnkAllowLocation;
 	
 	@FindBy(id="com.android.permissioncontroller:id/permission_allow_foreground_only_button")
-	WebElement lnkRecAudio;
+	WebElement lnkAllowPermission;
 	
 	@FindBy(xpath="//*[@text='Files']")
 	WebElement elefileButton;
 	
+	@FindBy(xpath="(//android.widget.ImageView[@resource-id='android:id/icon'])[3]")
+	WebElement eleMediaButton;
+	
 	@FindBy(xpath="//android.widget.ImageButton[@content-desc='Show roots']")
 	WebElement eleShowRoots;
 	
-	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView")
+	//@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView")
+	@FindBy(xpath="/android.widget.TextView[@resource-id='android:id/title' and @text='Downloads']")
 	WebElement eleDownloads;
 	
 	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/com.google.android.material.card.MaterialCardView/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.TextView[1]")
@@ -64,6 +68,12 @@ public class IndvControls {
 	
 	@FindBy(xpath="//button[normalize-space()='next']")
 	WebElement btnGeneralNext;
+	
+	@FindBy(xpath="(//android.widget.ImageView[@resource-id='com.google.android.documentsui:id/icon_thumb'])[1]")
+	WebElement iConFirstItem;
+	
+	@FindBy(xpath="//android.widget.TextView[@resource-id='android:id/title' and @index=0 and @class='android.widget.TextView' and @displayed='true']")
+	WebElement iMediaFirstItem;
 	
 	public static List<WebElement> tcols;
 	
@@ -186,8 +196,13 @@ public class IndvControls {
 //	@FindBy(xpath="//div[@class='fileupshow-body-div']")
 //	WebElement lnkFileUpload;
 //	Mobile View Specific
+//	@FindBy(xpath="//img[@id='imgsrc']")
+//	@FindBy(xpath="//input[@id='fileid']")
 	@FindBy(xpath="//img[@id='imgsrc']")
 	WebElement lnkFileUpload;
+	
+	@FindBy(xpath="//input[@id='fileid']")
+	WebElement lnkFUDirect;
 	
 	@FindBy(xpath="//*[@text='Files']")
 	WebElement eleFile;
@@ -226,9 +241,8 @@ public class IndvControls {
 	@FindBy(xpath="//i[normalize-space()='stop']")
 	WebElement btnVRStop;
 	
-	@FindBy(xpath="//input[contains(@class,'gmshow-input myanimation')]")
+	@FindBy(xpath="//input[contains(@class,'-input myanimation') and @type='text']")
 	WebElement txtGoogleMapInput;
-	
 	
 	@FindBy(xpath="p[class='ql-align-left'] span")
 	WebElement lblSecMsgcontrol;
@@ -282,23 +296,51 @@ public class IndvControls {
 	@FindBy(xpath="//div//h3")
 	WebElement lblPicMsgTitle;
 	
+	public boolean bIsAllowLocPopup() {
+		boolean bFlag = false;
+		if(lnkAllowLocation.isDisplayed()) {
+			bFlag = true;
+			System.out.println("Allow Location Popup displayed");
+			logger.info("Allow Location Popup displayed");
+		}
+		else {
+			bFlag = false;
+			System.out.println("Allow Location Popup not displayed");
+			logger.info("Allow Location Popup not displayed");
+		}
+		return bFlag;
+	}
+	public boolean bIsAllowPermission() {
+		boolean bFlag = false;
+		if(lnkAllowPermission.isDisplayed()) {
+			bFlag = true;
+		}
+		else {
+			bFlag = false;
+		}
+		return bFlag;
+	}
 	
-	public void clickAndroidLinkAllow() {
+	
+	
+	public void clickAndroidLinkAllowLocation() {
 		try {
 		WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		webWait.until(ExpectedConditions.elementToBeClickable(lnkAllow));
-		webWait.until(ExpectedConditions.visibilityOf(lnkAllow));
-		lnkAllow.click();
+		webWait.until(ExpectedConditions.elementToBeClickable(lnkAllowLocation));
+		webWait.until(ExpectedConditions.visibilityOf(lnkAllowLocation));
+		System.out.println("Allow Popup displayed within click function");
+		lnkAllowLocation.click();
 		}catch(Exception e) {
 			System.out.println(e.getCause());
 		}
 	}
-	public void clickAndroidAllowRecord() throws Exception {
+	public void clickAndroidAllowPermission() throws Exception {
 		try {
 			WebDriverWait webWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-			webWait.until(ExpectedConditions.elementToBeClickable(lnkRecAudio));
-			webWait.until(ExpectedConditions.visibilityOf(lnkRecAudio));
-			lnkRecAudio.click();
+			webWait.until(ExpectedConditions.elementToBeClickable(lnkAllowPermission));
+			webWait.until(ExpectedConditions.visibilityOf(lnkAllowPermission));
+			System.out.println("Allow Permission Popup displayed within click");
+			lnkAllowPermission.click();
 			}catch(Exception e) {
 				System.out.println(e.getCause());
 			}
@@ -323,8 +365,20 @@ public class IndvControls {
 		}
 
 	}
-
+	public boolean IsMediaFirstItemDisplayed() {
+		boolean bFlag;
+		if(iMediaFirstItem.isDisplayed()) {
+			bFlag = true;
+		}
+		else {
+			bFlag = false;
+		}
+		return bFlag;
+	}
 	
+	public void clickMediaFirstItm() throws Exception {
+		iMediaFirstItem.click();
+	}
 	
 	public boolean bIsLinksControlDisplayed() {
 		boolean bFlag = false;
@@ -431,8 +485,10 @@ public class IndvControls {
 		return bFlag;
 	}
 	public boolean bIsPhoneNoDisplayed() {
+		System.out.println("Before Phone number check");
 		boolean bFlag = false;
-		bFlag = IsElementVisible(driver,txtPhoneNumberInput); 
+		bFlag = IsElementVisible(driver,txtPhoneNumberInput);
+		System.out.println("after Phone number check:" + bFlag);
 		return bFlag;
 	}
 	public boolean bIsListDisplayed() {
@@ -471,14 +527,16 @@ public class IndvControls {
 		bFlag2 = IsElementVisible(driver,btnVRStop);
 		if(bFlag1==true && bFlag2==true) {
 			bFlag = true;
+			System.out.println("VR Displayed");
 		}
 		else {
 			bFlag = false;
+			System.out.println("VR Missing");
 		}	
 		return bFlag;
 	}
 	
-	public boolean IsElementVisible(WebDriver driver,WebElement element) {
+	public boolean IsElementVisible(AndroidDriver driver,WebElement element) {
 		boolean bIsElementVisible=false;
 		try {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -489,6 +547,8 @@ public class IndvControls {
 		bIsElementVisible = true;
 		}catch(Exception e) {
 			bIsElementVisible = false;
+			System.out.println(e.getCause());
+			
 		}
 		return bIsElementVisible;
 	}
@@ -932,55 +992,81 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 		}
 	}
 	public void SelectFiletoUpload(String sFUPath) throws Exception {
-		System.out.println("Before FileUpload link");
+		
+		logger.info("Within SelectFiletoUpload");
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(lnkFileUpload));
 		wait.until(ExpectedConditions.elementToBeClickable(lnkFileUpload));
+		
+		logger.info("File Upload Visible");
 		Thread.sleep(3000);
 		lnkFileUpload.click();
-		System.out.println("FileUpload link visible");
-//		UtilityCustomFunctions.doClick(driver, lnkFileUpload);
-	    Thread.sleep(3000);
-	    /*
-	    fi = new File(sFUPath);
-	    byte[] fileContent = Files.readAllBytes(fi.toPath()); 
-		driver.pushFile("storage/Downloads/TestFile.txt", fileContent);
-		System.out.println("After file push");*/
-	    //Change Context to Native
-		Thread.sleep(1000);
-		driver.context("NATIVE_APP");
+		logger.info("FileUpload Clicked");
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.visibilityOf(lnkRecAudio));
-	    Thread.sleep(3000);
-	    if(lnkRecAudio.isDisplayed()) {
-			lnkRecAudio.click();
-		}
-		else {
-			System.out.println("chrome to record not present");
-		}
+		//System.out.println("FilePath:" + System.getProperty("user.dir")+"\\resources\\NewFile.txt");
+//		lnkFileUpload.sendKeys(System.getProperty("user.dir")+"\\resources\\NewFile.txt");
+	    Thread.sleep(1000);
+//	    //Change Context to Native
+	    Set<String> fucontextNames = driver.getContextHandles();
+        for (String strContextName : fucontextNames) {
+            if (strContextName.contains("NATIVE_APP")) {
+                driver.context("NATIVE_APP");
+                break;
+            }
+        }
+        logger.info("Switched to Native app within FileUpload");
+	    Thread.sleep(1000);
+		//wait.until(ExpectedConditions.visibilityOf(lnkAllowPermission));
+	    Thread.sleep(2000);
+	    if(bIsAllowPermission()==true) {
+	    	System.out.println("Allow Permission popup displayed");
+	    	logger.info("Allow Permission displayed first time");
+	    	clickAndroidAllowPermission();
+	    }else {
+	    	System.out.println("Allow permission popup not displayed");
+	    }
+	    Thread.sleep(1000);
+//	    if(bIsAllowPermission()==true) {
+//	    	System.out.println("Allow Chrome Permission displayed");
+//	    	logger.info("Allow Permission displayed second time after click");
+//	    	clickAndroidAllowPermission();
+//	    }else {
+//	    	System.out.println("Allow permission popup not displayed");
+//	    }
+	    
 	    Thread.sleep(5000);
-		wait.until(ExpectedConditions.visibilityOf(elefileButton));
-        elefileButton.click();
-        System.out.println("Files button clicked");
+		wait.until(ExpectedConditions.visibilityOf(eleMediaButton));
+		eleMediaButton.click();
+        System.out.println("Media button clicked");
         Thread.sleep(3000);
-        
-        
-        wait.until(ExpectedConditions.visibilityOf(eleShowRoots));
-        eleShowRoots.click();
+       
+//        //Push file to device downloads.
+
+////		driver.pushFile("/Internal storage/Download/NewFile.txt", new File(System.getProperty("user.dir")+"\\resources\\NewFile.txt"));
+//        driver.pushFile("/data/local/tmp/NewFile.xlsx", new File(System.getProperty("user.dir")+"\\resources\\SkipLogicFlows.xlsx"));
+//        lnkFUDirect.sendKeys(System.getProperty("user.dir")+"\\resources\\SkipLogicFlows.xlsx");	
+//	    Thread.sleep(1000);
+//	    System.out.println("NewFile.txt pushed to device storage as TestFile.txt");
+//	    
+	    
+	    
+//        wait.until(ExpectedConditions.visibilityOf(eleShowRoots));
+//        eleShowRoots.click();
 		Thread.sleep(3000);
-		wait.until(ExpectedConditions.visibilityOf(eleDownloads));
-		Thread.sleep(5000);
-		eleDownloads.click();
-		
-		Thread.sleep(5000);
-        System.out.println("After Push file");
-		wait.until(ExpectedConditions.visibilityOf(eleDoc));
-		Thread.sleep(5000);
-		eleDoc.click();
-        
-        System.out.println("After eledoc Seelected");
-        driver.context("CHROMIUM");
-        Thread.sleep(3000);
+//		wait.until(ExpectedConditions.visibilityOf(eleDownloads));
+//		Thread.sleep(5000);
+//		eleDownloads.click();
+//		
+//		Thread.sleep(5000);
+//        System.out.println("After opening download");
+//        System.out.println("Before selecting the file to upload");
+//		wait.until(ExpectedConditions.visibilityOf(eleDoc));
+//		Thread.sleep(5000);
+//		eleDoc.click();
+//        
+//        System.out.println("After eledoc Seelected");
+       driver.context("CHROMIUM");
+//        Thread.sleep(3000);
  	}
 	
 	public boolean selectOneItem(String strItem) throws Exception{

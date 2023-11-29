@@ -257,8 +257,8 @@ public class BaseClass extends ExtentReportManager{
 		//driver.close();
 		//driver = new ChromeDriver();
 		NavigatetoResponse obj = new NavigatetoResponse(driver);
-		driver.get("https://rthree.live/");
-//		driver.get("https://rbot.live/");
+//		driver.get("https://rthree.live/");
+		driver.get("https://rbot.live/");
 		
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -268,32 +268,24 @@ public class BaseClass extends ExtentReportManager{
 		logger.info("Login details Entered");
 		obj.clickSubmit();
 		logger.info("Chat bot Logged In");
-		Thread.sleep(15000);
-		logger.info("Hard wait for 15 secs");
-		obj.clickClearAll();
-		logger.info("clear all button clicked on listbox");
-		obj.setBuildName(strBuildName);
-		logger.info("Build Name entered in List Box");
+		Thread.sleep(2000);
+		System.out.println("Before checking CloseAllVisible");
+		System.out.println("is close all: " + obj.bIsCloseAllVisible());
+		if(obj.bIsCloseAllVisible()) {
+			System.out.println("ClearAll Link clicked");
+			obj.clickClearAll();
+			obj.setBuildName(strBuildName);
+			logger.info(strBuildName+ " Build Name entered in List Box");
+			System.out.println(strBuildName+ " Build Name entered in List Box");
+		}
 		Thread.sleep(3000);
-		logger.info("Waited for 3 secs");
-		obj.KeyEnterBuildName();
-		logger.info("Enter Key applied on ListBox");
-		Thread.sleep(1000);
-		logger.info("Hard Wait for 1 sec");
-		obj.clickSideBarBldBtn();
-		logger.info("clicked side bar Build button once");
-		Thread.sleep(1000);
-		logger.info("Hard Wait for 1 sec");
-		/*
-		obj.clickSideBarBldBtn();
-		logger.info("clicked side bar Build button twice");
-		
-		Thread.sleep(1000);
-		
-		logger.info("Hard Wait for 1 sec");
-		*/
+		System.out.println("Before clicking Side Bar Build button ");
 		obj.clickSideBarResult();
+		System.out.println("Side Bar Result button clicked");
+		Thread.sleep(3000);
+		logger.info("Build link clicked side bar");
 		logger.info("clicked side bar Result");
+		Thread.sleep(1000);
 		obj.clickSideItemResp();
 		logger.info("Side Item Response clicked");
 		obj.clickRefreshResponse();

@@ -29,7 +29,7 @@ public class UtilityCustomFunctions {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static String getBrowserName(WebDriver driver) {
+	public static String getBrowserName(AndroidDriver driver) {
 		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
 	    String browserName = cap.getBrowserName().toLowerCase();
 		return browserName;
@@ -44,7 +44,7 @@ public class UtilityCustomFunctions {
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 			wait.until(ExpectedConditions.visibilityOf(element));
 			js.executeScript("arguments[0].scrollIntoView();", element);
-//			element.clear();
+			element.clear();
 //			Actions action = new Actions(driver);
 //			action.moveToElement(element).doubleClick().build().perform();
 			element.sendKeys(keyValue);

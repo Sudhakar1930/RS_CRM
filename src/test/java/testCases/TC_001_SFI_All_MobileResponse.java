@@ -21,6 +21,8 @@ import utilities.ExcelUtility;
 import utilities.Browser.*;
 
 public class TC_001_SFI_All_MobileResponse extends BaseClass{
+	
+	
 	Logger logger = LogManager.getLogger(this.getClass());
 	@BeforeTest
 	public void testName() {
@@ -33,7 +35,7 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 		SurveyFormReUsables oSFR = new SurveyFormReUsables(driver);
 		IndvControls IndvObj = new IndvControls(driver);
 		logger.info("******starting TC_001_SFI_All_MobileResponse ****");
-		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Browser.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
@@ -181,16 +183,19 @@ public class TC_001_SFI_All_MobileResponse extends BaseClass{
 			String sActRM_Value= IndvObj.getRespRMValues();
 			oSFR.fSoftAssert(sActRM_Value.trim(),sExpRM_Value,"Rank Matrix Values",node);
 //			//Google Map
-//			oSFR.ValidateAllIndResp(driver,true,sExpGM_Title,20,"Google Map Control Question",false,node);
-//			oSFR.ValidateAllIndResp(driver,false,sExpGM_Value,18,"Google Map Control Answer",false,node);
+			System.out.println("Expected Google Map Value: " + sExpGM_Value);
+			oSFR.ValidateAllIndResp(driver,true,sExpGM_Title,20,"Google Map Control Question",false,node);
+			oSFR.ValidateAllIndResp(driver,false,sExpGM_Value,17,"Google Map Control Answer",false,node);
 //			//Voice Record Control
-//			oSFR.ValidateAllIndResp(driver,true,sExpVR_Title,21,"Voice Record Control Question",false,node);
-//			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 43);
-//			oSFR.ValidateAllIndResp(driver,false,sExpVR_Value,19,"Voice Record Control Answer",true,node);
+			System.out.println("Expected VR Value: " + sExpVR_Value);
+			oSFR.ValidateAllIndResp(driver,true,sExpVR_Title,21,"Voice Record Control Question",false,node);
+			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 43);
+			oSFR.ValidateAllIndResp(driver,false,sExpVR_Value,18,"Voice Record Control Answer",true,node);
 //			//FileUpload Control
-//			oSFR.ValidateAllIndResp(driver,true,sExpUF_Title,22,"FileUpload Control Question",false,node);
-//			sExpUF_Prefix = xlObj.getCellData("Sheet1", 1, 46);
-//			oSFR.ValidateAllIndResp(driver,false,sExpUF_Prefix,20,"FileUpload Control Answer",true,node);
+			oSFR.ValidateAllIndResp(driver,true,sExpUF_Title,22,"FileUpload Control Question",false,node);
+			sExpUF_Prefix = xlObj.getCellData("Sheet1", 1, 46);
+			System.out.println("Expected File Upload Value: " + sExpUF_Prefix );
+			oSFR.ValidateAllIndResp(driver,false,sExpUF_Prefix,19,"FileUpload Control Answer",true,node);
 			
 		
 			IndvObj.clickResponseClose(driver);

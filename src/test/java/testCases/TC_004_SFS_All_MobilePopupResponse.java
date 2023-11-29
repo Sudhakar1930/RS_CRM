@@ -31,7 +31,8 @@ public class TC_004_SFS_All_MobilePopupResponse extends BaseClass{
 		IndvControls IndvObj = new IndvControls(driver);
 		
 		logger.info("******starting TC_002_SFS_All_MobileResponse ****");
-		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Browser.UtilityCustomFunctions.getBrowserName(driver);
+		
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 //		try{

@@ -7,15 +7,15 @@
   <test thread-count="5" name="chrometest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testCases.TC_001_SFI_All_Mobile">
+      <class name="testCases.TC_002_SFS_All_MobileResponse">
         <methods>
           <include name="onStart"/>
-          <include name="TestMobileIndividualControls"/>
-          <include name="testName"/>
+          <include name="setup"/>
           <include name="flush"/>
-          <include name="configureAppium"/>
+          <include name="testMobileSectionContrls"/>
+          <include name="testName"/>
         </methods>
-      </class> <!-- testCases.TC_001_SFI_All_Mobile -->
+      </class> <!-- testCases.TC_002_SFS_All_MobileResponse -->
     </classes>
   </test> <!-- chrometest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

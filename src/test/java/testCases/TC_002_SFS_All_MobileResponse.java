@@ -31,13 +31,13 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 		IndvControls IndvObj = new IndvControls(driver);
 		
 		logger.info("******starting TC_002_SFS_All_MobileResponse ****");
-		String sBrowserName=utilities.Android.UtilityCustomFunctions.getBrowserName(driver);
+		String sBrowserName=utilities.Browser.UtilityCustomFunctions.getBrowserName(driver);
 		logger.info("Test Execution on Browser: "+ sBrowserName);
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 //		try{
 			
-//			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Live" + ".xlsx" ;
-			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Rthree" + ".xlsx" ;
+			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Live" + ".xlsx" ;
+//			String sPath=".\\testData\\" + "SFS_AllMobile_Tbl_Rthree" + ".xlsx" ;
 			
 			ExcelUtility xlObj = new ExcelUtility(sPath);
 			logger.info("Excel file Utility instance created");
@@ -182,17 +182,17 @@ public class TC_002_SFS_All_MobileResponse extends BaseClass{
 			String sActRM_Value= IndvObj.getRespRMValues();
 			System.out.println("Actual Response Values: "+sActRM_Value);
 			oSFRSC.fSoftAssert(String.valueOf(sActRM_Value),String.valueOf(sExpRM_Value),"Rank Matrix Response Values",node);
-//			//Google Map
-//			oSFRSC.ValidateAllIndResp(driver,true,sExpGM_Title,20,"Google Map Control Question",false,node);
-//			oSFRSC.ValidateAllIndResp(driver,false,sExpGM_Value,18,"Google Map Control Answer",false,node);
-//			//Voice Record Control
-//			oSFRSC.ValidateAllIndResp(driver,true,sExpVR_Title,21,"Voice Record Control Question",false,node);
-//			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
-//			oSFRSC.ValidateAllIndResp(driver,false,sExpVR_Value,19,"Voice Record Control Answer",true,node);
-//			//FileUpload Control
-//			oSFRSC.ValidateAllIndResp(driver,true,sExpUF_Title,22,"FileUpload Control Question",false,node);
-//			sExpUF_Prefix = xlObj.getCellData("Sheet1", 1, 47);
-//			oSFRSC.ValidateAllIndResp(driver,false,sExpUF_Prefix,20,"FileUpload Control Answer",true,node);
+			//Google Map
+			oSFRSC.ValidateAllIndResp(driver,true,sExpGM_Title,20,"Google Map Control Question",false,node);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpGM_Value,17,"Google Map Control Answer",false,node);
+			//Voice Record Control
+			oSFRSC.ValidateAllIndResp(driver,true,sExpVR_Title,21,"Voice Record Control Question",false,node);
+			sExpVR_Value = xlObj.getCellData("Sheet1", 1, 44);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpVR_Value,18,"Voice Record Control Answer",true,node);
+			//FileUpload Control
+			oSFRSC.ValidateAllIndResp(driver,true,sExpUF_Title,22,"FileUpload Control Question",false,node);
+			sExpUF_Prefix = xlObj.getCellData("Sheet1", 1, 47);
+			oSFRSC.ValidateAllIndResp(driver,false,sExpUF_Prefix,19,"FileUpload Control Answer",true,node);
 			
 			
 			
