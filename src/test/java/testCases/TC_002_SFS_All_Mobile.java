@@ -295,9 +295,9 @@ public class TC_002_SFS_All_Mobile extends BaseTest{
 			SecObj.fValidateSectionLabels(driver, 13, sExpDT_Title, "Date Control Title",node);
 			 Thread.sleep(1000);
 			boolean bDateReturnValue = false;
-			 bDateReturnValue = IndvObj.setDate("No");
+			 bDateReturnValue = IndvObj.setSectionDate("No");
 			 if(bDateReturnValue=false) {
-				 bDateReturnValue = IndvObj.setDate("Yes");
+				 bDateReturnValue = IndvObj.setSectionDate("Yes");
 			 }
 			 System.out.println("Date Value Entered:");
 			 Thread.sleep(2000);

@@ -113,7 +113,7 @@ public class IndvControls {
 	
 	
 	
-	@FindBy(xpath="//button[normalize-space()='Book an appointment']")
+	@FindBy(xpath="//button[@class='appintshow-input myanimation']")
 	WebElement btnBookAppointment;
 	
 	@FindBy(css="svg")
@@ -185,10 +185,14 @@ public class IndvControls {
 	WebElement lstRatingLabels;
 	
 	
-	@FindBy(xpath="//button[@type='button']")
+	@FindBy(xpath="//input[contains(@class,'mat-datepicker-input')]")
 	WebElement btnDateIcon;
 	
-//	@FindBy(xpath="//div[@id='rootdiv']//input")
+	@FindBy(xpath="//input[@id='datebox']")
+	WebElement btnSectionDateInput;
+	
+	
+	
 	@FindBy(xpath="//div[@id='rootdiv']//input")
 	WebElement txtDateInput;
 	
@@ -1082,6 +1086,10 @@ public boolean clickMatchingLabel(String strItem) throws Exception {
 	public boolean setDate(String isNextMonthClicked)throws Exception{
 		//UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver);
 		return clickDate(isNextMonthClicked,btnCurrentDate,btnDateIcon, btnNextMonth);
+	}
+	public boolean setSectionDate(String isNextMonthClicked)throws Exception{
+		//UtilityCustomFunctions uObj = new UtilityCustomFunctions(driver);
+		return clickDate(isNextMonthClicked,btnCurrentDate,btnSectionDateInput, btnNextMonth);
 	}
 	
 	public String selectFirstAppointMent() throws Exception{
