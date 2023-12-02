@@ -47,8 +47,8 @@ public class TC_001_SFI_All_Mobile extends BaseTest{
 		System.out.println("Test Execution on Browser: "+ sBrowserName);
 	//	try{
 			
-//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
-			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
+			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_Live" + ".xlsx" ;
+//			String sPath=".\\testData\\" + "SFI_AllMobile_Tbl_RThree" + ".xlsx" ;
 			
 			
 			ExcelUtility xlObj = new ExcelUtility(sPath);
