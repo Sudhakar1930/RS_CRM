@@ -12,7 +12,7 @@
 		<class name="testCases.TC_001_SFI_All_Mobile"/>
 		<class name="testCases.TC_001_SFI_All_MobileResponse"/>
 		<class name="testCases.TC_002_SFS_All_Mobile"/>
-		<class name="testCases.TC_002_SFS_All_MobileResponse"/>
+	   <class name="testCases.TC_002_SFS_All_MobileResponse"/>
 		<!--
 		<class name="testBase.Android.AppiumServer"/>
 		<class name="testCases.TC_001_SFI_All_MobileResponse"/>

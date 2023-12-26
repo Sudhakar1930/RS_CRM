@@ -10,21 +10,21 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 public class NewBase extends ExtentReportManager{
-	public AndroidDriver driver;
+	public AndroidDriver Adriver;
 	public void startAppium() throws MalformedURLException {
 		AppiumDriverLocalService service = new AppiumServiceBuilder().withAppiumJS(new File("C://Users//sudha//AppData//Roaming//npm//node_modules//appium//lib//main.js")).withIPAddress("127.0.0.1").usingPort(4723).build();
 		service.start();
 		
 		UiAutomator2Options options = new UiAutomator2Options();
 
-		options.setDeviceName("RZCW30AKXKZ");
-		options.setPlatformVersion("13.0");
+		options.setDeviceName("emulator-5554");
+		options.setPlatformVersion("14.0");
 		options.setPlatformName("Android");
 		options.noReset();
 		options.withBrowserName("Chrome");
 		options.autoGrantPermissions();
 		
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		Adriver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+		Adriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
 }

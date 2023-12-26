@@ -61,24 +61,33 @@ public class BaseTest extends ExtentReportManager {
 Logger logger = LogManager.getLogger(this.getClass());
 @BeforeClass
 public void configureAppium() throws MalformedURLException, InterruptedException {
-	 AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
-		service.start();
+//	 AppiumDriverLocalService service = AppiumDriverLocalService.buildDefaultService();
+//		service.start();
+	
+	AppiumServiceBuilder builder = new AppiumServiceBuilder()
+	 .withAppiumJS(new File("C:\\Users\\Rsoft\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+	 .withIPAddress("127.0.0.1")
+	 .usingPort(4723);
+	AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
+	service.start();
 		System.out.println("Appium Url:" + service.getUrl());
 		System.out.println("Is Server Running:" + service.isRunning());
 	
 	UiAutomator2Options options = new UiAutomator2Options();
 
-	options.setDeviceName("RZCW30AKXKZ");
+	options.setDeviceName("RZCWA1JJM5L");
 	options.setPlatformVersion("13.0");
 	options.setPlatformName("Android");
 	options.noReset();
 	options.withBrowserName("Chrome");
-	options.setAutomationName("UiAutomator2");
+//	options.setAutomationName("UiAutomator2");
+//	options.setAutomationName("Chromium");
 	options.noSign();
 	options.autoGrantPermissions();
-	
+//	options.setAppPackage("com.android.chrome");
+//	options.setAppActivity("com.google.android.apps.chrome.Main");
 	driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(500));
 		 
 	logger = LogManager.getLogger(this.getClass());
 		
